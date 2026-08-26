@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lớp TOEIC 0→600</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F3F6F3; --surface:#FFFFFF; --surface-2:#EAEFEB;
+  --ink:#1A211E; --muted:#5C6B65; --faint:#8B9993;
+  --rule:#D4DCD7; --rule-2:#B9C4BE;
+  --accent:#1F7A72; --accent-ink:#0F5F58; --accent-soft:#DBEBE8; --on-accent:#FFFFFF;
+  --good:#2F7355; --warn:#8C6210; --crit:#A2382B;
+  --good-bg:#DEEDE5; --warn-bg:#F5EBD6; --crit-bg:#F5DFDB;
+  --sans:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;
+  --slab:"Bitter",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --shadow:0 1px 2px rgba(26,33,30,.05),0 10px 28px -22px rgba(26,33,30,.5);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121715; --surface:#1A211E; --surface-2:#212a27;
+    --ink:#E5EBE7; --muted:#9AA8A2; --faint:#77857F;
+    --rule:#2B3733; --rule-2:#3C4A45;
+    --accent:#63C6BA; --accent-ink:#8FDCD2; --accent-soft:#1C332F; --on-accent:#0B1513;
+    --good:#61B187; --warn:#D2A244; --crit:#E27C69;
+    --good-bg:#182E24; --warn-bg:#31280F; --crit-bg:#33201C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -24px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121715; --surface:#1A211E; --surface-2:#212a27;
+  --ink:#E5EBE7; --muted:#9AA8A2; --faint:#77857F;
+  --rule:#2B3733; --rule-2:#3C4A45;
+  --accent:#63C6BA; --accent-ink:#8FDCD2; --accent-soft:#1C332F; --on-accent:#0B1513;
+  --good:#61B187; --warn:#D2A244; --crit:#E27C69;
+  --good-bg:#182E24; --warn-bg:#31280F; --crit-bg:#33201C;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -24px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+a{color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.shell{max-width:600px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--rule);background:var(--surface);position:sticky;top:0;z-index:20}
+header.top .shell{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.brand b{display:block;font-family:var(--slab);font-weight:700;font-size:16px;line-height:1.15;letter-spacing:-.01em}
+.brand span{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.mentor{text-align:right;font-size:12px;color:var(--muted);line-height:1.3}
+.mentor b{display:block;font-family:var(--slab);font-size:13px;color:var(--ink);font-weight:600}
+
+main{padding-top:20px}
+.panel{display:none}
+.panel.on{display:block}
+h2{font-family:var(--slab);font-weight:700;font-size:22px;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;margin:0 0 20px}
+h3{font-family:var(--slab);font-weight:600;font-size:17px;margin:0 0 4px;letter-spacing:-.005em}
+.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px;margin:0 0 14px;box-shadow:var(--shadow)}
+.card p:last-child{margin-bottom:0}
+.card.acc{border-left:3px solid var(--accent)}
+.card.crit{border-left:3px solid var(--crit)}
+
+/* today blocks */
+ol.blocks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.blk label{display:grid;grid-template-columns:22px 30px 1fr auto;gap:10px;align-items:start;
+  background:var(--surface);padding:13px 14px;cursor:pointer}
+.blk input{width:19px;height:19px;accent-color:var(--accent);margin:2px 0 0;cursor:pointer}
+.bk{font-family:var(--slab);font-weight:700;font-size:17px;color:var(--accent-ink);line-height:1.2;text-align:center}
+.bt b{display:block;font-size:14.5px;font-weight:600;line-height:1.3}
+.bt i{display:block;font-style:normal;font-size:13px;color:var(--muted);line-height:1.45;margin-top:2px}
+.bm{font-family:var(--mono);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;padding-top:2px}
+.blk input:checked ~ .bt b{text-decoration:line-through;color:var(--muted)}
+.blk input:checked ~ .bk{color:var(--good)}
+
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+ol.steps li{counter-increment:s;padding-left:34px;position:relative;font-size:14.5px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;
+  border:1.5px solid var(--accent);color:var(--accent-ink);font-family:var(--mono);font-size:11.5px;
+  display:flex;align-items:center;justify-content:center}
+
+/* weeks */
+.bub{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 18px}
+.bub i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--rule-2)}
+.bub i.f{background:var(--accent);border-color:var(--accent)}
+.wk{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px;margin:0 0 14px;box-shadow:var(--shadow)}
+.wk header{border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:14px}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 5px}
+.wk h3{margin:0 0 4px}
+.np{margin:0;font-size:13px;color:var(--muted)}
+.wkgrid{display:grid;gap:18px}
+@media (min-width:520px){.wkgrid{grid-template-columns:1.15fr 1fr;gap:22px}}
+ol.buoi{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+ol.buoi li{display:grid;grid-template-columns:52px 1fr;gap:8px;font-size:13.5px;line-height:1.4}
+ol.buoi b{font-family:var(--mono);font-size:11px;color:var(--faint);font-weight:500;padding-top:2px}
+ul.sets,ul.crit{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:13.5px}
+ul.sets li{padding-left:14px;position:relative;color:var(--muted)}
+ul.sets li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+ul.crit li{padding-left:18px;position:relative}
+ul.crit li::before{content:"☐";position:absolute;left:0;color:var(--accent)}
+
+/* vocab */
+.tools{position:sticky;top:60px;z-index:10;background:var(--paper);padding:10px 0 12px;margin:-4px 0 6px}
+.search{width:100%;font-family:var(--sans);font-size:16px;padding:11px 13px;border-radius:8px;
+  border:1px solid var(--rule-2);background:var(--surface);color:var(--ink)}
+.search::placeholder{color:var(--faint)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;align-items:center}
+.chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;padding:5px 11px;border-radius:20px;
+  border:1px solid var(--rule-2);background:var(--surface);color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.count{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-left:auto}
+ul.words{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.w{background:var(--surface);padding:12px 14px;display:grid;grid-template-columns:34px 1fr;gap:10px}
+.wn{font-family:var(--mono);font-size:11px;color:var(--faint);padding-top:4px;font-variant-numeric:tabular-nums}
+.wh{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.wh b{font-family:var(--mono);font-size:15.5px;font-weight:500}
+.wh .ipa{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.wh .pos{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--accent-ink);background:var(--accent-soft);padding:1px 6px;border-radius:3px}
+.wvn{font-size:14.5px;font-weight:500;margin:3px 0 0}
+.wc{font-family:var(--mono);font-size:12px;color:var(--muted);margin:4px 0 0}
+.wex{font-family:var(--mono);font-size:12px;color:var(--muted);margin:3px 0 0;line-height:1.5}
+.hide .wvn,.hide .wc,.hide .wex{visibility:hidden}
+.hide .w{cursor:pointer}
+.hide .w.show .wvn,.hide .w.show .wc,.hide .w.show .wex{visibility:visible}
+.empty{text-align:center;color:var(--faint);font-size:14px;padding:28px 0}
+
+/* zoom */
+.week7{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:0 0 14px}
+@media (min-width:520px){.week7{grid-template-columns:repeat(7,1fr)}}
+.d{background:var(--surface);padding:10px 6px;text-align:center;display:flex;flex-direction:column;gap:3px}
+.d b{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.d span{font-family:var(--slab);font-size:12.5px;font-weight:600;line-height:1.2}
+.d.z{background:var(--accent-soft)} .d.z span{color:var(--accent-ink)}
+.d.s{background:var(--surface-2)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+td.n{font-family:var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted)}
+pre{font-family:var(--mono);font-size:11.5px;line-height:1.65;background:var(--surface-2);
+  border:1px solid var(--rule);border-radius:6px;padding:13px;overflow-x:auto;margin:0}
+.btn{font-family:var(--sans);font-size:14px;font-weight:500;padding:9px 16px;border-radius:7px;
+  border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;margin-top:11px}
+.btn.ghost{background:transparent;color:var(--accent-ink)}
+.ok{font-family:var(--mono);font-size:11.5px;color:var(--good);margin-left:10px}
+
+/* tabs */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);
+  border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom)}
+nav.tabs .shell{display:grid;grid-template-columns:repeat(4,1fr);padding:0}
+nav.tabs button{appearance:none;border:0;background:none;padding:9px 4px 10px;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);
+  border-top:2px solid transparent;margin-top:-1px}
+nav.tabs button span{font-family:var(--slab);font-size:12.5px;font-weight:600}
+nav.tabs button small{font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:var(--faint)}
+nav.tabs button[aria-selected="true"]{color:var(--accent-ink);border-top-color:var(--accent)}
+nav.tabs button[aria-selected="true"] small{color:var(--accent)}
+footer{max-width:600px;margin:26px auto 0;padding:16px;border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:11px;color:var(--faint);text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="shell">
+    <div class="brand">
+      <b>Lớp TOEIC 0→600</b>
+      <span>Phase 1 · Tuần 1–12</span>
+    </div>
+    <div class="mentor">Mentor<b>Thầy Đinh Văn Nam</b></div>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- HÔM NAY -->
+  <section class="panel on" id="p-today" role="tabpanel" aria-labelledby="t-today">
+    <h2>Buổi học hôm nay</h2>
+    <p class="sub">45 phút · làm đúng thứ tự A → F, không nhảy khối.</p>
+
+    <ol class="blocks" id="blocks">
+        <li class="blk">
+          <label>
+            <input type="checkbox">
+            <span class="bk">A</span>
+            <span class="bt"><b>Ôn lại</b><i>5 từ cũ + 2 cấu trúc cũ + 2 lỗi đã mắc. <b>Không lật lại bài</b> — nhớ sai cũng cứ viết.</i></span>
+            <span class="bm">5′</span>
+          </label>
+        </li>
+        <li class="blk">
+          <label>
+            <input type="checkbox">
+            <span class="bk">B</span>
+            <span class="bt"><b>Từ vựng</b><i>8 từ mới. <b>Đọc to từng từ</b>, không đọc thầm. Chưa có file nghe thì bấm loa trên Google Dịch.</i></span>
+            <span class="bm">10′</span>
+          </label>
+        </li>
+        <li class="blk">
+          <label>
+            <input type="checkbox">
+            <span class="bk">C</span>
+            <span class="bt"><b>Ngữ pháp</b><i>Đọc hết bảng <b>COMMON ERROR</b> trước khi làm bài tập.</i></span>
+            <span class="bm">10′</span>
+          </label>
+        </li>
+        <li class="blk">
+          <label>
+            <input type="checkbox">
+            <span class="bk">D</span>
+            <span class="bt"><b>Nghe &amp; phát âm</b><i>Nghe → nhại lại ngay. Bật rõ phụ âm cuối.</i></span>
+            <span class="bm">8′</span>
+          </label>
+        </li>
+        <li class="blk">
+          <label>
+            <input type="checkbox">
+            <span class="bk">E</span>
+            <span class="bt"><b>Đọc</b><i>Đọc đoạn ngắn rồi trả lời. Không dịch từng chữ.</i></span>
+            <span class="bm">8′</span>
+          </label>
+        </li>
+        <li class="blk">
+          <label>
+            <input type="checkbox">
+            <span class="bk">F</span>
+            <span class="bt"><b>Exit ticket</b><i>6 câu. <b>Ghi lại điểm</b> — đây là số gửi thầy cuối tuần.</i></span>
+            <span class="bm">4′</span>
+          </label>
+        </li></ol>
+
+    <div class="card acc" style="margin-top:16px">
+      <p class="lbl">Quy tắc 2 phút</p>
+      <p style="margin:0;font-size:14.5px">Bí quá <b>2 phút</b> thì đánh dấu <code>?</code> và đi tiếp. Ngồi lì 15 phút một câu là cách phá hỏng cả buổi học.</p>
+    </div>
+
+    <div class="card">
+      <h3>Sau khi làm xong — tự chấm 4 bước</h3>
+      <p class="sub" style="margin-bottom:14px">Chỉ mở file đáp án khi đã làm xong toàn bộ bài.</p>
+      <ol class="steps">
+        <li><b>Đóng đề</b> → mở đáp án → chấm đúng/sai.</li>
+        <li>Câu sai: <b>đừng đọc lời giải ngay.</b> Tự hỏi <i>“từ nào là manh mối? chỗ trống cần loại từ gì?”</i> rồi thử lại một lần.</li>
+        <li>Vẫn sai → đọc lời giải → ghi vào <b>Error Log</b> đủ cột <i>Vì sao sai</i> và <i>Quy tắc cần nhớ</i>.</li>
+        <li>Câu đánh dấu <code>?</code> mà <b>đoán trúng</b> vẫn tính là <b>chưa biết</b> → vẫn ghi vào Error Log.</li>
+      </ol>
+    </div>
+
+    <div class="card crit">
+      <p class="lbl" style="color:var(--crit)">Dấu hiệu thầy đọc đầu tiên</p>
+      <p style="margin:0;font-size:14.5px">Tuần nào Error Log trống là tuần đó bạn <b>chưa làm bài nghiêm túc</b> — không phải tuần đó bạn giỏi. Người học thật luôn có lỗi để ghi.</p>
+    </div>
+
+    <p class="sub" style="margin:16px 0 0;font-size:12.5px">Ô tick ở trên chỉ giữ trong lần mở này. Bản ghi chính thức nằm ở sổ tay — mục Nhật ký học tập.</p>
+  </section>
+
+  <!-- TUẦN -->
+  <section class="panel" id="p-week" role="tabpanel" aria-labelledby="t-week">
+    <h2>Chương trình 12 tuần</h2>
+    <p class="sub">Phase 1 — Survival English Foundation. <b>Đủ 12 tuần đã có tài liệu.</b></p>
+    <p class="lbl">Tiến độ Phase 1</p>
+    <div class="bub" role="img" aria-label="12 trên 12 tuần đã có tài liệu">
+      <i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i>
+    </div>
+    
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 1 / 52 · Phase 1</p>
+          <h3>Verb TO BE & đại từ nhân xưng</h3>
+          <p class="np">TO BE 4 dạng · đại từ nhân xưng · giới từ in/on/at</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Đại từ nhân xưng + TO BE khẳng định</span></li><li><b>Buổi 2</b><span>TO BE phủ định + viết tắt</span></li><li><b>Buổi 3</b><span>Câu hỏi Yes/No + trả lời ngắn</span></li><li><b>Buổi 4</b><span>WH-questions + số &amp; thời gian</span></li><li><b>Buổi 5</b><span>Tính từ + giới từ in/on/at</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">42 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Văn phòng</li><li>Nghề nghiệp</li><li>Nơi chốn trong tòa nhà</li><li>Số &amp; thời gian</li><li>Tính từ mô tả</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 30 / 42 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 2 / 52 · Phase 1</p>
+          <h3>Danh từ số ít / số nhiều &amp; mạo từ</h3>
+          <p class="np">-s/-es · bất quy tắc · không đếm được · a / an / the</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Số nhiều quy tắc +s / +es</span></li><li><b>Buổi 2</b><span>Số nhiều bất quy tắc + danh từ không đếm được</span></li><li><b>Buổi 3</b><span>Mạo từ a / an theo ÂM đầu</span></li><li><b>Buổi 4</b><span>Mạo từ the vs không mạo từ</span></li><li><b>Buổi 5</b><span>Tổng hợp mạo từ + số ít/nhiều</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Thiết bị văn phòng</li><li>Văn phòng phẩm</li><li>Địa điểm</li><li>Địa chỉ &amp; khu vực</li><li>Mua bán</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 3 / 52 · Phase 1</p>
+          <h3>this / that / these / those &amp; sở hữu</h3>
+          <p class="np">this–that–these–those · my, your, his… · sở hữu cách ’s</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>this / that</span></li><li><b>Buổi 2</b><span>these / those</span></li><li><b>Buổi 3</b><span>Tính từ sở hữu my, your, his…</span></li><li><b>Buổi 4</b><span>Sở hữu cách ’s và bẫy ’s = is</span></li><li><b>Buổi 5</b><span>Part 1 làm quen — mô tả người</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Gia đình</li><li>Đồng nghiệp</li><li>Tính cách &amp; năng lực</li><li>Hồ sơ cá nhân</li><li>Mô tả người trong ảnh</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 4 / 52 · Phase 1</p>
+          <h3>There is / There are &amp; giới từ vị trí</h3>
+          <p class="np">there is/are 3 dạng · some/any · giới từ vị trí</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>There is / There are khẳng định</span></li><li><b>Buổi 2</b><span>Phủ định + câu hỏi Is/Are there…?</span></li><li><b>Buổi 3</b><span>Giới từ vị trí</span></li><li><b>Buổi 4</b><span>Mô tả căn phòng + some / any</span></li><li><b>Buổi 5</b><span>Part 1 — vị trí đồ vật</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz + chuẩn bị Milestone 1</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Nhà &amp; phòng</li><li>Đồ nội thất</li><li>Giới từ vị trí</li><li>Vị trí tương đối</li><li>Thiết bị &amp; biển báo</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 5 / 52 · Phase 1</p>
+          <h3>Present Simple — thể khẳng định</h3>
+          <p class="np">động từ thường · ngôi ba số ít +s/-es/-ies · hòa hợp chủ ngữ</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Present Simple với I / you / we / they</span></li><li><b>Buổi 2</b><span>Ngôi ba số ít — quy tắc chính tả</span></li><li><b>Buổi 3</b><span>Chủ ngữ là danh từ — hòa hợp</span></li><li><b>Buổi 4</b><span>Cụm chỉ tần suất cuối câu</span></li><li><b>Buổi 5</b><span>Present Simple trong ngữ cảnh TOEIC</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Động từ hằng ngày</li><li>Động từ văn phòng</li><li>Đi lại &amp; sinh hoạt</li><li>Thói quen &amp; ca làm</li><li>Công việc</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 6 / 52 · Phase 1</p>
+          <h3>Present Simple — phủ định &amp; nghi vấn</h3>
+          <p class="np">don’t / doesn’t · Do…? Does…? · WH + do/does · lượng từ</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Phủ định don’t / doesn’t</span></li><li><b>Buổi 2</b><span>Câu hỏi Do…? Does…? + trả lời ngắn</span></li><li><b>Buổi 3</b><span>many / much / a few / a lot of…</span></li><li><b>Buổi 4</b><span>WH-questions với do / does</span></li><li><b>Buổi 5</b><span>Đọc lịch trình &amp; thông báo</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Tháng</li><li>Thời gian</li><li>Lượng từ</li><li>Sự kiện &amp; lịch trình</li><li>Động từ về lịch</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 7 / 52 · Phase 1</p>
+          <h3>Trạng từ tần suất &amp; tính từ / trạng từ</h3>
+          <p class="np">vị trí trạng từ tần suất · tính từ vs trạng từ · word form</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Vị trí trạng từ tần suất</span></li><li><b>Buổi 2</b><span>Tính từ — vị trí &amp; thứ tự</span></li><li><b>Buổi 3</b><span>Tính từ vs trạng từ (word form)</span></li><li><b>Buổi 4</b><span>Nhà hàng &amp; mua sắm</span></li><li><b>Buổi 5</b><span>TOEIC Part 2 — câu hỏi Yes/No</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Trạng từ tần suất</li><li>Đồ ăn &amp; đồ uống</li><li>Nhà hàng &amp; dịch vụ</li><li>Mua sắm</li><li>Tính từ mô tả</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 8 / 52 · Phase 1</p>
+          <h3>can / can’t &amp; câu mệnh lệnh</h3>
+          <p class="np">can 3 dạng · Can I…? Can you…? · mệnh lệnh · be allowed/required</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>can / can’t chỉ khả năng</span></li><li><b>Buổi 2</b><span>Can I…? xin phép · Can you…? nhờ vả</span></li><li><b>Buổi 3</b><span>Câu mệnh lệnh + Don’t + V</span></li><li><b>Buổi 4</b><span>Biển báo &amp; hướng dẫn thiết bị</span></li><li><b>Buổi 5</b><span>Nghe chỉ dẫn đường đi</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz + nhìn lại 8 tuần</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Phương tiện</li><li>Động từ chỉ đường</li><li>Hạ tầng giao thông</li><li>Động từ mệnh lệnh</li><li>Khả năng &amp; quy định</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 9 / 52 · Phase 1</p>
+          <h3>WH-questions đầy đủ</h3>
+          <p class="np">8 WH-word · WH + TO BE vs WH + do/does · How many/much/long/often · Which · Whose</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Hệ thống hoá 8 WH-word</span></li><li><b>Buổi 2</b><span>WH + TO BE đối lập WH + do/does</span></li><li><b>Buổi 3</b><span>Cụm hỏi số đo với How</span></li><li><b>Buổi 4</b><span>Which vs What · Whose</span></li><li><b>Buổi 5</b><span>TOEIC Part 2 — câu hỏi WH</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Sân bay &amp; thủ tục bay</li><li>Khách sạn &amp; lưu trú</li><li>Du lịch &amp; tham quan</li><li>Giấy tờ &amp; tiền tệ</li><li>Danh từ trừu tượng thường gặp</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 10 / 52 · Phase 1</p>
+          <h3>Present Continuous &amp; TOEIC Part 1</h3>
+          <p class="np">am/is/are + V-ing · quy tắc -ing · động từ trạng thái · phân biệt với Present Simple</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>Present Continuous: công thức &amp; ý nghĩa</span></li><li><b>Buổi 2</b><span>Quy tắc thêm -ing + phủ định &amp; nghi vấn</span></li><li><b>Buổi 3</b><span>Động từ không dùng ở tiếp diễn</span></li><li><b>Buổi 4</b><span>Present Simple hay Present Continuous?</span></li><li><b>Buổi 5</b><span>TOEIC Part 1 — mô tả ảnh</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Động từ hành động trong ảnh</li><li>Vật thể ngoài trời</li><li>Trang phục &amp; đồ mang theo</li><li>Danh từ chỉ tiến trình</li><li>Trạng từ chỉ lúc này</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 11 / 52 · Phase 1</p>
+          <h3>Past Simple cơ bản &amp; đọc email công việc</h3>
+          <p class="np">was/were · V-ed + phát âm đuôi -ed · didn’t / Did…? · 8 động từ bất quy tắc</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>was / were — quá khứ của TO BE</span></li><li><b>Buổi 2</b><span>Động từ có quy tắc + đuôi -ed</span></li><li><b>Buổi 3</b><span>Phủ định &amp; nghi vấn: didn’t / Did…?</span></li><li><b>Buổi 4</b><span>Mốc thời gian quá khứ</span></li><li><b>Buổi 5</b><span>8 động từ bất quy tắc + đọc email công việc</span></li><li><b>Buổi 6</b><span>Tổng ôn + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Động từ tiền bạc &amp; tuyển dụng</li><li>Động từ email</li><li>Danh từ nhân sự</li><li>Mốc thời gian quá khứ</li><li>8 động từ bất quy tắc</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="wk">
+        <header>
+          <p class="tag">Tuần 12 / 52 · Phase 1</p>
+          <h3>Liên từ &amp; từ nối · tổng ôn 12 tuần</h3>
+          <p class="np">and/but/or · because/so · however/therefore/although · từ nối trong văn bản · Part 6</p>
+        </header>
+        <div class="wkgrid">
+          <div>
+            <p class="lbl">Sáu buổi</p>
+            <ol class="buoi"><li><b>Buổi 1</b><span>and / but / or</span></li><li><b>Buổi 2</b><span>because / so</span></li><li><b>Buổi 3</b><span>however / therefore / although</span></li><li><b>Buổi 4</b><span>Từ nối trong văn bản</span></li><li><b>Buổi 5</b><span>Ứng dụng TOEIC Part 6</span></li><li><b>Buổi 6</b><span>Tổng ôn 12 tuần + mini quiz 25 câu</span></li></ol>
+          </div>
+          <div>
+            <p class="lbl">40 từ · 5 chủ đề</p>
+            <ul class="sets"><li>Liên từ cơ bản</li><li>Từ nối nâng cao</li><li>Động từ giao tiếp công việc</li><li>Danh từ quy định &amp; tài chính</li><li>Tính từ đánh giá</li></ul>
+            <p class="lbl" style="margin-top:16px">Tiêu chí qua tuần</p>
+            <ul class="crit">
+              <li>≥ 5 / 6 buổi</li>
+              <li>Mini quiz ≥ 18 / 25</li>
+              <li>Nhớ ≥ 28 / 40 từ</li>
+              <li>≥ 5 dòng Error Log</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    <div class="card">
+      <h3>Cuối Tuần 4 — Milestone 1</h3>
+      <p style="margin:6px 0 0;font-size:14.5px">40 câu · 30 phút · <b>làm trên Zoom, camera bật</b>. Chuẩn đạt <b>32/40</b>. Bài làm ở nhà không tính.</p>
+    </div>
+    <div class="card">
+      <h3>Cuối Tuần 12 — Milestone 2 (A1)</h3>
+      <p style="margin:6px 0 0;font-size:14.5px">60 câu · 45 phút · 12 phần · <b>làm trên Zoom, camera bật</b>. Chuẩn đạt <b>48/60</b>. Đây là mốc kết thúc Phase 1 — đạt mới sang <b>Phase 2 — Core English for TOEIC</b>.</p>
+      <p style="margin:8px 0 0;font-size:14px">Vào Phase 2 phải đủ <b>cả ba</b>: ≥ 48/60 · học đủ 12 tuần packet · không còn lỗi lặp chưa xử lý.</p>
+    </div>
+  </section>
+
+  <!-- TỪ VỰNG -->
+  <section class="panel" id="p-vocab" role="tabpanel" aria-labelledby="t-vocab">
+    <h2>Sổ từ vựng</h2>
+    <p class="sub">Trọn <b>482 từ</b> của Tuần 1–12. Gõ tiếng Anh hoặc tiếng Việt để tìm.</p>
+    <div class="tools">
+      <input class="search" id="q" type="search" placeholder="Tìm từ… (manager, quản lý, /ˈmæn/)" aria-label="Tìm từ vựng">
+      <div class="chips">
+        <button class="chip" data-wk="0" aria-pressed="true">Tất cả</button>
+        <button class="chip" data-wk="1" aria-pressed="false">T1</button>
+        <button class="chip" data-wk="2" aria-pressed="false">T2</button>
+        <button class="chip" data-wk="3" aria-pressed="false">T3</button>
+        <button class="chip" data-wk="4" aria-pressed="false">T4</button>
+        <button class="chip" data-wk="5" aria-pressed="false">T5</button>
+        <button class="chip" data-wk="6" aria-pressed="false">T6</button>
+        <button class="chip" data-wk="7" aria-pressed="false">T7</button>
+        <button class="chip" data-wk="8" aria-pressed="false">T8</button>
+        <button class="chip" data-wk="9" aria-pressed="false">T9</button>
+        <button class="chip" data-wk="10" aria-pressed="false">T10</button>
+        <button class="chip" data-wk="11" aria-pressed="false">T11</button>
+        <button class="chip" data-wk="12" aria-pressed="false">T12</button>
+        <button class="chip" id="flash" aria-pressed="false">Che nghĩa</button>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <ul class="words" id="words"></ul>
+    <p class="sub" style="margin:14px 0 0;font-size:12.5px">Chế độ <b>Che nghĩa</b>: chạm vào từ để lật. Dùng khi ôn khối A đầu buổi.</p>
+  </section>
+
+  <!-- ZOOM -->
+  <section class="panel" id="p-zoom" role="tabpanel" aria-labelledby="t-zoom">
+    <h2>Nhịp tuần &amp; buổi Zoom</h2>
+    <p class="sub">Sáu ngày bạn tự học. Ngày thứ bảy gặp thầy 60 phút.</p>
+
+    <div class="week7" role="img" aria-label="Sáu ngày tự học, ngày 6 gửi báo cáo, ngày 7 Zoom">
+      <div class="d"><b>Ngày 1</b><span>Tự học</span></div>
+      <div class="d"><b>Ngày 2</b><span>Tự học</span></div>
+      <div class="d"><b>Ngày 3</b><span>Tự học</span></div>
+      <div class="d"><b>Ngày 4</b><span>Tự học</span></div>
+      <div class="d"><b>Ngày 5</b><span>Tự học</span></div>
+      <div class="d s"><b>Ngày 6</b><span>Quiz + gửi BC</span></div>
+      <div class="d z"><b>Ngày 7</b><span>Zoom 60′</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Buổi Zoom 60 phút</h3>
+      <p class="sub" style="margin-bottom:10px">Zoom <b>không phải giờ giảng bài mới</b> — bài mới nằm hết trong packet.</p>
+      <table>
+        <thead><tr><th>Phút</th><th>Nội dung</th></tr></thead>
+        <tbody>
+          <tr><td class="n">0–5</td><td>Số liệu cả lớp</td></tr>
+          <tr><td class="n">5–20</td><td><b>Chữa 3 lỗi chung</b></td></tr>
+          <tr><td class="n">20–35</td><td><b>Kiểm tra ngẫu nhiên</b> — thầy gọi tên bất kỳ</td></tr>
+          <tr><td class="n">35–45</td><td>Hỏi đáp <i>(câu hỏi viết sẵn)</i></td></tr>
+          <tr><td class="n">45–55</td><td>Giao tuần mới</td></tr>
+          <tr><td class="n">55–60</td><td>Mỗi người một câu cam kết</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card acc">
+      <h3>Câu hỏi phải đủ ba phần</h3>
+      <p class="sub" style="margin-bottom:12px">Thiếu một phần thì không ai trả lời trúng được.</p>
+      <table>
+        <tbody>
+          <tr><td class="n">1</td><td><b>Câu hỏi gốc</b><br><span style="font-family:var(--mono);font-size:12.5px;color:var(--muted)">The staff ____ ready.</span></td></tr>
+          <tr><td class="n">2</td><td><b>Tôi chọn gì</b><br><span style="font-size:13.5px;color:var(--muted)">Em chọn <code>is</code></span></td></tr>
+          <tr><td class="n">3</td><td><b>Không hiểu chỗ nào</b><br><span style="font-size:13.5px;color:var(--muted)">Đáp án ghi <code>are</code>. Em không hiểu vì sao.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Hỏi thầy giữa tuần</h3>
+      <table>
+        <tbody>
+          <tr><td style="width:34px">❌</td><td><i>“Câu này đáp án gì thầy?”</i> — không trả lời. Có file đáp án rồi.</td></tr>
+          <tr><td>✅</td><td><i>“Em đọc lời giải rồi mà vẫn không hiểu vì sao…”</i> — trả lời trong 24 giờ ngày làm việc.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Liên hệ thầy</h3>
+      <p class="sub" style="margin:0 0 12px">Trang lớp: <b>lucero6886.github.io/lucero-toeic</b></p>
+      <table>
+        <tbody>
+          <tr><td style="width:96px"><b>Nộp báo cáo</b></td><td>Biểu mẫu <b>Nộp báo cáo tuần</b> trên trang lớp · trước Zoom 24 giờ</td></tr>
+          <tr><td><b>Hỏi bài</b></td><td>Zalo <b>0988999027</b> · trả lời trong 24 giờ ngày làm việc</td></tr>
+          <tr><td><b>Hành chính</b></td><td><b>luceroenglishsystem@gmail.com</b> · trả lời trong 2 ngày làm việc</td></tr>
+          <tr><td><b>Thi Milestone</b></td><td>Biểu mẫu <b>Đăng ký thi</b> · trước 48 giờ</td></tr>
+        </tbody>
+      </table>
+      <p class="sub" style="margin:12px 0 0"><b>Đáp án tuần kế tiếp mở ngay sau khi nộp báo cáo</b> — link nằm ở trang xác nhận của biểu mẫu. Lưu lại để tự chấm suốt tuần.</p>
+    </div>
+
+    <div class="card">
+      <h3>Báo cáo tuần</h3>
+      <p class="sub" style="margin-bottom:12px">Nộp qua biểu mẫu trên trang lớp, <b>trước Zoom 24 giờ</b>. Mẫu dưới đây để chuẩn bị sẵn số liệu. Mục 8 bắt buộc có số.</p>
+      <pre id="rep"># WEEKLY TOEIC REPORT — Tuần __ (__/__ – __/__)
+Học viên: ______________________
+
+ 1. Study           Sessions: __/6  ·  Tổng thời gian: __ phút
+ 2. Vocabulary      New: __  ·  Nhớ được: __  ·  Chưa nhớ: __
+ 3. Grammar         Chắc: __  ·  Chưa chắc: __
+ 4. Listening       Khó nhất với tôi là: __
+ 5. Reading         Khó nhất với tôi là: __
+ 6. Mini quiz       __ / 25 câu đúng
+ 7. Frequent errors __
+ 8. Progress        Tuần trước __  →  tuần này __   (bắt buộc có số)
+ 9. Priority        Tuần tới tôi muốn tập trung: __
+10. Study load      Tôi giữ được __ phút/ngày</pre>
+      <button class="btn" id="copy">Chép mẫu báo cáo</button><span class="ok" id="copied"></span>
+    </div>
+
+    <div class="card">
+      <h3>Mang gì tới Zoom</h3>
+      <ul class="crit" style="font-size:14.5px">
+        <li>Weekly Report đã gửi trước 24 giờ</li>
+        <li>Ảnh Error Log của tuần</li>
+        <li>Ba câu hỏi viết sẵn, đủ ba phần</li>
+        <li>Ba lỗi sai nhiều nhất</li>
+        <li>Điểm mini quiz cuối tuần</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tabs" role="tablist" aria-label="Mục chính">
+  <div class="shell">
+    <button role="tab" id="t-today" aria-controls="p-today" aria-selected="true"><span>Hôm nay</span><small>45′</small></button>
+    <button role="tab" id="t-week"  aria-controls="p-week"  aria-selected="false"><span>Tuần</span><small>1–12</small></button>
+    <button role="tab" id="t-vocab" aria-controls="p-vocab" aria-selected="false"><span>Từ vựng</span><small>482</small></button>
+    <button role="tab" id="t-zoom"  aria-controls="p-zoom"  aria-selected="false"><span>Zoom</span><small>60′</small></button>
+  </div>
+</nav>
+
+<footer>
+  Chương trình TOEIC 0 → 600+ · Mentor: Thầy Đinh Văn Nam — Mr. Lucero Dinh<br>
+  Tự học 6 buổi/tuần · gặp mentor 60 phút mỗi tuần
+</footer>
+
+<script>
+var VOCAB = [{"n":1,"w":"manager","ipa":"/ˈmæn.ɪ.dʒər/","vn_read":"MEN-ơ-jơ","pos":"n","vn":"quản lý","col":"a sales manager","ex":"The manager is in a meeting.","wk":1},{"n":2,"w":"staff","ipa":"/stɑːf/","vn_read":"sta-f","pos":"n","vn":"nhân viên (tập thể)","col":"office staff","ex":"All staff are here.","wk":1},{"n":3,"w":"office","ipa":"/ˈɒf.ɪs/","vn_read":"Ô-phis","pos":"n","vn":"văn phòng","col":"at the office","ex":"Our office is on the third floor.","wk":1},{"n":4,"w":"company","ipa":"/ˈkʌm.pə.ni/","vn_read":"CÂM-pơ-ni","pos":"n","vn":"công ty","col":"work for a company","ex":"The company is very large.","wk":1},{"n":5,"w":"meeting","ipa":"/ˈmiː.tɪŋ/","vn_read":"MI-ting","pos":"n","vn":"cuộc họp","col":"in a meeting","ex":"She is in a meeting now.","wk":1},{"n":6,"w":"busy","ipa":"/ˈbɪz.i/","vn_read":"BI-zi","pos":"adj","vn":"bận","col":"be busy","ex":"He is busy this morning.","wk":1},{"n":7,"w":"ready","ipa":"/ˈred.i/","vn_read":"RE-đi","pos":"adj","vn":"sẵn sàng","col":"be ready for","ex":"We are ready for the meeting.","wk":1},{"n":8,"w":"late","ipa":"/leɪt/","vn_read":"lêyt","pos":"adj","vn":"muộn, trễ","col":"be late for","ex":"They are late for work.","wk":1},{"n":9,"w":"employee","ipa":"/ɪmˈplɔɪ.iː/","vn_read":"im-PLOI-i","pos":"n","vn":"nhân viên (1 người)","col":"a new employee","ex":"She is a new employee.","wk":1},{"n":10,"w":"engineer","ipa":"/ˌen.dʒɪˈnɪər/","vn_read":"en-ji-NIA","pos":"n","vn":"kỹ sư","col":"a software engineer","ex":"He is an engineer.","wk":1},{"n":11,"w":"accountant","ipa":"/əˈkaʊn.tənt/","vn_read":"ơ-CAO-tơnt","pos":"n","vn":"kế toán","col":"a company accountant","ex":"The accountant is not here.","wk":1},{"n":12,"w":"receptionist","ipa":"/rɪˈsep.ʃən.ɪst/","vn_read":"ri-SEP-shơn-ist","pos":"n","vn":"lễ tân","col":"a front-desk receptionist","ex":"The receptionist is at the desk.","wk":1},{"n":13,"w":"customer","ipa":"/ˈkʌs.tə.mər/","vn_read":"CÂS-tơ-mơ","pos":"n","vn":"khách hàng (mua lẻ)","col":"a regular customer","ex":"The customer is waiting.","wk":1},{"n":14,"w":"client","ipa":"/ˈklaɪ.ənt/","vn_read":"CLAI-ơnt","pos":"n","vn":"khách hàng (dịch vụ)","col":"an important client","ex":"They are our clients.","wk":1},{"n":15,"w":"department","ipa":"/dɪˈpɑːt.mənt/","vn_read":"đi-PAT-mơnt","pos":"n","vn":"phòng ban","col":"the sales department","ex":"I am in the sales department.","wk":1},{"n":16,"w":"position","ipa":"/pəˈzɪʃ.ən/","vn_read":"pơ-ZI-shơn","pos":"n","vn":"vị trí, chức vụ","col":"apply for a position","ex":"The position is open.","wk":1},{"n":17,"w":"floor","ipa":"/flɔːr/","vn_read":"flo","pos":"n","vn":"tầng; sàn","col":"on the third floor","ex":"The office is on the third floor.","wk":1},{"n":18,"w":"desk","ipa":"/desk/","vn_read":"đesk","pos":"n","vn":"bàn làm việc","col":"at the front desk","ex":"She is at her desk.","wk":1},{"n":19,"w":"room","ipa":"/ruːm/","vn_read":"rum","pos":"n","vn":"phòng","col":"a meeting room","ex":"The meeting room is upstairs.","wk":1},{"n":20,"w":"building","ipa":"/ˈbɪl.dɪŋ/","vn_read":"BIL-đing","pos":"n","vn":"tòa nhà","col":"an office building","ex":"Our building is new.","wk":1},{"n":21,"w":"entrance","ipa":"/ˈen.trəns/","vn_read":"EN-trơns","pos":"n","vn":"lối vào","col":"the main entrance","ex":"Meet me at the entrance.","wk":1},{"n":22,"w":"lobby","ipa":"/ˈlɒb.i/","vn_read":"LÔ-bi","pos":"n","vn":"sảnh","col":"the hotel lobby","ex":"He is waiting in the lobby.","wk":1},{"n":23,"w":"elevator","ipa":"/ˈel.ɪ.veɪ.tər/","vn_read":"E-li-vêy-tơ","pos":"n","vn":"thang máy","col":"take the elevator","ex":"The elevator is on the left.","wk":1},{"n":24,"w":"parking lot","ipa":"/ˈpɑː.kɪŋ lɒt/","vn_read":"PA-king lot","pos":"n","vn":"bãi đỗ xe","col":"in the parking lot","ex":"The parking lot is full.","wk":1},{"n":25,"w":"number","ipa":"/ˈnʌm.bər/","vn_read":"NÂM-bơ","pos":"n","vn":"số","col":"a phone number","ex":"What is your phone number?","wk":1},{"n":26,"w":"o'clock","ipa":"/əˈklɒk/","vn_read":"ơ-CLOK","pos":"adv","vn":"giờ đúng","col":"at three o'clock","ex":"The meeting is at nine o'clock.","wk":1},{"n":27,"w":"hour","ipa":"/aʊər/","vn_read":"AO-ơ *(h câm)*","pos":"n","vn":"giờ (khoảng)","col":"in an hour","ex":"The meeting is in an hour.","wk":1},{"n":28,"w":"minute","ipa":"/ˈmɪn.ɪt/","vn_read":"MI-nit","pos":"n","vn":"phút","col":"in five minutes","ex":"I'm ready in five minutes.","wk":1},{"n":29,"w":"morning","ipa":"/ˈmɔː.nɪŋ/","vn_read":"MO-ning","pos":"n","vn":"buổi sáng","col":"in the morning","ex":"The meeting is in the morning.","wk":1},{"n":30,"w":"afternoon","ipa":"/ˌɑːf.təˈnuːn/","vn_read":"af-tơ-NUN","pos":"n","vn":"buổi chiều","col":"in the afternoon","ex":"She is free this afternoon.","wk":1},{"n":31,"w":"evening","ipa":"/ˈiːv.nɪŋ/","vn_read":"IV-ning","pos":"n","vn":"buổi tối","col":"in the evening","ex":"The office is closed in the evening.","wk":1},{"n":32,"w":"today","ipa":"/təˈdeɪ/","vn_read":"tơ-ĐÊY","pos":"adv","vn":"hôm nay","col":"not here today","ex":"He isn't here today.","wk":1},{"n":33,"w":"tomorrow","ipa":"/təˈmɒr.əʊ/","vn_read":"tơ-MO-rô","pos":"adv","vn":"ngày mai","col":"see you tomorrow","ex":"The report is due tomorrow.","wk":1},{"n":34,"w":"schedule","ipa":"/ˈʃed.juːl/ hoặc /ˈskedʒ.uːl/","vn_read":"SHE-điu-l / SKE-giu-l","pos":"n","vn":"lịch trình","col":"a busy schedule","ex":"My schedule is full today.","wk":1},{"n":35,"w":"new","ipa":"/njuː/","vn_read":"niu","pos":"adj","vn":"mới","col":"a new employee","ex":"She is a new employee.","wk":1},{"n":36,"w":"old","ipa":"/əʊld/","vn_read":"ôuld","pos":"adj","vn":"cũ; già","col":"an old building","ex":"Our office is in an old building.","wk":1},{"n":37,"w":"large","ipa":"/lɑːdʒ/","vn_read":"la-jơ","pos":"adj","vn":"lớn, rộng","col":"a large company","ex":"It is a large company.","wk":1},{"n":38,"w":"small","ipa":"/smɔːl/","vn_read":"smoll","pos":"adj","vn":"nhỏ","col":"a small office","ex":"The meeting room is small.","wk":1},{"n":39,"w":"open","ipa":"/ˈəʊ.pən/","vn_read":"Ô-pơn","pos":"adj","vn":"đang mở","col":"the store is open","ex":"The office is open at 8:00.","wk":1},{"n":40,"w":"closed","ipa":"/kləʊzd/","vn_read":"clôuzd","pos":"adj","vn":"đã đóng","col":"closed on Sunday","ex":"The bank is closed today.","wk":1},{"n":41,"w":"available","ipa":"/əˈveɪ.lə.bəl/","vn_read":"ơ-VÊY-lơ-bơl","pos":"adj","vn":"rảnh; còn trống","col":"available at 3:00","ex":"Is the room available?","wk":1},{"n":42,"w":"free","ipa":"/friː/","vn_read":"fri","pos":"adj","vn":"rảnh; miễn phí","col":"free this afternoon","ex":"I am free this afternoon.","wk":1},{"n":43,"w":"computer","ipa":"/kəmˈpjuː.tər/","vn_read":"kơm-PIU-tơ","pos":"n","vn":"máy tính","col":"a new computer","ex":"The computer in Room 402 is new.","wk":2},{"n":44,"w":"printer","ipa":"/ˈprɪn.tər/","vn_read":"PRIN-tơ","pos":"n","vn":"máy in","col":"a color printer","ex":"The printer is not available today.","wk":2},{"n":45,"w":"copier","ipa":"/ˈkɒp.i.ər/","vn_read":"CÔ-pi-ơ","pos":"n","vn":"máy photocopy","col":"the office copier","ex":"The copier is on the third floor.","wk":2},{"n":46,"w":"phone","ipa":"/fəʊn/","vn_read":"fôun","pos":"n","vn":"điện thoại","col":"a phone number","ex":"The phone is on the front desk. *(front desk = quầy lễ tân)*","wk":2},{"n":47,"w":"file","ipa":"/faɪl/","vn_read":"fai-l","pos":"n","vn":"tệp, hồ sơ","col":"a client file","ex":"The files are in the folder.","wk":2},{"n":48,"w":"folder","ipa":"/ˈfəʊl.dər/","vn_read":"FÔUL-đơ","pos":"n","vn":"cặp, bìa đựng hồ sơ","col":"a document folder","ex":"The folder is on the desk.","wk":2},{"n":49,"w":"document","ipa":"/ˈdɒk.jə.mənt/","vn_read":"ĐÔ-kiu-mơnt","pos":"n","vn":"tài liệu, văn bản","col":"an important document","ex":"The documents are ready.","wk":2},{"n":50,"w":"report","ipa":"/rɪˈpɔːt/","vn_read":"ri-POT","pos":"n","vn":"báo cáo","col":"a sales report","ex":"The sales report is ready today.","wk":2},{"n":51,"w":"pen","ipa":"/pen/","vn_read":"pen","pos":"n","vn":"bút mực, bút bi","col":"a box of pens","ex":"The pens are in the box.","wk":2},{"n":52,"w":"pencil","ipa":"/ˈpen.səl/","vn_read":"PEN-sơl","pos":"n","vn":"bút chì","col":"a pencil box","ex":"The pencils are on the desk.","wk":2},{"n":53,"w":"paper","ipa":"/ˈpeɪ.pər/","vn_read":"PÊY-pơ","pos":"n","vn":"giấy *(không đếm được)*","col":"a box of paper","ex":"The paper for the copier is not ready.","wk":2},{"n":54,"w":"envelope","ipa":"/ˈen.və.ləʊp/","vn_read":"EN-vơ-lôup","pos":"n","vn":"phong bì","col":"a large envelope","ex":"The envelope is on the front desk.","wk":2},{"n":55,"w":"package","ipa":"/ˈpæk.ɪdʒ/","vn_read":"PẮC-kịj","pos":"n","vn":"bưu kiện, gói hàng","col":"a small package","ex":"The package is in the lobby.","wk":2},{"n":56,"w":"box","ipa":"/bɒks/","vn_read":"bok-s","pos":"n","vn":"hộp, thùng","col":"a box of paper","ex":"The boxes are in Room 105.","wk":2},{"n":57,"w":"order","ipa":"/ˈɔː.dər/","vn_read":"Ô-đơ","pos":"n","vn":"đơn hàng","col":"a large order","ex":"The order is ready today.","wk":2},{"n":58,"w":"supply","ipa":"/səˈplaɪ/","vn_read":"sơ-PLAI","pos":"n","vn":"vật tư, đồ dùng","col":"office supplies","ex":"The office supplies are in Room 105.","wk":2},{"n":59,"w":"store","ipa":"/stɔːr/","vn_read":"sto","pos":"n","vn":"cửa hàng","col":"a department store","ex":"The store is closed today.","wk":2},{"n":60,"w":"bank","ipa":"/bæŋk/","vn_read":"beng-k","pos":"n","vn":"ngân hàng","col":"at the bank","ex":"The bank is not open on Sunday.","wk":2},{"n":61,"w":"post office","ipa":"/ˈpəʊst ˌɒf.ɪs/","vn_read":"PÔUST ô-phis","pos":"n","vn":"bưu điện","col":"at the post office","ex":"The post office is closed at five o'clock.","wk":2},{"n":62,"w":"restaurant","ipa":"/ˈres.trɒnt/","vn_read":"RES-trơnt","pos":"n","vn":"nhà hàng","col":"a small restaurant","ex":"The restaurant in the hotel is open now.","wk":2},{"n":63,"w":"hotel","ipa":"/həʊˈtel/","vn_read":"hôu-TEL","pos":"n","vn":"khách sạn","col":"a hotel lobby","ex":"The hotel lobby is very large.","wk":2},{"n":64,"w":"airport","ipa":"/ˈeə.pɔːt/","vn_read":"E-pot","pos":"n","vn":"sân bay","col":"at the airport","ex":"The airport is very busy today.","wk":2},{"n":65,"w":"station","ipa":"/ˈsteɪ.ʃən/","vn_read":"STÊY-shơn","pos":"n","vn":"nhà ga, trạm","col":"a train station","ex":"The station is open 24 hours.","wk":2},{"n":66,"w":"factory","ipa":"/ˈfæk.tər.i/","vn_read":"FẮC-tơ-ri","pos":"n","vn":"nhà máy","col":"a car factory","ex":"The factory is closed on Sunday.","wk":2},{"n":67,"w":"street","ipa":"/striːt/","vn_read":"stri-t","pos":"n","vn":"đường phố","col":"on Green Street","ex":"The store is on Green Street.","wk":2},{"n":68,"w":"city","ipa":"/ˈsɪt.i/","vn_read":"SI-ti","pos":"n","vn":"thành phố","col":"a large city","ex":"The city is very large.","wk":2},{"n":69,"w":"address","ipa":"/əˈdres/ · /ˈæd.res/","vn_read":"ơ-ĐRES / ẮD-res","pos":"n","vn":"địa chỉ","col":"a new address","ex":"The address is on the envelope.","wk":2},{"n":70,"w":"map","ipa":"/mæp/","vn_read":"máp","pos":"n","vn":"bản đồ","col":"a city map","ex":"The map is in the lobby.","wk":2},{"n":71,"w":"area","ipa":"/ˈeə.ri.ə/","vn_read":"E-ri-ơ","pos":"n","vn":"khu vực","col":"a parking area","ex":"The parking area is not free.","wk":2},{"n":72,"w":"branch","ipa":"/brɑːntʃ/","vn_read":"bran-ch","pos":"n","vn":"chi nhánh","col":"a branch office","ex":"The new branch is in Da Nang.","wk":2},{"n":73,"w":"location","ipa":"/ləʊˈkeɪ.ʃən/","vn_read":"lôu-KÊY-shơn","pos":"n","vn":"vị trí, địa điểm","col":"a new location","ex":"The new location is on Green Street.","wk":2},{"n":74,"w":"floor plan","ipa":"/ˈflɔː plæn/","vn_read":"FLO-plan","pos":"n","vn":"sơ đồ mặt bằng","col":"a floor plan of the office","ex":"The floor plan is in the folder.","wk":2},{"n":75,"w":"item","ipa":"/ˈaɪ.təm/","vn_read":"AI-tơm","pos":"n","vn":"món hàng, mục","col":"an item on the order","ex":"All items are in the box.","wk":2},{"n":76,"w":"price","ipa":"/praɪs/","vn_read":"prai-s","pos":"n","vn":"giá bán","col":"a low price","ex":"The price is on the box.","wk":2},{"n":77,"w":"cost","ipa":"/kɒst/","vn_read":"kost","pos":"n","vn":"chi phí","col":"the total cost","ex":"The total cost is 500 dollars.","wk":2},{"n":78,"w":"receipt","ipa":"/rɪˈsiːt/","vn_read":"ri-SIT *(p câm)*","pos":"n","vn":"hoá đơn, biên lai","col":"a receipt for the order","ex":"The receipt is in the envelope.","wk":2},{"n":79,"w":"cash","ipa":"/kæʃ/","vn_read":"kesh","pos":"n","vn":"tiền mặt *(không đếm được)*","col":"pay in cash","ex":"Cash is not available today.","wk":2},{"n":80,"w":"card","ipa":"/kɑːd/","vn_read":"ka-d","pos":"n","vn":"thẻ","col":"a credit card","ex":"The card is in the envelope.","wk":2},{"n":81,"w":"size","ipa":"/saɪz/","vn_read":"sai-z","pos":"n","vn":"cỡ, kích thước","col":"a large size","ex":"The size is on the box.","wk":2},{"n":82,"w":"color","ipa":"/ˈkʌl.ər/","vn_read":"CÂ-lơ","pos":"n","vn":"màu sắc","col":"the color of the folder","ex":"The color of the folder is blue.","wk":2},{"n":83,"w":"family","ipa":"/ˈfæm.əl.i/","vn_read":"FE-mơ-li","pos":"n","vn":"gia đình","col":"a large family","ex":"My family is not large.","wk":3},{"n":84,"w":"parents","ipa":"/ˈpeə.rənts/","vn_read":"PE-rơnts","pos":"n *(số nhiều)*","vn":"bố mẹ","col":"my parents","ex":"My parents are in the lobby.","wk":3},{"n":85,"w":"wife","ipa":"/waɪf/","vn_read":"oai-f","pos":"n","vn":"vợ","col":"his wife","ex":"His wife is an accountant.","wk":3},{"n":86,"w":"husband","ipa":"/ˈhʌz.bənd/","vn_read":"HÂZ-bơnd","pos":"n","vn":"chồng","col":"her husband","ex":"Her husband is an engineer.","wk":3},{"n":87,"w":"son","ipa":"/sʌn/","vn_read":"sân","pos":"n","vn":"con trai","col":"their son","ex":"Their son is a new employee.","wk":3},{"n":88,"w":"daughter","ipa":"/ˈdɔː.tər/","vn_read":"ĐÔ-tơ *(gh câm)*","pos":"n","vn":"con gái","col":"my daughter","ex":"My daughter is a receptionist.","wk":3},{"n":89,"w":"brother","ipa":"/ˈbrʌð.ər/","vn_read":"BRÂ-thơ *(lưỡi ra giữa răng, KHÔNG phải \"đ\")*","pos":"n","vn":"anh trai / em trai","col":"my older brother","ex":"My brother is at work today.","wk":3},{"n":90,"w":"sister","ipa":"/ˈsɪs.tər/","vn_read":"SIS-tơ","pos":"n","vn":"chị gái / em gái","col":"his sister","ex":"His sister is very busy.","wk":3},{"n":91,"w":"colleague","ipa":"/ˈkɒl.iːɡ/","vn_read":"CO-lig","pos":"n","vn":"đồng nghiệp","col":"a close colleague","ex":"These are my colleagues.","wk":3},{"n":92,"w":"boss","ipa":"/bɒs/","vn_read":"bos","pos":"n","vn":"sếp","col":"my boss","ex":"My boss is in a meeting.","wk":3},{"n":93,"w":"team","ipa":"/tiːm/","vn_read":"tim","pos":"n","vn":"nhóm, đội","col":"the sales team","ex":"Our sales team is small.","wk":3},{"n":94,"w":"member","ipa":"/ˈmem.bər/","vn_read":"MEM-bơ","pos":"n","vn":"thành viên","col":"a team member","ex":"She is a new team member.","wk":3},{"n":95,"w":"partner","ipa":"/ˈpɑːt.nər/","vn_read":"PAT-nơ","pos":"n","vn":"đối tác; cộng sự","col":"a business partner","ex":"They are our business partners.","wk":3},{"n":96,"w":"assistant","ipa":"/əˈsɪs.tənt/","vn_read":"ơ-SIS-tơnt","pos":"n","vn":"trợ lý","col":"an assistant to the director","ex":"His assistant is at the front desk.","wk":3},{"n":97,"w":"director","ipa":"/dɪˈrek.tər/","vn_read":"đi-REC-tơ *(cũng nghe được \"đai-REC-tơ\")*","pos":"n","vn":"giám đốc","col":"the sales director","ex":"The director is not available today.","wk":3},{"n":98,"w":"supervisor","ipa":"/ˈsuː.pə.vaɪ.zər/","vn_read":"SU-pơ-vai-zơ","pos":"n","vn":"người quản lý trực tiếp","col":"a shift supervisor","ex":"My supervisor is on the third floor.","wk":3},{"n":99,"w":"friendly","ipa":"/ˈfrend.li/","vn_read":"FREND-li","pos":"adj","vn":"thân thiện","col":"a friendly colleague","ex":"The new assistant is very friendly.","wk":3},{"n":100,"w":"polite","ipa":"/pəˈlaɪt/","vn_read":"pơ-LAIT","pos":"adj","vn":"lịch sự","col":"polite to customers","ex":"Our staff are polite to customers.","wk":3},{"n":101,"w":"careful","ipa":"/ˈkeə.fəl/","vn_read":"KE-fơl","pos":"adj","vn":"cẩn thận","col":"careful with numbers","ex":"Our accountant is careful with numbers.","wk":3},{"n":102,"w":"quiet","ipa":"/ˈkwaɪ.ət/","vn_read":"QUAI-ơt","pos":"adj","vn":"ít nói; yên tĩnh","col":"a quiet office","ex":"This meeting room is very quiet.","wk":3},{"n":103,"w":"serious","ipa":"/ˈsɪə.ri.əs/","vn_read":"SI-ri-ơs","pos":"adj","vn":"nghiêm túc","col":"serious at work","ex":"My supervisor is very serious at work.","wk":3},{"n":104,"w":"hard-working","ipa":"/ˌhɑːdˈwɜː.kɪŋ/","vn_read":"had-UƠ-king","pos":"adj","vn":"chăm chỉ","col":"a hard-working employee","ex":"She is a hard-working employee.","wk":3},{"n":105,"w":"helpful","ipa":"/ˈhelp.fəl/","vn_read":"HELP-fơl","pos":"adj","vn":"hay giúp đỡ; hữu ích","col":"a helpful colleague","ex":"The receptionist is very helpful.","wk":3},{"n":106,"w":"experienced","ipa":"/ɪkˈspɪə.ri.ənst/","vn_read":"ik-SPI-ri-ơnst","pos":"adj","vn":"có kinh nghiệm","col":"an experienced engineer","ex":"He is an experienced engineer.","wk":3},{"n":107,"w":"name","ipa":"/neɪm/","vn_read":"nêym","pos":"n","vn":"tên","col":"a full name","ex":"What is your name?","wk":3},{"n":108,"w":"age","ipa":"/eɪdʒ/","vn_read":"êy-jơ","pos":"n","vn":"tuổi","col":"age 45","ex":"Your age is not on the badge.","wk":3},{"n":109,"w":"email","ipa":"/ˈiː.meɪl/","vn_read":"I-mêyl","pos":"n","vn":"thư điện tử","col":"an email address","ex":"My email address is on my card.","wk":3},{"n":110,"w":"badge","ipa":"/bædʒ/","vn_read":"be-jơ","pos":"n","vn":"thẻ (đeo trước ngực)","col":"a staff badge","ex":"Your staff badge is at the front desk.","wk":3},{"n":111,"w":"uniform","ipa":"/ˈjuː.nɪ.fɔːm/","vn_read":"IU-ni-fom","pos":"n","vn":"đồng phục","col":"a staff uniform","ex":"Her uniform is new.","wk":3},{"n":112,"w":"photo","ipa":"/ˈfəʊ.təʊ/","vn_read":"FÔU-tôu","pos":"n","vn":"ảnh","col":"a photo on a badge","ex":"Your photo is on your badge.","wk":3},{"n":113,"w":"signature","ipa":"/ˈsɪɡ.nə.tʃər/","vn_read":"SIG-nơ-chơ","pos":"n","vn":"chữ ký","col":"a signature on a document","ex":"Your signature is not here.","wk":3},{"n":114,"w":"list","ipa":"/lɪst/","vn_read":"list","pos":"n","vn":"danh sách","col":"a staff list","ex":"Her name is on the list.","wk":3},{"n":115,"w":"man","ipa":"/mæn/","vn_read":"me-n *(miệng mở rộng, KHÔNG đọc như \"men\")*","pos":"n","vn":"người đàn ông","col":"a young man","ex":"This is a man at the front desk.","wk":3},{"n":116,"w":"woman","ipa":"/ˈwʊm.ən/","vn_read":"UU-mơn","pos":"n","vn":"người phụ nữ","col":"a woman in a jacket","ex":"That woman is our director.","wk":3},{"n":117,"w":"people","ipa":"/ˈpiː.pəl/","vn_read":"PI-pơl","pos":"n *(số nhiều)*","vn":"mọi người, nhiều người","col":"three people","ex":"Three people are in the lobby.","wk":3},{"n":118,"w":"child","ipa":"/tʃaɪld/","vn_read":"chaild","pos":"n","vn":"đứa trẻ","col":"a small child","ex":"The child is with his parents.","wk":3},{"n":119,"w":"glasses","ipa":"/ˈɡlɑː.sɪz/","vn_read":"GLA-siz","pos":"n *(số nhiều)*","vn":"kính mắt","col":"a pair of glasses","ex":"His glasses are on the desk.","wk":3},{"n":120,"w":"jacket","ipa":"/ˈdʒæk.ɪt/","vn_read":"JE-kit","pos":"n","vn":"áo khoác","col":"a dark jacket","ex":"Her jacket is black.","wk":3},{"n":121,"w":"shirt","ipa":"/ʃɜːt/","vn_read":"shơt","pos":"n","vn":"áo sơ mi","col":"a white shirt","ex":"His shirt is white.","wk":3},{"n":122,"w":"bag","ipa":"/bæɡ/","vn_read":"beg","pos":"n","vn":"túi, cặp","col":"a black bag","ex":"Her bag is on the floor.","wk":3},{"n":123,"w":"house","ipa":"/haʊs/","vn_read":"hao-s","pos":"n","vn":"ngôi nhà (nhà đất)","col":"a large house","ex":"Their house is on Green Street.","wk":4},{"n":124,"w":"apartment","ipa":"/əˈpɑːt.mənt/","vn_read":"ơ-PAT-mơnt","pos":"n","vn":"căn hộ","col":"a two-bedroom apartment","ex":"My apartment is on the tenth floor.","wk":4},{"n":125,"w":"kitchen","ipa":"/ˈkɪtʃ.ɪn/","vn_read":"KI-chin","pos":"n","vn":"nhà bếp","col":"in the kitchen","ex":"The kitchen is on this floor.","wk":4},{"n":126,"w":"bedroom","ipa":"/ˈbed.ruːm/","vn_read":"BED-rum","pos":"n","vn":"phòng ngủ","col":"a small bedroom","ex":"There are two bedrooms in this apartment.","wk":4},{"n":127,"w":"bathroom","ipa":"/ˈbɑːθ.ruːm/","vn_read":"BAATH-rum","pos":"n","vn":"phòng tắm, nhà vệ sinh","col":"a private bathroom","ex":"There is a large bathroom in the apartment.","wk":4},{"n":128,"w":"garden","ipa":"/ˈɡɑː.dən/","vn_read":"GA-đơn","pos":"n","vn":"vườn","col":"a small garden","ex":"There are trees in the garden. *(tree = cây)*","wk":4},{"n":129,"w":"window","ipa":"/ˈwɪn.dəʊ/","vn_read":"UIN-đô*(u)*","pos":"n","vn":"cửa sổ","col":"a large window","ex":"There are four windows in my office.","wk":4},{"n":130,"w":"door","ipa":"/dɔːr/","vn_read":"đo-ơ","pos":"n","vn":"cửa ra vào","col":"the front door","ex":"The door is open.","wk":4},{"n":131,"w":"wall","ipa":"/wɔːl/","vn_read":"uo-l","pos":"n","vn":"bức tường","col":"on the wall","ex":"There is a photo on the wall.","wk":4},{"n":132,"w":"chair","ipa":"/tʃeər/","vn_read":"che-ơ","pos":"n","vn":"cái ghế","col":"an office chair","ex":"There are eight chairs in the meeting room.","wk":4},{"n":133,"w":"table","ipa":"/ˈteɪ.bəl/","vn_read":"TÊY-bơl","pos":"n","vn":"cái bàn (bàn ăn, bàn họp)","col":"a long table","ex":"There is a long table in Room 3B. *(long = dài)*","wk":4},{"n":134,"w":"shelf","ipa":"/ʃelf/","vn_read":"shelf","pos":"n","vn":"cái kệ, giá","col":"on the top shelf","ex":"The files are on the shelf.","wk":4},{"n":135,"w":"cabinet","ipa":"/ˈkæb.ɪ.nət/","vn_read":"KE-bi-nơt","pos":"n","vn":"tủ (có cánh)","col":"a file cabinet","ex":"The old documents are in the file cabinet.","wk":4},{"n":136,"w":"drawer","ipa":"/drɔːr/","vn_read":"đro-ơ","pos":"n","vn":"ngăn kéo","col":"the top drawer","ex":"My pens are in the drawer.","wk":4},{"n":137,"w":"lamp","ipa":"/læmp/","vn_read":"lem-p","pos":"n","vn":"đèn (bàn, cây)","col":"a desk lamp","ex":"There is a lamp on my desk.","wk":4},{"n":138,"w":"carpet","ipa":"/ˈkɑː.pɪt/","vn_read":"CA-pit","pos":"n","vn":"thảm","col":"a new carpet","ex":"There is a new carpet in the lobby.","wk":4},{"n":139,"w":"in front of","ipa":"/ɪn ˈfrʌnt əv/","vn_read":"in FRÂN-tơv","pos":"prep","vn":"ở phía trước","col":"in front of the building","ex":"The parking lot is in front of the building.","wk":4},{"n":140,"w":"behind","ipa":"/bɪˈhaɪnd/","vn_read":"bi-HAIN-đ","pos":"prep","vn":"ở phía sau","col":"behind the door","ex":"The garden is behind the house.","wk":4},{"n":141,"w":"next to","ipa":"/ˈnekst tuː/","vn_read":"NEKST-tu","pos":"prep","vn":"ngay bên cạnh","col":"next to the window","ex":"The printer is next to the copier.","wk":4},{"n":142,"w":"between","ipa":"/bɪˈtwiːn/","vn_read":"bi-TUIN","pos":"prep","vn":"ở giữa (hai vật)","col":"between A and B","ex":"The table is between the two windows.","wk":4},{"n":143,"w":"near","ipa":"/nɪər/","vn_read":"ni-ơ","pos":"prep","vn":"gần","col":"near the station","ex":"The hotel is near the airport.","wk":4},{"n":144,"w":"under","ipa":"/ˈʌn.dər/","vn_read":"ÂN-đơ","pos":"prep","vn":"ở dưới","col":"under the desk","ex":"My bag is under the desk.","wk":4},{"n":145,"w":"above","ipa":"/əˈbʌv/","vn_read":"ơ-BÂV","pos":"prep","vn":"ở phía trên (cao hơn)","col":"above the door","ex":"There is a photo above the door.","wk":4},{"n":146,"w":"opposite","ipa":"/ˈɒp.ə.zɪt/","vn_read":"Ô-pơ-zit","pos":"prep","vn":"đối diện","col":"opposite the bank","ex":"The restaurant is opposite the hotel.","wk":4},{"n":147,"w":"corner","ipa":"/ˈkɔː.nər/","vn_read":"CO-nơ","pos":"n","vn":"góc (phòng, phố)","col":"in the corner","ex":"There is a lamp in the corner of the room.","wk":4},{"n":148,"w":"side","ipa":"/saɪd/","vn_read":"sai-d","pos":"n","vn":"bên, phía","col":"on the left side","ex":"The elevator is on the right side of the lobby.","wk":4},{"n":149,"w":"top","ipa":"/tɒp/","vn_read":"to-p","pos":"n / adj","vn":"đỉnh; trên cùng","col":"on the top shelf","ex":"The box is on the top shelf.","wk":4},{"n":150,"w":"bottom","ipa":"/ˈbɒt.əm/","vn_read":"BÔ-tơm","pos":"n / adj","vn":"đáy; dưới cùng","col":"at the bottom","ex":"The files are on the bottom shelf.","wk":4},{"n":151,"w":"middle","ipa":"/ˈmɪd.əl/","vn_read":"MI-đơl","pos":"n","vn":"ở giữa, chính giữa","col":"in the middle of","ex":"There is a table in the middle of the room.","wk":4},{"n":152,"w":"left","ipa":"/left/","vn_read":"left","pos":"n / adj","vn":"bên trái","col":"on the left","ex":"The entrance is on the left.","wk":4},{"n":153,"w":"right","ipa":"/raɪt/","vn_read":"rai-t","pos":"n / adj","vn":"bên phải","col":"on the right","ex":"The elevator is on the right.","wk":4},{"n":154,"w":"edge","ipa":"/edʒ/","vn_read":"e-jơ","pos":"n","vn":"mép, rìa","col":"at the edge of","ex":"The phone is at the edge of the table.","wk":4},{"n":155,"w":"equipment","ipa":"/ɪˈkwɪp.mənt/","vn_read":"i-QUÍP-mơnt","pos":"n","vn":"thiết bị *(không đếm được)*","col":"office equipment","ex":"All the office equipment is new.","wk":4},{"n":156,"w":"machine","ipa":"/məˈʃiːn/","vn_read":"mơ-SHIN","pos":"n","vn":"máy móc","col":"a copy machine","ex":"The copy machine is not available today.","wk":4},{"n":157,"w":"tool","ipa":"/tuːl/","vn_read":"tu-l","pos":"n","vn":"dụng cụ, công cụ","col":"a tool box","ex":"The tools are in the cabinet.","wk":4},{"n":158,"w":"sign","ipa":"/saɪn/","vn_read":"sai-n *(g câm)*","pos":"n","vn":"biển báo, bảng hiệu","col":"a \"No Parking\" sign","ex":"There is a sign above the main entrance.","wk":4},{"n":159,"w":"notice","ipa":"/ˈnəʊ.tɪs/","vn_read":"NÔU-tis","pos":"n","vn":"thông báo (giấy dán)","col":"a notice on the board","ex":"There is a notice on the board.","wk":4},{"n":160,"w":"board","ipa":"/bɔːd/","vn_read":"bo-d","pos":"n","vn":"bảng (thông báo, trắng)","col":"a notice board","ex":"The schedule is on the board.","wk":4},{"n":161,"w":"screen","ipa":"/skriːn/","vn_read":"skrin","pos":"n","vn":"màn hình","col":"a large screen","ex":"There is a large screen on the wall.","wk":4},{"n":162,"w":"key","ipa":"/kiː/","vn_read":"ki","pos":"n","vn":"chìa khóa","col":"the room key","ex":"The key is at the front desk.","wk":4},{"n":163,"w":"work","ipa":"/wɜːk/","vn_read":"uơ-k","pos":"v","vn":"làm việc","col":"work for a company","ex":"I work for a large company.","wk":5},{"n":164,"w":"start","ipa":"/stɑːt/","vn_read":"sta-t","pos":"v","vn":"bắt đầu","col":"start at nine","ex":"We start work at nine o'clock.","wk":5},{"n":165,"w":"finish","ipa":"/ˈfɪn.ɪʃ/","vn_read":"FI-ni-sh","pos":"v","vn":"kết thúc, làm xong","col":"finish at five","ex":"They finish work at five o'clock.","wk":5},{"n":166,"w":"arrive","ipa":"/əˈraɪv/","vn_read":"ơ-RAI-v","pos":"v","vn":"đến nơi","col":"arrive at the office","ex":"I arrive at the office at 8:30.","wk":5},{"n":167,"w":"leave","ipa":"/liːv/","vn_read":"li-v *(i dài)*","pos":"v","vn":"rời đi, ra khỏi","col":"leave the office","ex":"We leave the office at six o'clock.","wk":5},{"n":168,"w":"begin","ipa":"/bɪˈɡɪn/","vn_read":"bi-GHI-n","pos":"v","vn":"bắt đầu","col":"begin at ten","ex":"We begin the meeting at ten o'clock.","wk":5},{"n":169,"w":"return","ipa":"/rɪˈtɜːn/","vn_read":"ri-TƠ-n","pos":"v","vn":"quay lại; trả lại","col":"return to the office","ex":"They return to the office at two o'clock.","wk":5},{"n":170,"w":"need","ipa":"/niːd/","vn_read":"ni-đ","pos":"v","vn":"cần","col":"need a new printer","ex":"We need a new printer.","wk":5},{"n":171,"w":"send","ipa":"/send/","vn_read":"sen-đ","pos":"v","vn":"gửi","col":"send an email","ex":"She sends an email to the client.","wk":5},{"n":172,"w":"receive","ipa":"/rɪˈsiːv/","vn_read":"ri-SI-v","pos":"v","vn":"nhận (được)","col":"receive a package","ex":"He receives many emails from customers.","wk":5},{"n":173,"w":"check","ipa":"/tʃek/","vn_read":"che-k","pos":"v","vn":"kiểm tra","col":"check the schedule","ex":"She checks the schedule.","wk":5},{"n":174,"w":"prepare","ipa":"/prɪˈpeər/","vn_read":"pri-PE-ơ","pos":"v","vn":"chuẩn bị","col":"prepare a report","ex":"He prepares the sales report.","wk":5},{"n":175,"w":"attend","ipa":"/əˈtend/","vn_read":"ơ-TEN-đ","pos":"v","vn":"tham dự, có mặt","col":"attend a meeting","ex":"She attends the sales meeting.","wk":5},{"n":176,"w":"call","ipa":"/kɔːl/","vn_read":"co-l","pos":"v","vn":"gọi điện; gọi","col":"call a customer","ex":"He calls the customer.","wk":5},{"n":177,"w":"meet","ipa":"/miːt/","vn_read":"mi-t","pos":"v","vn":"gặp","col":"meet a client","ex":"She meets the new client.","wk":5},{"n":178,"w":"submit","ipa":"/səbˈmɪt/","vn_read":"sơb-MI-t","pos":"v","vn":"nộp","col":"submit a report","ex":"He submits the report to the director.","wk":5},{"n":179,"w":"live","ipa":"/lɪv/","vn_read":"li-v *(i ngắn)*","pos":"v","vn":"sống, ở","col":"live in Hanoi","ex":"She lives in Hanoi.","wk":5},{"n":180,"w":"study","ipa":"/ˈstʌd.i/","vn_read":"STA-đi","pos":"v","vn":"học","col":"study English","ex":"He studies English. *(English = tiếng Anh)*","wk":5},{"n":181,"w":"travel","ipa":"/ˈtræv.əl/","vn_read":"TRE-vơ-l","pos":"v","vn":"đi lại, đi công tác","col":"travel to Japan","ex":"The director travels to Japan.","wk":5},{"n":182,"w":"drive","ipa":"/draɪv/","vn_read":"đrai-v","pos":"v","vn":"lái xe","col":"drive to work","ex":"She drives to work.","wk":5},{"n":183,"w":"walk","ipa":"/wɔːk/","vn_read":"uo-k *(l câm)*","pos":"v","vn":"đi bộ","col":"walk to the office","ex":"He walks to the office.","wk":5},{"n":184,"w":"take","ipa":"/teɪk/","vn_read":"têy-k","pos":"v","vn":"đi bằng; lấy","col":"take the elevator","ex":"She takes the elevator to the fifth floor.","wk":5},{"n":185,"w":"use","ipa":"/juːz/","vn_read":"diu-z","pos":"v","vn":"dùng, sử dụng","col":"use a computer","ex":"He uses the new computer.","wk":5},{"n":186,"w":"visit","ipa":"/ˈvɪz.ɪt/","vn_read":"VI-zi-t","pos":"v","vn":"tới thăm, ghé thăm","col":"visit a client","ex":"She visits the client in Da Nang.","wk":5},{"n":187,"w":"routine","ipa":"/ruːˈtiːn/","vn_read":"ru-TI-n","pos":"n","vn":"nếp làm việc, thói quen","col":"a daily routine","ex":"My daily routine starts at six o'clock. *(daily = hằng ngày)*","wk":5},{"n":188,"w":"break","ipa":"/breɪk/","vn_read":"brêy-k","pos":"n","vn":"giờ giải lao","col":"a coffee break","ex":"We take a break at ten o'clock.","wk":5},{"n":189,"w":"lunch","ipa":"/lʌntʃ/","vn_read":"lân-ch","pos":"n","vn":"bữa trưa","col":"a lunch break","ex":"The lunch break is from 12:00 to 1:00.","wk":5},{"n":190,"w":"overtime","ipa":"/ˈəʊ.və.taɪm/","vn_read":"Ô-vơ-tai-m","pos":"n","vn":"giờ làm thêm","col":"work overtime","ex":"They work overtime on Fridays.","wk":5},{"n":191,"w":"shift","ipa":"/ʃɪft/","vn_read":"shif-t","pos":"n","vn":"ca làm việc","col":"the night shift","ex":"He works the night shift. *(night = ban đêm)*","wk":5},{"n":192,"w":"weekend","ipa":"/ˌwiːkˈend/","vn_read":"uik-EN-đ","pos":"n","vn":"cuối tuần *(T7 + CN)*","col":"at the weekend","ex":"The office is closed at the weekend.","wk":5},{"n":193,"w":"weekday","ipa":"/ˈwiːk.deɪ/","vn_read":"UIK-đêy","pos":"n","vn":"ngày trong tuần *(T2–T6)*","col":"on weekdays","ex":"The store opens at 7:00 on weekdays.","wk":5},{"n":194,"w":"holiday","ipa":"/ˈhɒl.ɪ.deɪ/","vn_read":"HÔ-li-đêy","pos":"n","vn":"ngày nghỉ lễ","col":"a public holiday","ex":"The bank is closed on public holidays.","wk":5},{"n":195,"w":"job","ipa":"/dʒɒb/","vn_read":"jôb","pos":"n","vn":"công việc, việc làm","col":"a new job","ex":"She has a new job at a bank.","wk":5},{"n":196,"w":"task","ipa":"/tɑːsk/","vn_read":"ta-sk","pos":"n","vn":"nhiệm vụ, đầu việc","col":"a daily task","ex":"The manager prepares a list of daily tasks.","wk":5},{"n":197,"w":"project","ipa":"/ˈprɒdʒ.ekt/","vn_read":"PRÔ-jec-t","pos":"n","vn":"dự án","col":"work on a project","ex":"The team works on a new project.","wk":5},{"n":198,"w":"deadline","ipa":"/ˈded.laɪn/","vn_read":"ĐED-lai-n","pos":"n","vn":"hạn chót","col":"meet a deadline","ex":"The deadline is Friday, May 8.","wk":5},{"n":199,"w":"appointment","ipa":"/əˈpɔɪnt.mənt/","vn_read":"ơ-POIN-mơn-t","pos":"n","vn":"cuộc hẹn","col":"make an appointment","ex":"She has an appointment at three o'clock.","wk":5},{"n":200,"w":"training","ipa":"/ˈtreɪ.nɪŋ/","vn_read":"TRÊY-ning","pos":"n","vn":"việc đào tạo, tập huấn","col":"a training course","ex":"The new employees attend a training course.","wk":5},{"n":201,"w":"contract","ipa":"/ˈkɒn.trækt/","vn_read":"CON-trec-t","pos":"n","vn":"hợp đồng","col":"sign a contract","ex":"The client signs the contract. *(sign = ký)*","wk":5},{"n":202,"w":"salary","ipa":"/ˈsæl.ər.i/","vn_read":"SE-lơ-ri","pos":"n","vn":"lương (tháng)","col":"a good salary","ex":"The company pays a good salary. *(pay = trả tiền)*","wk":5},{"n":203,"w":"January","ipa":"/ˈdʒæn.ju.ə.ri/","vn_read":"JEN-iu-ơ-ri","pos":"n","vn":"tháng Một","col":"in January","ex":"The new training starts in January.","wk":6},{"n":204,"w":"February","ipa":"/ˈfeb.ru.ə.ri/","vn_read":"FEB-ru-ơ-ri","pos":"n","vn":"tháng Hai","col":"in February","ex":"Our new office opens in February.","wk":6},{"n":205,"w":"March","ipa":"/mɑːtʃ/","vn_read":"ma-ch","pos":"n","vn":"tháng Ba","col":"in March","ex":"The contract ends in March.","wk":6},{"n":206,"w":"April","ipa":"/ˈeɪ.prəl/","vn_read":"ÊY-prơl","pos":"n","vn":"tháng Tư","col":"in April","ex":"She returns to work in April.","wk":6},{"n":207,"w":"May","ipa":"/meɪ/","vn_read":"mêy","pos":"n","vn":"tháng Năm","col":"in May","ex":"The sales meeting is in May.","wk":6},{"n":208,"w":"June","ipa":"/dʒuːn/","vn_read":"jun","pos":"n","vn":"tháng Sáu","col":"in June","ex":"Our team meets the client in June.","wk":6},{"n":209,"w":"July","ipa":"/dʒuˈlaɪ/","vn_read":"ju-LAI","pos":"n","vn":"tháng Bảy","col":"in July","ex":"The project finishes in July.","wk":6},{"n":210,"w":"August","ipa":"/ˈɔː.ɡəst/","vn_read":"O-gơst","pos":"n","vn":"tháng Tám","col":"in August","ex":"Many employees take a holiday in August.","wk":6},{"n":211,"w":"date","ipa":"/deɪt/","vn_read":"đêy-t","pos":"n","vn":"ngày tháng (ngày cụ thể)","col":"the date of the meeting","ex":"What is the date of the sales meeting?","wk":6},{"n":212,"w":"day","ipa":"/deɪ/","vn_read":"đêy","pos":"n","vn":"ngày","col":"every day","ex":"She checks her email every day.","wk":6},{"n":213,"w":"week","ipa":"/wiːk/","vn_read":"uy-k","pos":"n","vn":"tuần","col":"twice a week","ex":"Our team meets twice a week.","wk":6},{"n":214,"w":"month","ipa":"/mʌnθ/","vn_read":"mân-th","pos":"n","vn":"tháng","col":"every month","ex":"The report arrives every month.","wk":6},{"n":215,"w":"year","ipa":"/jɪər/","vn_read":"yi-ơ","pos":"n","vn":"năm","col":"this year","ex":"Our company opens two branches this year.","wk":6},{"n":216,"w":"calendar","ipa":"/ˈkæl.ən.dər/","vn_read":"KE-lơn-đơ","pos":"n","vn":"quyển lịch, tờ lịch","col":"on the calendar","ex":"The training days are on the calendar.","wk":6},{"n":217,"w":"season","ipa":"/ˈsiː.zən/","vn_read":"SI-zơn","pos":"n","vn":"mùa","col":"the busy season","ex":"December is our busy season.","wk":6},{"n":218,"w":"period","ipa":"/ˈpɪə.ri.əd/","vn_read":"PIA-ri-ơd","pos":"n","vn":"khoảng thời gian, kỳ","col":"a two-week period","ex":"Our busy period starts in May.","wk":6},{"n":219,"w":"many","ipa":"/ˈmen.i/","vn_read":"ME-ni","pos":"det","vn":"nhiều *(đếm được)*","col":"many employees","ex":"Many employees attend the training.","wk":6},{"n":220,"w":"much","ipa":"/mʌtʃ/","vn_read":"mâ-ch","pos":"det","vn":"nhiều *(không đếm được)*","col":"not much time","ex":"We don't need much paper.","wk":6},{"n":221,"w":"a few","ipa":"/ə ˈfjuː/","vn_read":"ơ-FIU","pos":"det","vn":"một vài *(đếm được, ít)*","col":"a few days","ex":"The manager needs a few days.","wk":6},{"n":222,"w":"a lot of","ipa":"/ə ˈlɒt əv/","vn_read":"ơ-LO-tơv","pos":"det","vn":"rất nhiều *(cả hai loại)*","col":"a lot of work","ex":"She receives a lot of emails every day.","wk":6},{"n":223,"w":"several","ipa":"/ˈsev.ər.əl/","vn_read":"SE-vơ-rơl","pos":"det","vn":"vài, một số *(đếm được)*","col":"several months","ex":"Several clients visit our office in June.","wk":6},{"n":224,"w":"most","ipa":"/məʊst/","vn_read":"môus-t","pos":"det","vn":"hầu hết","col":"most employees","ex":"Most employees work on the second floor.","wk":6},{"n":225,"w":"all","ipa":"/ɔːl/","vn_read":"oo-l","pos":"det","vn":"tất cả","col":"all day","ex":"All employees attend the meeting.","wk":6},{"n":226,"w":"both","ipa":"/bəʊθ/","vn_read":"bôu-th","pos":"det","vn":"cả hai","col":"both managers","ex":"Both managers work in this building.","wk":6},{"n":227,"w":"agenda","ipa":"/əˈdʒen.də/","vn_read":"ơ-JEN-đơ","pos":"n","vn":"nội dung/chương trình buổi họp","col":"on the agenda","ex":"The agenda for the meeting is on my desk.","wk":6},{"n":228,"w":"event","ipa":"/ɪˈvent/","vn_read":"i-VEN-t","pos":"n","vn":"sự kiện","col":"a company event","ex":"The company event starts at 6:00 p.m.","wk":6},{"n":229,"w":"conference","ipa":"/ˈkɒn.fər.əns/","vn_read":"CON-fơ-rơns","pos":"n","vn":"hội nghị (lớn, nhiều ngày)","col":"attend a conference","ex":"She attends the sales conference in May.","wk":6},{"n":230,"w":"workshop","ipa":"/ˈwɜːk.ʃɒp/","vn_read":"UƠK-shop","pos":"n","vn":"buổi thực hành, hội thảo thực hành","col":"a training workshop","ex":"The training workshop starts on Monday.","wk":6},{"n":231,"w":"seminar","ipa":"/ˈsem.ɪ.nɑːr/","vn_read":"SE-mi-na","pos":"n","vn":"buổi hội thảo (ngồi nghe giảng)","col":"a one-day seminar","ex":"The seminar finishes at four o'clock.","wk":6},{"n":232,"w":"session","ipa":"/ˈseʃ.ən/","vn_read":"SE-shơn","pos":"n","vn":"buổi, phiên *(một phần của chương trình)*","col":"the morning session","ex":"The morning session begins at 9:00.","wk":6},{"n":233,"w":"delay","ipa":"/dɪˈleɪ/","vn_read":"đi-LÊY","pos":"n","vn":"sự chậm trễ","col":"a two-hour delay","ex":"There is a two-hour delay at the airport.","wk":6},{"n":234,"w":"cancellation","ipa":"/ˌkæn.səlˈeɪ.ʃən/","vn_read":"ken-sơ-LÊY-shơn","pos":"n","vn":"sự hủy bỏ","col":"a cancellation notice","ex":"The cancellation of the seminar is on the board.","wk":6},{"n":235,"w":"last","ipa":"/lɑːst/","vn_read":"las-t","pos":"v","vn":"kéo dài","col":"last two hours","ex":"The workshop lasts two hours.","wk":6},{"n":236,"w":"continue","ipa":"/kənˈtɪn.juː/","vn_read":"cơn-TI-niu","pos":"v","vn":"tiếp tục","col":"continue after lunch","ex":"The session continues after lunch.","wk":6},{"n":237,"w":"postpone","ipa":"/pəʊstˈpəʊn/","vn_read":"pôust-PÔUn","pos":"v","vn":"hoãn lại","col":"postpone the event","ex":"The company postpones the event until July.","wk":6},{"n":238,"w":"reschedule","ipa":"/ˌriːˈʃedʒ.uːl/ hoặc /ˌriːˈskedʒ.uːl/","vn_read":"ri-SHE-điu-l / ri-SKE-giu-l","pos":"v","vn":"dời lịch, xếp lịch lại","col":"reschedule a meeting","ex":"She reschedules the appointment for Friday.","wk":6},{"n":239,"w":"confirm","ipa":"/kənˈfɜːm/","vn_read":"cơn-FƠm","pos":"v","vn":"xác nhận","col":"confirm the date","ex":"The manager confirms the date of the conference.","wk":6},{"n":240,"w":"book","ipa":"/bʊk/","vn_read":"bu-k","pos":"v","vn":"đặt trước (phòng, vé)","col":"book a room","ex":"We book Room 403 for the workshop.","wk":6},{"n":241,"w":"register","ipa":"/ˈredʒ.ɪ.stər/","vn_read":"RE-ji-stơ","pos":"v","vn":"đăng ký","col":"register for a seminar","ex":"Many employees register for the seminar.","wk":6},{"n":242,"w":"wait","ipa":"/weɪt/","vn_read":"uêy-t","pos":"v","vn":"chờ, đợi","col":"wait for the manager","ex":"The clients wait in the lobby.","wk":6},{"n":243,"w":"always","ipa":"/ˈɔːl.weɪz/","vn_read":"OL-uêyz","pos":"adv","vn":"luôn luôn *(100%)*","col":"always work late","ex":"She always arrives at eight o'clock.","wk":7},{"n":244,"w":"usually","ipa":"/ˈjuː.ʒu.ə.li/","vn_read":"IU-zhu-ơ-li","pos":"adv","vn":"thường *(≈90%)*","col":"usually finish at five","ex":"He usually finishes work at five o'clock.","wk":7},{"n":245,"w":"often","ipa":"/ˈɒf.ən/ *(t câm)* · /ˈɒf.tən/","vn_read":"Ô-fơn","pos":"adv","vn":"thường *(≈70%)*","col":"often visit clients","ex":"We often visit our clients.","wk":7},{"n":246,"w":"sometimes","ipa":"/ˈsʌm.taɪmz/","vn_read":"SÂM-taimz","pos":"adv","vn":"thỉnh thoảng *(≈50%)*","col":"sometimes work on Saturday","ex":"She sometimes works on Saturday.","wk":7},{"n":247,"w":"rarely","ipa":"/ˈreə.li/","vn_read":"RÊ-li","pos":"adv","vn":"hiếm khi *(≈10%)*","col":"rarely take a break","ex":"He rarely takes a break.","wk":7},{"n":248,"w":"seldom","ipa":"/ˈsel.dəm/","vn_read":"SEL-đơm","pos":"adv","vn":"hiếm khi *(≈10%)*","col":"seldom use this room","ex":"They seldom use this meeting room.","wk":7},{"n":249,"w":"never","ipa":"/ˈnev.ər/","vn_read":"NE-vơ","pos":"adv","vn":"không bao giờ *(0%)*","col":"never be late","ex":"She is never late for work.","wk":7},{"n":250,"w":"frequently","ipa":"/ˈfriː.kwənt.li/","vn_read":"FRI-kuơnt-li","pos":"adv","vn":"thường xuyên *(≈70%)*","col":"frequently receive orders","ex":"We frequently receive orders from this client.","wk":7},{"n":251,"w":"food","ipa":"/fuːd/","vn_read":"fu-d","pos":"n","vn":"đồ ăn, thức ăn","col":"fresh food","ex":"The food here is always fresh.","wk":7},{"n":252,"w":"drink","ipa":"/drɪŋk/","vn_read":"đring-k","pos":"n, v","vn":"đồ uống; uống","col":"a free drink","ex":"There is a free drink with every meal.","wk":7},{"n":253,"w":"coffee","ipa":"/ˈkɒf.i/","vn_read":"CÔ-fi","pos":"n","vn":"cà phê","col":"a cup of coffee","ex":"The coffee in the office kitchen is free.","wk":7},{"n":254,"w":"tea","ipa":"/tiː/","vn_read":"ti","pos":"n","vn":"trà","col":"a cup of tea","ex":"She usually drinks tea in the afternoon.","wk":7},{"n":255,"w":"water","ipa":"/ˈwɔː.tə(r)/","vn_read":"UÔ-tơ","pos":"n","vn":"nước","col":"drink water","ex":"There is water on every table.","wk":7},{"n":256,"w":"meal","ipa":"/miːl/","vn_read":"mi-l","pos":"n","vn":"bữa ăn","col":"a large meal","ex":"Every meal on the menu includes a free drink.","wk":7},{"n":257,"w":"menu","ipa":"/ˈmen.juː/","vn_read":"ME-niu","pos":"n","vn":"thực đơn","col":"on the menu","ex":"All the prices are on the menu.","wk":7},{"n":258,"w":"dish","ipa":"/dɪʃ/","vn_read":"đi-sh","pos":"n","vn":"món ăn; cái đĩa","col":"a new dish","ex":"The restaurant prepares this dish every day.","wk":7},{"n":259,"w":"reservation","ipa":"/ˌrez.əˈveɪ.ʃən/","vn_read":"re-zơ-VÊY-shơn","pos":"n","vn":"việc đặt chỗ, đặt bàn","col":"a table reservation","ex":"Your reservation is for seven o'clock.","wk":7},{"n":260,"w":"bill","ipa":"/bɪl/","vn_read":"bi-l","pos":"n","vn":"hoá đơn","col":"the bill for the meal","ex":"The bill for the meal is on the table.","wk":7},{"n":261,"w":"tip","ipa":"/tɪp/","vn_read":"ti-p","pos":"n","vn":"tiền boa","col":"a small tip","ex":"The tip is not on the bill.","wk":7},{"n":262,"w":"service","ipa":"/ˈsɜː.vɪs/","vn_read":"SƠ-vis","pos":"n","vn":"dịch vụ; sự phục vụ","col":"customer service","ex":"Customer service is on the first floor.","wk":7},{"n":263,"w":"waiter","ipa":"/ˈweɪ.tər/","vn_read":"UÊY-tơ","pos":"n","vn":"nhân viên phục vụ bàn","col":"a polite waiter","ex":"The waiter is very polite.","wk":7},{"n":264,"w":"discount","ipa":"/ˈdɪs.kaʊnt/","vn_read":"ĐI-sao-nt","pos":"n","vn":"sự giảm giá","col":"a 20% discount","ex":"Staff members receive a 20% discount.","wk":7},{"n":265,"w":"refund","ipa":"/ˈriː.fʌnd/","vn_read":"RI-fân-d","pos":"n","vn":"tiền hoàn lại","col":"a full refund","ex":"Customers receive a refund in five days.","wk":7},{"n":266,"w":"delivery","ipa":"/dɪˈlɪv.ər.i/","vn_read":"đi-LI-vơ-ri","pos":"n","vn":"việc giao hàng","col":"free delivery","ex":"Delivery is free for all large orders.","wk":7},{"n":267,"w":"shop","ipa":"/ʃɒp/","vn_read":"shô-p","pos":"n, v","vn":"cửa hàng; mua sắm","col":"a coffee shop","ex":"The shop on the first floor opens at nine.","wk":7},{"n":268,"w":"mall","ipa":"/mɔːl/","vn_read":"mo-l","pos":"n","vn":"trung tâm thương mại","col":"a shopping mall","ex":"The mall near our office is very large.","wk":7},{"n":269,"w":"sale","ipa":"/seɪl/","vn_read":"sêy-l","pos":"n","vn":"đợt giảm giá; việc bán","col":"on sale","ex":"The sale starts on Monday.","wk":7},{"n":270,"w":"coupon","ipa":"/ˈkuː.pɒn/","vn_read":"CU-pon","pos":"n","vn":"phiếu giảm giá","col":"a discount coupon","ex":"This coupon is for a 20% discount.","wk":7},{"n":271,"w":"cart","ipa":"/kɑːt/","vn_read":"ca-t","pos":"n","vn":"xe đẩy; giỏ hàng","col":"a shopping cart","ex":"There are three items in my cart.","wk":7},{"n":272,"w":"checkout","ipa":"/ˈtʃek.aʊt/","vn_read":"CHEC-ao-t","pos":"n","vn":"quầy thanh toán","col":"at the checkout","ex":"The customers wait at the checkout.","wk":7},{"n":273,"w":"exchange","ipa":"/ɪksˈtʃeɪndʒ/","vn_read":"ik-CHÊYN-j","pos":"n, v","vn":"việc đổi hàng; đổi","col":"exchange an item","ex":"Customers exchange items at the service desk.","wk":7},{"n":274,"w":"warranty","ipa":"/ˈwɒr.ən.ti/","vn_read":"UO-rơn-ti","pos":"n","vn":"(chế độ) bảo hành","col":"a two-year warranty","ex":"The warranty for this computer is two years.","wk":7},{"n":275,"w":"cheap","ipa":"/tʃiːp/","vn_read":"chi-p","pos":"adj","vn":"rẻ","col":"a cheap meal","ex":"The lunch menu is very cheap.","wk":7},{"n":276,"w":"expensive","ipa":"/ɪkˈspen.sɪv/","vn_read":"ik-SPEN-siv","pos":"adj","vn":"đắt","col":"an expensive restaurant","ex":"This restaurant is very expensive.","wk":7},{"n":277,"w":"fresh","ipa":"/freʃ/","vn_read":"fre-sh","pos":"adj","vn":"tươi, mới","col":"fresh food","ex":"The food here is always fresh.","wk":7},{"n":278,"w":"delicious","ipa":"/dɪˈlɪʃ.əs/","vn_read":"đi-LI-shơs","pos":"adj","vn":"ngon","col":"a delicious dish","ex":"This dish is delicious.","wk":7},{"n":279,"w":"popular","ipa":"/ˈpɒp.jə.lər/","vn_read":"PÔ-piu-lơ","pos":"adj","vn":"được ưa chuộng","col":"a popular restaurant","ex":"This shop is very popular with office staff.","wk":7},{"n":280,"w":"crowded","ipa":"/ˈkraʊ.dɪd/","vn_read":"CRAO-đid","pos":"adj","vn":"đông người","col":"a crowded mall","ex":"The mall is crowded on Sunday.","wk":7},{"n":281,"w":"convenient","ipa":"/kənˈviː.ni.ənt/","vn_read":"cơn-VI-ni-ơnt","pos":"adj","vn":"tiện lợi","col":"a convenient location","ex":"The location of this shop is very convenient.","wk":7},{"n":282,"w":"comfortable","ipa":"/ˈkʌmf.tə.bəl/","vn_read":"CÂMF-tơ-bơl","pos":"adj","vn":"thoải mái","col":"a comfortable chair","ex":"The chairs in the lobby are very comfortable.","wk":7},{"n":283,"w":"bus","ipa":"/bʌs/","vn_read":"bâ-s","pos":"n","vn":"xe buýt","col":"take the bus","ex":"I take the bus to work every day.","wk":8},{"n":284,"w":"train","ipa":"/treɪn/","vn_read":"trêy-n","pos":"n","vn":"tàu hỏa","col":"by train","ex":"The train to Hue leaves at 7:00.","wk":8},{"n":285,"w":"taxi","ipa":"/ˈtæk.si/","vn_read":"TẮC-si","pos":"n","vn":"xe taxi","col":"take a taxi","ex":"She often takes a taxi to the airport.","wk":8},{"n":286,"w":"subway","ipa":"/ˈsʌb.weɪ/","vn_read":"SÂB-uêy","pos":"n","vn":"tàu điện ngầm","col":"take the subway","ex":"The subway is very convenient.","wk":8},{"n":287,"w":"flight","ipa":"/flaɪt/","vn_read":"flai-t","pos":"n","vn":"chuyến bay","col":"book a flight","ex":"My flight arrives at nine o'clock.","wk":8},{"n":288,"w":"ticket","ipa":"/ˈtɪk.ɪt/","vn_read":"TI-kit","pos":"n","vn":"vé","col":"book a ticket","ex":"I need two tickets for the train.","wk":8},{"n":289,"w":"platform","ipa":"/ˈplæt.fɔːm/","vn_read":"PLẮT-fom","pos":"n","vn":"sân ga (chỗ chờ tàu)","col":"on platform 4","ex":"The train to Hue is on platform 4.","wk":8},{"n":290,"w":"gate","ipa":"/ɡeɪt/","vn_read":"gêy-t","pos":"n","vn":"cổng; cửa ra máy bay","col":"at gate 12","ex":"Our gate is near the restaurant.","wk":8},{"n":291,"w":"turn","ipa":"/tɜːn/","vn_read":"tơ-n","pos":"v","vn":"rẽ, quay","col":"turn left / right","ex":"Can you turn left at the corner?","wk":8},{"n":292,"w":"straight","ipa":"/streɪt/","vn_read":"strêy-t","pos":"adv","vn":"thẳng","col":"go straight","ex":"We go straight on Green Street.","wk":8},{"n":293,"w":"cross","ipa":"/krɒs/","vn_read":"cro-s","pos":"v","vn":"băng qua","col":"cross the street","ex":"You can cross the street at the corner.","wk":8},{"n":294,"w":"follow","ipa":"/ˈfɒl.əʊ/","vn_read":"FO-lô*(u)*","pos":"v","vn":"đi theo, làm theo","col":"follow the signs","ex":"I always follow this route to the office.","wk":8},{"n":295,"w":"pass","ipa":"/pɑːs/","vn_read":"pa-s","pos":"v","vn":"đi qua (không dừng)","col":"pass the bank","ex":"You pass the post office on the left.","wk":8},{"n":296,"w":"reach","ipa":"/riːtʃ/","vn_read":"ri-ch","pos":"v","vn":"tới, đến nơi","col":"reach the station","ex":"We reach the airport at ten o'clock.","wk":8},{"n":297,"w":"direction","ipa":"/dɪˈrek.ʃən/","vn_read":"đi-REK-shơn","pos":"n","vn":"hướng; *(số nhiều)* lời chỉ đường","col":"ask for directions","ex":"The directions to the hotel are on this map.","wk":8},{"n":298,"w":"route","ipa":"/ruːt/","vn_read":"ru-t","pos":"n","vn":"tuyến đường","col":"a bus route","ex":"This bus route is very convenient.","wk":8},{"n":299,"w":"stop","ipa":"/stɒp/","vn_read":"sto-p","pos":"n · v","vn":"điểm dừng; dừng lại","col":"a bus stop","ex":"The bus stop is in front of the bank.","wk":8},{"n":300,"w":"terminal","ipa":"/ˈtɜː.mɪ.nəl/","vn_read":"TƠ-mi-nơl","pos":"n","vn":"nhà ga, bến cuối","col":"Terminal 2","ex":"Flight 22 leaves from Terminal 2.","wk":8},{"n":301,"w":"exit","ipa":"/ˈek.sɪt/","vn_read":"EK-sit","pos":"n · v","vn":"lối ra; đi ra","col":"the main exit","ex":"The exit is on your right.","wk":8},{"n":302,"w":"bridge","ipa":"/brɪdʒ/","vn_read":"bri-jơ","pos":"n","vn":"cây cầu","col":"cross the bridge","ex":"Our office is near the new bridge.","wk":8},{"n":303,"w":"traffic","ipa":"/ˈtræf.ɪk/","vn_read":"TRẮ-fik","pos":"n","vn":"giao thông, xe cộ","col":"a lot of traffic","ex":"There is a lot of traffic in the morning.","wk":8},{"n":304,"w":"signal","ipa":"/ˈsɪɡ.nəl/","vn_read":"SIG-nơl","pos":"n","vn":"đèn tín hiệu giao thông","col":"at the signal","ex":"Turn left at the signal.","wk":8},{"n":305,"w":"lane","ipa":"/leɪn/","vn_read":"lêy-n","pos":"n","vn":"làn đường","col":"the bus lane","ex":"This lane is only for buses.","wk":8},{"n":306,"w":"crossing","ipa":"/ˈkrɒs.ɪŋ/","vn_read":"CRO-sing","pos":"n","vn":"vạch sang đường","col":"at the crossing","ex":"Cross the street at the crossing.","wk":8},{"n":307,"w":"press","ipa":"/pres/","vn_read":"pre-s","pos":"v","vn":"bấm, nhấn","col":"press the button","ex":"Press the green button.","wk":8},{"n":308,"w":"push","ipa":"/pʊʃ/","vn_read":"pu-sh","pos":"v","vn":"đẩy","col":"push the door","ex":"Push the door; don't pull it.","wk":8},{"n":309,"w":"pull","ipa":"/pʊl/","vn_read":"pu-l","pos":"v","vn":"kéo","col":"pull the door","ex":"Pull this door, please.","wk":8},{"n":310,"w":"insert","ipa":"/ɪnˈsɜːt/","vn_read":"in-SƠ-t","pos":"v","vn":"đưa vào, cắm vào","col":"insert a card","ex":"Insert your card here.","wk":8},{"n":311,"w":"remove","ipa":"/rɪˈmuːv/","vn_read":"ri-MU-v","pos":"v","vn":"lấy ra, tháo ra","col":"remove the paper","ex":"Please remove the old paper from the printer.","wk":8},{"n":312,"w":"enter","ipa":"/ˈen.tər/","vn_read":"EN-tơ","pos":"v","vn":"đi vào; nhập (dữ liệu)","col":"enter the room · enter a number","ex":"Enter your number on the screen.","wk":8},{"n":313,"w":"avoid","ipa":"/əˈvɔɪd/","vn_read":"ơ-VOI-d","pos":"v","vn":"tránh","col":"avoid the traffic","ex":"Avoid the city center at 8:00 in the morning. *(city center = trung tâm thành phố)*","wk":8},{"n":314,"w":"keep","ipa":"/kiːp/","vn_read":"ki-p","pos":"v","vn":"giữ lại","col":"keep your ticket","ex":"Keep your ticket; the staff can check it.","wk":8},{"n":315,"w":"able","ipa":"/ˈeɪ.bəl/","vn_read":"ÊY-bơl","pos":"adj","vn":"có khả năng","col":"be able to + V","ex":"She is able to drive a bus.","wk":8},{"n":316,"w":"allowed","ipa":"/əˈlaʊd/","vn_read":"ơ-LAO-d","pos":"adj","vn":"được phép","col":"be allowed","ex":"Taxis are not allowed in this lane.","wk":8},{"n":317,"w":"possible","ipa":"/ˈpɒs.ə.bəl/","vn_read":"PO-sơ-bơl","pos":"adj","vn":"có thể xảy ra, khả thi","col":"it is possible to + V","ex":"It is possible to reach the airport in twenty minutes.","wk":8},{"n":318,"w":"necessary","ipa":"/ˈnes.ə.sər.i/","vn_read":"NE-sơ-sơ-ri","pos":"adj","vn":"cần thiết","col":"it is necessary to + V","ex":"It is necessary to keep your ticket.","wk":8},{"n":319,"w":"required","ipa":"/rɪˈkwaɪəd/","vn_read":"ri-QUAI-ơd","pos":"adj","vn":"bắt buộc phải có","col":"be required","ex":"A staff card is required at this gate.","wk":8},{"n":320,"w":"permitted","ipa":"/pəˈmɪt.ɪd/","vn_read":"pơ-MI-tid","pos":"adj","vn":"được phép *(trang trọng)*","col":"be permitted","ex":"Food is not permitted on the subway.","wk":8},{"n":321,"w":"forbidden","ipa":"/fəˈbɪd.ən/","vn_read":"fơ-BI-đơn","pos":"adj","vn":"bị cấm","col":"be forbidden","ex":"Cars are forbidden on this bridge.","wk":8},{"n":322,"w":"safe","ipa":"/seɪf/","vn_read":"sêy-f","pos":"adj","vn":"an toàn","col":"a safe route","ex":"This crossing is very safe.","wk":8},{"n":323,"w":"check-in","ipa":"/ˈtʃek.ɪn/","vn_read":"CHEC-in","pos":"n","vn":"thủ tục nhận chỗ (trước khi bay)","col":"the check-in counter","ex":"The check-in counter opens at 7:00.","wk":9},{"n":324,"w":"boarding","ipa":"/ˈbɔː.dɪŋ/","vn_read":"BO-đing","pos":"n","vn":"việc lên máy bay","col":"a boarding pass","ex":"Boarding starts at Gate 12.","wk":9},{"n":325,"w":"luggage","ipa":"/ˈlʌɡ.ɪdʒ/","vn_read":"LÂ-gij","pos":"n","vn":"hành lý *(không đếm được)*","col":"a lot of luggage","ex":"I don't have a lot of luggage.","wk":9},{"n":326,"w":"baggage","ipa":"/ˈbæɡ.ɪdʒ/","vn_read":"BE-gij","pos":"n","vn":"hành lý *(không đếm được)*","col":"the baggage area","ex":"The baggage area is near Exit 3.","wk":9},{"n":327,"w":"passport","ipa":"/ˈpɑːs.pɔːt/","vn_read":"PAS-pot","pos":"n","vn":"hộ chiếu","col":"show your passport","ex":"Please show your passport here.","wk":9},{"n":328,"w":"visa","ipa":"/ˈviː.zə/","vn_read":"VI-zơ","pos":"n","vn":"thị thực","col":"need a visa","ex":"Does he need a visa for Thailand?","wk":9},{"n":329,"w":"security","ipa":"/sɪˈkjʊə.rə.ti/","vn_read":"si-KIU-rơ-ti","pos":"n","vn":"an ninh; khu kiểm tra an ninh","col":"the security area","ex":"The security area is very crowded.","wk":9},{"n":330,"w":"departure","ipa":"/dɪˈpɑː.tʃər/","vn_read":"đi-PA-chơ","pos":"n","vn":"sự khởi hành","col":"the departure time","ex":"The departure time is 9:10.","wk":9},{"n":331,"w":"arrival","ipa":"/əˈraɪ.vəl/","vn_read":"ơ-RAI-vơl","pos":"n","vn":"sự đến nơi","col":"the arrival time","ex":"The arrival time is 10:20.","wk":9},{"n":332,"w":"landing","ipa":"/ˈlæn.dɪŋ/","vn_read":"LEN-đing","pos":"n","vn":"việc hạ cánh","col":"a safe landing","ex":"Our landing is at four o'clock.","wk":9},{"n":333,"w":"seat","ipa":"/siːt/","vn_read":"si-t","pos":"n","vn":"chỗ ngồi, ghế","col":"an aisle seat","ex":"My seat number is 24C.","wk":9},{"n":334,"w":"aisle","ipa":"/aɪl/","vn_read":"ai-l *(s câm)*","pos":"n","vn":"lối đi giữa hai hàng ghế","col":"an aisle seat","ex":"I always take an aisle seat.","wk":9},{"n":335,"w":"row","ipa":"/rəʊ/","vn_read":"rôu","pos":"n","vn":"hàng (ghế)","col":"in row 12","ex":"My seat is in row 12.","wk":9},{"n":336,"w":"crew","ipa":"/kruː/","vn_read":"cru","pos":"n","vn":"tổ bay, phi hành đoàn","col":"the cabin crew","ex":"The crew on this flight is helpful.","wk":9},{"n":337,"w":"announcement","ipa":"/əˈnaʊns.mənt/","vn_read":"ơ-NAONS-mơnt","pos":"n","vn":"thông báo","col":"make an announcement","ex":"The announcement is about a delay.","wk":9},{"n":338,"w":"destination","ipa":"/ˌdes.tɪˈneɪ.ʃən/","vn_read":"đes-ti-NÊY-shơn","pos":"n","vn":"điểm đến","col":"arrive at your destination","ex":"What is your destination?","wk":9},{"n":339,"w":"guest","ipa":"/ɡest/","vn_read":"gest","pos":"n","vn":"khách (ở khách sạn)","col":"a hotel guest","ex":"Hotel guests can use the parking lot.","wk":9},{"n":340,"w":"check-out","ipa":"/ˈtʃek.aʊt/","vn_read":"CHEC-ao-t","pos":"n","vn":"việc trả phòng","col":"the check-out time","ex":"Check-out time is 12:00.","wk":9},{"n":341,"w":"deposit","ipa":"/dɪˈpɒz.ɪt/","vn_read":"đi-PÔ-zit","pos":"n","vn":"tiền đặt cọc","col":"a deposit of 500,000 dong","ex":"The hotel needs a deposit for the key.","wk":9},{"n":342,"w":"towel","ipa":"/ˈtaʊ.əl/","vn_read":"TAO-ơl","pos":"n","vn":"khăn tắm","col":"two towels in the bathroom","ex":"There are two towels in the bathroom.","wk":9},{"n":343,"w":"laundry","ipa":"/ˈlɔːn.dri/","vn_read":"LON-đri","pos":"n","vn":"đồ giặt; dịch vụ giặt là","col":"the laundry service","ex":"The laundry service opens at 8:00.","wk":9},{"n":344,"w":"breakfast","ipa":"/ˈbrek.fəst/","vn_read":"BREK-fơst","pos":"n","vn":"bữa sáng","col":"a free breakfast","ex":"Breakfast is free for all rooms.","wk":9},{"n":345,"w":"balcony","ipa":"/ˈbæl.kə.ni/","vn_read":"BEL-cơ-ni","pos":"n","vn":"ban công","col":"a room with a balcony","ex":"Room 507 has a large balcony.","wk":9},{"n":346,"w":"view","ipa":"/vjuː/","vn_read":"viu","pos":"n","vn":"quang cảnh, tầm nhìn","col":"a city view","ex":"This room has a city view.","wk":9},{"n":347,"w":"trip","ipa":"/trɪp/","vn_read":"tri-p","pos":"n","vn":"chuyến đi","col":"a business trip","ex":"Mr. Park is on a business trip.","wk":9},{"n":348,"w":"tour","ipa":"/tʊər/","vn_read":"tua","pos":"n","vn":"chuyến tham quan","col":"a city tour","ex":"The city tour starts at 8:00.","wk":9},{"n":349,"w":"guide","ipa":"/ɡaɪd/","vn_read":"gai-d","pos":"n","vn":"hướng dẫn viên; sách hướng dẫn","col":"a tour guide","ex":"Our tour guide is very helpful.","wk":9},{"n":350,"w":"sightseeing","ipa":"/ˈsaɪtˌsiː.ɪŋ/","vn_read":"SAIT-si-ing","pos":"n","vn":"việc đi tham quan","col":"go sightseeing","ex":"We often go sightseeing on Sunday.","wk":9},{"n":351,"w":"souvenir","ipa":"/ˌsuː.vəˈnɪər/","vn_read":"su-vơ-NIA","pos":"n","vn":"quà lưu niệm","col":"a souvenir shop","ex":"The souvenir shop is near Gate 12.","wk":9},{"n":352,"w":"itinerary","ipa":"/aɪˈtɪn.ər.ər.i/","vn_read":"ai-TI-nơ-rơ-ri","pos":"n","vn":"lịch trình chuyến đi","col":"a travel itinerary","ex":"The itinerary is in this folder.","wk":9},{"n":353,"w":"currency","ipa":"/ˈkʌr.ən.si/","vn_read":"CÂ-rơn-si","pos":"n","vn":"tiền tệ, đơn vị tiền","col":"a currency exchange desk","ex":"The currency exchange desk is in the lobby.","wk":9},{"n":354,"w":"insurance","ipa":"/ɪnˈʃɔː.rəns/","vn_read":"in-SHO-rơns","pos":"n","vn":"bảo hiểm","col":"travel insurance","ex":"Travel insurance is necessary for this tour.","wk":9},{"n":355,"w":"reason","ipa":"/ˈriː.zən/","vn_read":"RI-zơn","pos":"n","vn":"lý do","col":"the reason for the delay","ex":"What is the reason for the delay?","wk":9},{"n":356,"w":"purpose","ipa":"/ˈpɜː.pəs/","vn_read":"PƠ-pơs","pos":"n","vn":"mục đích","col":"the purpose of the trip","ex":"What is the purpose of your trip?","wk":9},{"n":357,"w":"method","ipa":"/ˈmeθ.əd/","vn_read":"ME-thơd","pos":"n","vn":"phương pháp, cách thức","col":"a new method","ex":"The manager often uses this method.","wk":9},{"n":358,"w":"distance","ipa":"/ˈdɪs.təns/","vn_read":"ĐI-stơns","pos":"n","vn":"khoảng cách","col":"the distance to the airport","ex":"What is the distance to the airport?","wk":9},{"n":359,"w":"duration","ipa":"/djuˈreɪ.ʃən/","vn_read":"điu-RÊY-shơn","pos":"n","vn":"thời lượng","col":"the duration of the flight","ex":"The duration of the flight is two hours.","wk":9},{"n":360,"w":"choice","ipa":"/tʃɔɪs/","vn_read":"chois","pos":"n","vn":"sự lựa chọn","col":"two choices","ex":"There are two choices on the menu.","wk":9},{"n":361,"w":"opinion","ipa":"/əˈpɪn.jən/","vn_read":"ơ-PI-niơn","pos":"n","vn":"ý kiến","col":"in my opinion","ex":"In my opinion, this hotel is comfortable.","wk":9},{"n":362,"w":"suggestion","ipa":"/səˈdʒes.tʃən/","vn_read":"sơ-JES-chơn","pos":"n","vn":"lời đề nghị, gợi ý","col":"a helpful suggestion","ex":"Thank you for your suggestion.","wk":9},{"n":363,"w":"stand","ipa":"/stænd/","vn_read":"stăn-d","pos":"v","vn":"đứng","col":"stand near the door","ex":"A man is standing near the door.","wk":10},{"n":364,"w":"sit","ipa":"/sɪt/","vn_read":"si-t","pos":"v","vn":"ngồi","col":"sit on a chair","ex":"A woman is sitting on a chair.","wk":10},{"n":365,"w":"hold","ipa":"/həʊld/","vn_read":"hôul-d","pos":"v","vn":"cầm, giữ","col":"hold a phone","ex":"She is holding a phone.","wk":10},{"n":366,"w":"carry","ipa":"/ˈkær.i/","vn_read":"KE-ri","pos":"v","vn":"mang, xách, bê","col":"carry a box","ex":"He is carrying a box.","wk":10},{"n":367,"w":"point","ipa":"/pɔɪnt/","vn_read":"poi-nt","pos":"v","vn":"chỉ (bằng tay)","col":"point at the screen","ex":"The manager is pointing at the screen.","wk":10},{"n":368,"w":"lean","ipa":"/liːn/","vn_read":"li-n","pos":"v","vn":"tựa, dựa vào","col":"lean on the desk","ex":"A man is leaning on the desk.","wk":10},{"n":369,"w":"look","ipa":"/lʊk/","vn_read":"lu-k","pos":"v","vn":"nhìn","col":"look at a map","ex":"Two guests are looking at a map.","wk":10},{"n":370,"w":"wear","ipa":"/weər/","vn_read":"uê-ơ","pos":"v","vn":"mặc, đội, đeo","col":"wear a jacket","ex":"Mr. Park is wearing a jacket.","wk":10},{"n":371,"w":"clean","ipa":"/kliːn/","vn_read":"cli-n","pos":"v","vn":"lau, dọn, làm sạch","col":"clean a window","ex":"A man is cleaning a window.","wk":10},{"n":372,"w":"repair","ipa":"/rɪˈpeər/","vn_read":"ri-PE-ơ","pos":"v","vn":"sửa chữa","col":"repair a machine","ex":"Two men are repairing a machine.","wk":10},{"n":373,"w":"load","ipa":"/ləʊd/","vn_read":"lôu-d","pos":"v","vn":"chất, xếp hàng lên","col":"load a cart","ex":"He is loading boxes onto a cart.","wk":10},{"n":374,"w":"unload","ipa":"/ʌnˈləʊd/","vn_read":"ân-LÔU-d","pos":"v","vn":"dỡ hàng xuống","col":"unload a cart","ex":"She is unloading boxes from the cart.","wk":10},{"n":375,"w":"arrange","ipa":"/əˈreɪndʒ/","vn_read":"ơ-RÊY-nj","pos":"v","vn":"sắp xếp, bày biện","col":"arrange chairs","ex":"A woman is arranging chairs.","wk":10},{"n":376,"w":"stack","ipa":"/stæk/","vn_read":"stắ-k","pos":"v","vn":"xếp chồng lên nhau","col":"stack boxes","ex":"A man is stacking boxes.","wk":10},{"n":377,"w":"hang","ipa":"/hæŋ/","vn_read":"hă-ng","pos":"v","vn":"treo","col":"hang a sign","ex":"He is hanging a sign on the wall.","wk":10},{"n":378,"w":"sweep","ipa":"/swiːp/","vn_read":"sui-p","pos":"v","vn":"quét","col":"sweep the floor","ex":"A man is sweeping the floor.","wk":10},{"n":379,"w":"sidewalk","ipa":"/ˈsaɪd.wɔːk/","vn_read":"SAI-uó-k","pos":"n","vn":"vỉa hè","col":"walk on the sidewalk","ex":"People are walking on the sidewalk.","wk":10},{"n":380,"w":"railing","ipa":"/ˈreɪ.lɪŋ/","vn_read":"RÊY-ling","pos":"n","vn":"lan can, tay vịn","col":"hold the railing","ex":"She is holding the railing.","wk":10},{"n":381,"w":"fountain","ipa":"/ˈfaʊn.tɪn/","vn_read":"FAO-tin","pos":"n","vn":"đài phun nước","col":"near the fountain","ex":"Two people are sitting near the fountain.","wk":10},{"n":382,"w":"bench","ipa":"/bentʃ/","vn_read":"ben-ch","pos":"n","vn":"ghế băng dài","col":"sit on a bench","ex":"A man is sitting on a bench.","wk":10},{"n":383,"w":"counter","ipa":"/ˈkaʊn.tər/","vn_read":"CAO-tơ","pos":"n","vn":"quầy (thu ngân, lễ tân)","col":"at the counter","ex":"A woman is standing at the counter.","wk":10},{"n":384,"w":"display","ipa":"/dɪˈspleɪ/","vn_read":"đi-SPLÊY","pos":"n","vn":"sự trưng bày; quầy hàng bày","col":"on display","ex":"Some items are on display.","wk":10},{"n":385,"w":"ladder","ipa":"/ˈlæd.ər/","vn_read":"LẮ-đơ","pos":"n","vn":"cái thang","col":"stand on a ladder","ex":"A man is standing on a ladder.","wk":10},{"n":386,"w":"umbrella","ipa":"/ʌmˈbrel.ə/","vn_read":"âm-BRE-lơ","pos":"n","vn":"cái ô, cái dù","col":"hold an umbrella","ex":"She is holding an umbrella.","wk":10},{"n":387,"w":"hat","ipa":"/hæt/","vn_read":"hă-t","pos":"n","vn":"mũ (có vành)","col":"wear a hat","ex":"The man is wearing a hat.","wk":10},{"n":388,"w":"coat","ipa":"/kəʊt/","vn_read":"côu-t","pos":"n","vn":"áo khoác dài","col":"wear a coat","ex":"She is wearing a coat.","wk":10},{"n":389,"w":"tie","ipa":"/taɪ/","vn_read":"tai","pos":"n","vn":"cà vạt","col":"wear a tie","ex":"The manager is wearing a tie.","wk":10},{"n":390,"w":"shoes","ipa":"/ʃuːz/","vn_read":"shu-z","pos":"n","vn":"giày *(luôn số nhiều)*","col":"a pair of shoes","ex":"His shoes are new.","wk":10},{"n":391,"w":"gloves","ipa":"/ɡlʌvz/","vn_read":"glâ-vz","pos":"n","vn":"găng tay *(luôn số nhiều)*","col":"wear gloves","ex":"The men are wearing gloves.","wk":10},{"n":392,"w":"helmet","ipa":"/ˈhel.mət/","vn_read":"HEL-mơ-t","pos":"n","vn":"mũ bảo hộ","col":"wear a helmet","ex":"All the workers are wearing a helmet.","wk":10},{"n":393,"w":"apron","ipa":"/ˈeɪ.prən/","vn_read":"ÊY-prơ-n","pos":"n","vn":"tạp dề","col":"wear an apron","ex":"The waiter is wearing an apron.","wk":10},{"n":394,"w":"backpack","ipa":"/ˈbæk.pæk/","vn_read":"BẮC-pắ-k","pos":"n","vn":"ba lô","col":"carry a backpack","ex":"A woman is carrying a backpack.","wk":10},{"n":395,"w":"currently","ipa":"/ˈkʌr.ənt.li/","vn_read":"CÂ-rơnt-li","pos":"adv","vn":"hiện tại, hiện giờ","col":"currently closed","ex":"The elevator is currently closed.","wk":10},{"n":396,"w":"moment","ipa":"/ˈməʊ.mənt/","vn_read":"MÔU-mơ-nt","pos":"n","vn":"lúc, khoảnh khắc","col":"at the moment","ex":"She is busy at the moment.","wk":10},{"n":397,"w":"progress","ipa":"/ˈprəʊ.ɡres/","vn_read":"PRÔU-gres","pos":"n","vn":"tiến độ; sự tiến bộ","col":"in progress","ex":"The meeting is in progress.","wk":10},{"n":398,"w":"process","ipa":"/ˈprəʊ.ses/","vn_read":"PRÔU-ses","pos":"n","vn":"quy trình","col":"the check-in process","ex":"The check-in process takes five minutes.","wk":10},{"n":399,"w":"activity","ipa":"/ækˈtɪv.ə.ti/","vn_read":"ắc-TI-vơ-ti","pos":"n","vn":"hoạt động","col":"a team activity","ex":"The team activity starts at nine o'clock.","wk":10},{"n":400,"w":"movement","ipa":"/ˈmuːv.mənt/","vn_read":"MU-vơ-mơ-nt","pos":"n","vn":"sự chuyển động, cử động","col":"a lot of movement","ex":"There is a lot of movement in this photo.","wk":10},{"n":401,"w":"situation","ipa":"/ˌsɪtʃ.uˈeɪ.ʃən/","vn_read":"si-chu-ÊY-shơ-n","pos":"n","vn":"tình huống, tình hình","col":"the traffic situation","ex":"The traffic situation is serious today.","wk":10},{"n":402,"w":"condition","ipa":"/kənˈdɪʃ.ən/","vn_read":"cơn-ĐI-shơ-n","pos":"n","vn":"tình trạng; điều kiện","col":"in good condition","ex":"This machine is in good condition. *(good = tốt)*","wk":10},{"n":403,"w":"buy","ipa":"/baɪ/","vn_read":"bai","pos":"v","vn":"mua","col":"buy a ticket","ex":"I buy my lunch at the restaurant near the station.","wk":11},{"n":404,"w":"sell","ipa":"/sel/","vn_read":"se-l","pos":"v","vn":"bán","col":"sell something to somebody","ex":"This store sells office supplies to small companies.","wk":11},{"n":405,"w":"pay","ipa":"/peɪ/","vn_read":"pêy","pos":"v","vn":"trả tiền","col":"pay for something","ex":"Mr. Kim always pays for his coffee in cash.","wk":11},{"n":406,"w":"spend","ipa":"/spend/","vn_read":"spen-d","pos":"v","vn":"tiêu (tiền); dành (thời gian)","col":"spend money on something","ex":"Our department spends a lot of money on new computers.","wk":11},{"n":407,"w":"save","ipa":"/seɪv/","vn_read":"sêy-v","pos":"v","vn":"tiết kiệm; để dành","col":"save money · save time","ex":"The new printer saves a lot of time.","wk":11},{"n":408,"w":"earn","ipa":"/ɜːn/","vn_read":"ơ-n","pos":"v","vn":"kiếm được (tiền do đi làm)","col":"earn a salary","ex":"An experienced engineer earns a good salary.","wk":11},{"n":409,"w":"hire","ipa":"/ˈhaɪər/","vn_read":"HAI-ơ","pos":"v","vn":"thuê, tuyển (người)","col":"hire a new employee","ex":"Our company hires ten new employees every year.","wk":11},{"n":410,"w":"fire","ipa":"/ˈfaɪər/","vn_read":"FAI-ơ","pos":"v","vn":"sa thải","col":"fire an employee","ex":"A good manager never fires a hard-working employee.","wk":11},{"n":411,"w":"reply","ipa":"/rɪˈplaɪ/","vn_read":"ri-PLAI","pos":"v, n","vn":"trả lời (thư, email)","col":"reply to an email","ex":"Please reply to this email before Friday.","wk":11},{"n":412,"w":"forward","ipa":"/ˈfɔː.wəd/","vn_read":"FO-uơd","pos":"v","vn":"chuyển tiếp","col":"forward an email to somebody","ex":"I forward every order to the sales team.","wk":11},{"n":413,"w":"attach","ipa":"/əˈtætʃ/","vn_read":"ơ-TẮch","pos":"v","vn":"đính kèm","col":"attach a file to an email","ex":"Please attach the report to your email.","wk":11},{"n":414,"w":"subject","ipa":"/ˈsʌb.dʒekt/","vn_read":"SÂB-jekt","pos":"n","vn":"tiêu đề (email); chủ đề","col":"the subject line","ex":"The subject of this email is \"New price list\".","wk":11},{"n":415,"w":"message","ipa":"/ˈmes.ɪdʒ/","vn_read":"ME-sij","pos":"n","vn":"tin nhắn; lời nhắn","col":"leave a message","ex":"The receptionist leaves a message on my desk.","wk":11},{"n":416,"w":"contact","ipa":"/ˈkɒn.tækt/","vn_read":"CON-tắct","pos":"v, n","vn":"liên hệ; người liên hệ","col":"contact somebody · a contact person","ex":"For more information, please contact the front desk.","wk":11},{"n":417,"w":"inform","ipa":"/ɪnˈfɔːm/","vn_read":"in-FOm","pos":"v","vn":"báo cho ai biết *(trang trọng)*","col":"inform somebody about something","ex":"We inform all staff about the new schedule.","wk":11},{"n":418,"w":"notify","ipa":"/ˈnəʊ.tɪ.faɪ/","vn_read":"NÔU-ti-fai","pos":"v","vn":"thông báo *(trang trọng)*","col":"notify somebody","ex":"The hotel notifies every guest by email.","wk":11},{"n":419,"w":"interview","ipa":"/ˈɪn.tə.vjuː/","vn_read":"IN-tơ-viu","pos":"n, v","vn":"cuộc phỏng vấn; phỏng vấn","col":"a job interview","ex":"Her job interview was on Monday morning.","wk":11},{"n":420,"w":"application","ipa":"/ˌæp.lɪˈkeɪ.ʃən/","vn_read":"áp-li-CÊY-shơn","pos":"n","vn":"đơn ứng tuyển; hồ sơ","col":"send an application","ex":"He sent his application last week.","wk":11},{"n":421,"w":"resume","ipa":"/ˈrez.ju.meɪ/","vn_read":"RE-zu-mêy","pos":"n","vn":"bản lý lịch, CV","col":"attach a resume","ex":"Please attach your resume to the email.","wk":11},{"n":422,"w":"candidate","ipa":"/ˈkæn.dɪ.dət/","vn_read":"CEN-đi-đơt","pos":"n","vn":"ứng viên","col":"a strong candidate","ex":"Four candidates were at the office on Friday.","wk":11},{"n":423,"w":"promotion","ipa":"/prəˈməʊ.ʃən/","vn_read":"prơ-MÔU-shơn","pos":"n","vn":"sự thăng chức","col":"get a promotion","ex":"Ms. Chen is now the director. Her promotion was in May.","wk":11},{"n":424,"w":"transfer","ipa":"/ˈtræns.fɜːr/ *(n)* · /trænsˈfɜːr/ *(v)*","vn_read":"TRAN-sfơ · tran-SFƠ","pos":"n, v","vn":"sự chuyển nơi làm việc; chuyển","col":"a transfer to another branch","ex":"His transfer to the Hanoi branch was last month.","wk":11},{"n":425,"w":"resignation","ipa":"/ˌrez.ɪɡˈneɪ.ʃən/","vn_read":"re-zig-NÊY-shơn","pos":"n","vn":"đơn xin thôi việc; sự từ chức","col":"a letter of resignation","ex":"The manager was not happy about Mr. Kim's resignation.","wk":11},{"n":426,"w":"retirement","ipa":"/rɪˈtaɪə.mənt/","vn_read":"ri-TAI-ơ-mơnt","pos":"n","vn":"sự nghỉ hưu","col":"the retirement age","ex":"Mr. Nam is 60 years old. His retirement is in June.","wk":11},{"n":427,"w":"yesterday","ipa":"/ˈjes.tə.deɪ/","vn_read":"IES-tơ-đêy","pos":"adv, n","vn":"hôm qua","col":"yesterday morning","ex":"The package arrived yesterday.","wk":11},{"n":428,"w":"ago","ipa":"/əˈɡəʊ/","vn_read":"ơ-GÔU","pos":"adv","vn":"cách đây *(đứng SAU khoảng thời gian)*","col":"two days ago","ex":"She called me two days ago.","wk":11},{"n":429,"w":"last night","ipa":"/ˌlɑːst ˈnaɪt/","vn_read":"last nait","pos":"adv","vn":"tối qua","col":"work late last night","ex":"I worked late last night.","wk":11},{"n":430,"w":"recently","ipa":"/ˈriː.sənt.li/","vn_read":"RI-sơnt-li","pos":"adv","vn":"gần đây","col":"recently opened","ex":"Our company recently opened a new branch.","wk":11},{"n":431,"w":"already","ipa":"/ɔːlˈred.i/","vn_read":"ol-RE-đi","pos":"adv","vn":"đã… rồi","col":"already sent","ex":"I already sent the email.","wk":11},{"n":432,"w":"just","ipa":"/dʒʌst/","vn_read":"jâst","pos":"adv","vn":"vừa mới","col":"just left","ex":"He just left the office.","wk":11},{"n":433,"w":"finally","ipa":"/ˈfaɪ.nəl.i/","vn_read":"FAI-nơ-li","pos":"adv","vn":"cuối cùng thì","col":"finally arrived","ex":"The bus finally arrived at 9:30.","wk":11},{"n":434,"w":"then","ipa":"/ðen/","vn_read":"đen","pos":"adv","vn":"sau đó; lúc đó","col":"and then","ex":"First we checked the report. Then we sent it.","wk":11},{"n":435,"w":"go → went","ipa":"/ɡəʊ/ → /went/","vn_read":"gôu → uent","pos":"v","vn":"đi","col":"go to a meeting","ex":"I went to the bank yesterday.","wk":11},{"n":436,"w":"come → came","ipa":"/kʌm/ → /keɪm/","vn_read":"câm → kêym","pos":"v","vn":"đến","col":"come to the office","ex":"The client came here at ten o'clock.","wk":11},{"n":437,"w":"get → got","ipa":"/ɡet/ → /ɡɒt/","vn_read":"get → got","pos":"v","vn":"nhận được; lấy","col":"get an email","ex":"She got my email last night.","wk":11},{"n":438,"w":"make → made","ipa":"/meɪk/ → /meɪd/","vn_read":"mêyk → mêyd","pos":"v","vn":"làm ra, tạo ra","col":"make a copy","ex":"He made two copies of the contract.","wk":11},{"n":439,"w":"say → said","ipa":"/seɪ/ → /sed/","vn_read":"sêy → sed","pos":"v","vn":"nói (điều gì)","col":"say yes · say no","ex":"The manager said yes.","wk":11},{"n":440,"w":"see → saw","ipa":"/siː/ → /sɔː/","vn_read":"si → so","pos":"v","vn":"nhìn thấy; gặp","col":"see a client","ex":"I saw Mr. Park in the lobby.","wk":11},{"n":441,"w":"give → gave","ipa":"/ɡɪv/ → /ɡeɪv/","vn_read":"giv → gêyv","pos":"v","vn":"đưa, trao","col":"give somebody something","ex":"She gave me the report.","wk":11},{"n":442,"w":"find → found","ipa":"/faɪnd/ → /faʊnd/","vn_read":"faind → faond","pos":"v","vn":"tìm thấy","col":"find a file","ex":"We found the file in the green folder.","wk":11},{"n":443,"w":"and","ipa":"/ænd/","vn_read":"ăn-d","pos":"conj","vn":"và","col":"A and B","ex":"The report and the contract are on my desk.","wk":12},{"n":444,"w":"but","ipa":"/bʌt/","vn_read":"bâ-t","pos":"conj","vn":"nhưng","col":"…, but …","ex":"The hotel is old, but the rooms are comfortable.","wk":12},{"n":445,"w":"or","ipa":"/ɔːr/","vn_read":"o","pos":"conj","vn":"hoặc","col":"A or B","ex":"You can pay by card or in cash.","wk":12},{"n":446,"w":"because","ipa":"/bɪˈkɒz/","vn_read":"bi-CỎ-z","pos":"conj","vn":"bởi vì","col":"because + mệnh đề","ex":"He is late because there is a lot of traffic.","wk":12},{"n":447,"w":"so","ipa":"/səʊ/","vn_read":"sô-u","pos":"conj","vn":"vì vậy, nên","col":"…, so …","ex":"There is a lot of traffic, so he is late.","wk":12},{"n":448,"w":"however","ipa":"/haʊˈev.ər/","vn_read":"hau-E-vơ","pos":"adv","vn":"tuy nhiên","col":"However, …","ex":"The price is high. However, the service is good.","wk":12},{"n":449,"w":"therefore","ipa":"/ˈðeə.fɔːr/","vn_read":"ĐE-fo","pos":"adv","vn":"do đó","col":"Therefore, …","ex":"Room 401 is closed. Therefore, we use Room 405.","wk":12},{"n":450,"w":"although","ipa":"/ɔːlˈðəʊ/","vn_read":"ol-ĐÔ-u","pos":"conj","vn":"mặc dù","col":"Although + mệnh đề","ex":"Although the price is high, many customers buy it.","wk":12},{"n":451,"w":"also","ipa":"/ˈɔːl.səʊ/","vn_read":"OL-sô-u","pos":"adv","vn":"cũng, ngoài ra","col":"S + also + V","ex":"The store sells coffee. It also sells tea.","wk":12},{"n":452,"w":"in addition","ipa":"/ɪn əˈdɪʃ.ən/","vn_read":"in ơ-ĐI-shơn","pos":"phrase","vn":"thêm vào đó","col":"In addition, …","ex":"The price is cheap. In addition, delivery is free.","wk":12},{"n":453,"w":"for example","ipa":"/fər ɪɡˈzɑːm.pəl/","vn_read":"fơ ig-ZAM-pơl","pos":"phrase","vn":"ví dụ","col":"For example, …","ex":"We sell office supplies. For example, we sell pens and paper.","wk":12},{"n":454,"w":"such as","ipa":"/sʌtʃ æz/","vn_read":"sất-ch ăz","pos":"phrase","vn":"chẳng hạn như","col":"N such as N","ex":"We sell office supplies such as pens and paper.","wk":12},{"n":455,"w":"instead","ipa":"/ɪnˈsted/","vn_read":"in-STE-d","pos":"adv","vn":"thay vào đó","col":"Instead, …","ex":"The meeting is not on Monday. Instead, it is on Tuesday.","wk":12},{"n":456,"w":"otherwise","ipa":"/ˈʌð.ə.waɪz/","vn_read":"Â-đơ-oai-z","pos":"adv","vn":"nếu không thì","col":"Otherwise, …","ex":"Please pay before Friday. Otherwise, we send a second invoice.","wk":12},{"n":457,"w":"meanwhile","ipa":"/ˈmiːn.waɪl/","vn_read":"MIN-oai-l","pos":"adv","vn":"trong lúc đó","col":"Meanwhile, …","ex":"Mr. Nam checks the files. Meanwhile, Ms. Ha calls the client.","wk":12},{"n":458,"w":"in fact","ipa":"/ɪn fækt/","vn_read":"in fắc-t","pos":"phrase","vn":"thực ra","col":"In fact, …","ex":"The hotel is not expensive. In fact, it is very cheap.","wk":12},{"n":459,"w":"announce","ipa":"/əˈnaʊns/","vn_read":"ơ-NAO-ns","pos":"v","vn":"thông báo","col":"announce a change","ex":"The manager announced a new schedule yesterday.","wk":12},{"n":460,"w":"provide","ipa":"/prəˈvaɪd/","vn_read":"prơ-VAI-d","pos":"v","vn":"cung cấp","col":"provide information","ex":"The front desk provides information for all guests.","wk":12},{"n":461,"w":"offer","ipa":"/ˈɒf.ər/","vn_read":"Ô-fơ","pos":"v, n","vn":"mời chào, đưa ra; lời đề nghị","col":"offer a discount","ex":"The store offers a discount on all items today.","wk":12},{"n":462,"w":"request","ipa":"/rɪˈkwest/","vn_read":"ri-QUES-t","pos":"v, n","vn":"yêu cầu (lịch sự)","col":"request a receipt","ex":"Many guests request a room with a view.","wk":12},{"n":463,"w":"accept","ipa":"/əkˈsept/","vn_read":"ơc-SEP-t","pos":"v","vn":"chấp nhận, nhận","col":"accept cash","ex":"This store accepts cash and cards.","wk":12},{"n":464,"w":"refuse","ipa":"/rɪˈfjuːz/","vn_read":"ri-FIU-z","pos":"v","vn":"từ chối","col":"refuse a request","ex":"The manager refused my request for a transfer.","wk":12},{"n":465,"w":"agree","ipa":"/əˈɡriː/","vn_read":"ơ-GRI","pos":"v","vn":"đồng ý","col":"agree with someone","ex":"All the members agree with this schedule.","wk":12},{"n":466,"w":"decide","ipa":"/dɪˈsaɪd/","vn_read":"đi-SAI-d","pos":"v","vn":"quyết định","col":"decide on a date","ex":"The director decided on a new date for the seminar.","wk":12},{"n":467,"w":"policy","ipa":"/ˈpɒl.ə.si/","vn_read":"PÔ-lơ-si","pos":"n","vn":"chính sách, quy định công ty","col":"a company policy","ex":"The company policy is on the notice board.","wk":12},{"n":468,"w":"procedure","ipa":"/prəˈsiː.dʒər/","vn_read":"prơ-SI-jơ","pos":"n","vn":"quy trình, thủ tục","col":"follow the procedure","ex":"Please follow the procedure for all new orders.","wk":12},{"n":469,"w":"regulation","ipa":"/ˌreɡ.jəˈleɪ.ʃən/","vn_read":"re-ghiu-LÊY-shơn","pos":"n","vn":"quy định (luật, an toàn)","col":"safety regulations","ex":"The safety regulations are on the wall.","wk":12},{"n":470,"w":"benefit","ipa":"/ˈben.ɪ.fɪt/","vn_read":"BE-nơ-fit","pos":"n","vn":"phúc lợi; lợi ích","col":"employee benefits","ex":"Free training is a benefit for all employees.","wk":12},{"n":471,"w":"budget","ipa":"/ˈbʌdʒ.ɪt/","vn_read":"BÂ-jit","pos":"n","vn":"ngân sách","col":"the training budget","ex":"The training budget is not large this year.","wk":12},{"n":472,"w":"expense","ipa":"/ɪkˈspens/","vn_read":"ic-SPEN-s","pos":"n","vn":"chi phí","col":"travel expenses","ex":"The company pays all travel expenses.","wk":12},{"n":473,"w":"invoice","ipa":"/ˈɪn.vɔɪs/","vn_read":"IN-voi-s","pos":"n","vn":"hoá đơn (đòi tiền)","col":"send an invoice","ex":"Please send the invoice to the client today.","wk":12},{"n":474,"w":"payment","ipa":"/ˈpeɪ.mənt/","vn_read":"PÊY-mơnt","pos":"n","vn":"khoản thanh toán","col":"make a payment","ex":"The payment arrives in three days.","wk":12},{"n":475,"w":"important","ipa":"/ɪmˈpɔː.tənt/","vn_read":"im-PO-tơnt","pos":"adj","vn":"quan trọng","col":"an important client","ex":"This is an important message for all staff.","wk":12},{"n":476,"w":"useful","ipa":"/ˈjuːs.fəl/","vn_read":"IU-s-fơl","pos":"adj","vn":"hữu ích","col":"a useful tool","ex":"A city map is very useful for a new guest.","wk":12},{"n":477,"w":"difficult","ipa":"/ˈdɪf.ɪ.kəlt/","vn_read":"ĐI-fi-cơlt","pos":"adj","vn":"khó","col":"a difficult task","ex":"This task is difficult for a new employee.","wk":12},{"n":478,"w":"similar","ipa":"/ˈsɪm.ɪ.lər/","vn_read":"SI-mi-lơ","pos":"adj","vn":"giống, tương tự","col":"similar to","ex":"Our two branches follow similar procedures.","wk":12},{"n":479,"w":"different","ipa":"/ˈdɪf.ər.ənt/","vn_read":"ĐI-fơ-rơnt","pos":"adj","vn":"khác","col":"different from","ex":"The new policy is different from the old policy.","wk":12},{"n":480,"w":"correct","ipa":"/kəˈrekt/","vn_read":"cơ-REC-t","pos":"adj","vn":"đúng, chính xác","col":"the correct address","ex":"Please write the correct address on the invoice.","wk":12},{"n":481,"w":"complete","ipa":"/kəmˈpliːt/","vn_read":"cơm-PLI-t","pos":"adj","vn":"đầy đủ, hoàn chỉnh","col":"a complete report","ex":"The manager needs a complete report before Friday.","wk":12},{"n":482,"w":"recent","ipa":"/ˈriː.sənt/","vn_read":"RI-sơnt","pos":"adj","vn":"gần đây","col":"a recent order","ex":"The recent order from ABC Company is very large.","wk":12}];
+
+/* tabs */
+var tabs = [].slice.call(document.querySelectorAll('nav.tabs button'));
+tabs.forEach(function(t){
+  t.addEventListener('click', function(){
+    tabs.forEach(function(x){
+      x.setAttribute('aria-selected', String(x === t));
+      document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on', x === t);
+    });
+    window.scrollTo(0, 0);
+  });
+});
+
+/* vocab */
+var listEl = document.getElementById('words');
+var qEl = document.getElementById('q');
+var countEl = document.getElementById('count');
+var chips = [].slice.call(document.querySelectorAll('.chip[data-wk]'));
+var flashBtn = document.getElementById('flash');
+var wk = 0;
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function norm(s){ return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d'); }
+
+function render(){
+  var q = norm(qEl.value.trim());
+  var out = VOCAB.filter(function(v){
+    if (wk && v.wk !== wk) return false;
+    if (!q) return true;
+    return norm(v.w).indexOf(q) > -1 || norm(v.vn).indexOf(q) > -1 ||
+           norm(v.col).indexOf(q) > -1 || v.ipa.toLowerCase().indexOf(q) > -1;
+  });
+  countEl.textContent = out.length + ' từ';
+  if (!out.length){ listEl.innerHTML = '<li class="empty">Không tìm thấy từ nào.</li>'; return; }
+  listEl.innerHTML = out.map(function(v){
+    return '<li class="w" tabindex="0"><span class="wn">' + v.n + '</span><div>' +
+      '<div class="wh"><b>' + esc(v.w) + '</b><span class="ipa">' + esc(v.ipa) + '</span>' +
+      '<span class="pos">' + esc(v.pos) + '</span></div>' +
+      '<p class="wvn">' + esc(v.vn) + '</p>' +
+      '<p class="wc">' + esc(v.col) + '</p>' +
+      '<p class="wex">' + esc(v.ex) + '</p></div></li>';
+  }).join('');
+}
+
+qEl.addEventListener('input', render);
+chips.forEach(function(c){
+  c.addEventListener('click', function(){
+    wk = parseInt(c.getAttribute('data-wk'), 10);
+    chips.forEach(function(x){ x.setAttribute('aria-pressed', String(x === c)); });
+    render();
+  });
+});
+flashBtn.addEventListener('click', function(){
+  var on = flashBtn.getAttribute('aria-pressed') !== 'true';
+  flashBtn.setAttribute('aria-pressed', String(on));
+  listEl.classList.toggle('hide', on);
+  [].slice.call(listEl.querySelectorAll('.w.show')).forEach(function(e){ e.classList.remove('show'); });
+});
+listEl.addEventListener('click', function(e){
+  if (!listEl.classList.contains('hide')) return;
+  var li = e.target.closest('.w'); if (li) li.classList.toggle('show');
+});
+listEl.addEventListener('keydown', function(e){
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  if (!listEl.classList.contains('hide')) return;
+  var li = e.target.closest('.w'); if (li){ e.preventDefault(); li.classList.toggle('show'); }
+});
+render();
+
+/* copy report */
+document.getElementById('copy').addEventListener('click', function(){
+  var txt = document.getElementById('rep').textContent;
+  var done = function(){
+    var m = document.getElementById('copied');
+    m.textContent = 'Đã chép';
+    setTimeout(function(){ m.textContent = ''; }, 2200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(done, fallback);
+  } else { fallback(); }
+  function fallback(){
+    var r = document.createRange();
+    r.selectNodeContents(document.getElementById('rep'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    document.getElementById('copied').textContent = 'Đã bôi đen — bấm giữ để Copy';
+    setTimeout(function(){ document.getElementById('copied').textContent = ''; }, 3500);
+  }
+});
+</script>
+
+<a class="backpill" href="index.html" style="position:fixed;left:12px;bottom:12px;z-index:60;background:#fff;color:#0F5F58;border:1px solid #B9C4BE;border-radius:20px;padding:7px 14px;font-size:13px;text-decoration:none;box-shadow:0 6px 18px -10px rgba(0,0,0,.5);font-family:'Be Vietnam Pro',system-ui,sans-serif">← Về trang chủ</a>
+</body>
+</html>

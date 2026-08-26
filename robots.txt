@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /tuan/*-dap-an.html
+Disallow: /pdf/*_DAP-AN.pdf
+Allow: /
+
+Sitemap: /sitemap.txt

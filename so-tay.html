@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sổ tay TOEIC 0→600</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F3F6F3;
+  --surface:#FFFFFF;
+  --surface-2:#EAEFEB;
+  --ink:#1A211E;
+  --muted:#5C6B65;
+  --faint:#8B9993;
+  --rule:#D4DCD7;
+  --rule-strong:#B9C4BE;
+  --accent:#1F7A72;
+  --accent-ink:#0F5F58;
+  --accent-soft:#DBEBE8;
+  --good:#2F7355;
+  --warn:#8C6210;
+  --crit:#A2382B;
+  --good-bg:#DEEDE5;
+  --warn-bg:#F5EBD6;
+  --crit-bg:#F5DFDB;
+  --shadow:0 1px 2px rgba(26,33,30,.05), 0 8px 24px -18px rgba(26,33,30,.35);
+  --sans:"Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --slab:"Bitter", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121715;
+    --surface:#1A211E;
+    --surface-2:#212a27;
+    --ink:#E5EBE7;
+    --muted:#9AA8A2;
+    --faint:#77857F;
+    --rule:#2B3733;
+    --rule-strong:#3C4A45;
+    --accent:#63C6BA;
+    --accent-ink:#8FDCD2;
+    --accent-soft:#1C332F;
+    --good:#61B187;
+    --warn:#D2A244;
+    --crit:#E27C69;
+    --good-bg:#182E24;
+    --warn-bg:#31280F;
+    --crit-bg:#33201C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121715;
+  --surface:#1A211E;
+  --surface-2:#212a27;
+  --ink:#E5EBE7;
+  --muted:#9AA8A2;
+  --faint:#77857F;
+  --rule:#2B3733;
+  --rule-strong:#3C4A45;
+  --accent:#63C6BA;
+  --accent-ink:#8FDCD2;
+  --accent-soft:#1C332F;
+  --good:#61B187;
+  --warn:#D2A244;
+  --crit:#E27C69;
+  --good-bg:#182E24;
+  --warn-bg:#31280F;
+  --crit-bg:#33201C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent-ink);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px 96px;
+  display:grid;
+  grid-template-columns:200px minmax(0,1fr);
+  gap:56px;
+  align-items:start;
+}
+@media (max-width:1000px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:0}
+  .rail{display:none}
+}
+
+/* ---------- masthead ---------- */
+.masthead{grid-column:1/-1;padding:56px 0 32px;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule);min-width:20px}
+h1{
+  font-family:var(--slab);font-weight:700;font-size:clamp(30px,4.6vw,46px);
+  line-height:1.1;letter-spacing:-.015em;margin:0 0 12px;text-wrap:balance;
+}
+.dek{font-size:17px;color:var(--muted);max-width:62ch;margin:0 0 28px}
+
+.console{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.tile{background:var(--surface);padding:14px 16px}
+.tile dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+.tile dd{margin:0;font-family:var(--slab);font-weight:600;font-size:19px;line-height:1.25;font-variant-numeric:tabular-nums}
+.tile dd small{display:block;font-family:var(--sans);font-weight:400;font-size:12.5px;color:var(--muted);letter-spacing:0}
+
+/* ---------- rail ---------- */
+.rail{position:sticky;top:24px;padding-top:36px}
+.rail p{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 12px}
+.rail ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.rail a{
+  display:flex;gap:10px;padding:5px 8px;font-size:13.5px;text-decoration:none;color:var(--muted);
+  border-left:2px solid var(--rule);border-radius:0 3px 3px 0;transition:color .15s,border-color .15s,background .15s;
+}
+.rail a span{font-family:var(--mono);font-size:11px;color:var(--faint);padding-top:2px}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail a.on{color:var(--accent-ink);border-left-color:var(--accent);font-weight:500}
+.rail a.on span{color:var(--accent)}
+
+.toc-m{display:none;margin:22px 0 0;border:1px solid var(--rule);border-radius:4px;background:var(--surface)}
+@media (max-width:1000px){.toc-m{display:block}}
+.toc-m summary{cursor:pointer;padding:11px 14px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.toc-m ol{list-style:none;margin:0;padding:0 14px 14px;columns:2;column-gap:20px;font-size:13.5px}
+.toc-m li{break-inside:avoid;padding:2px 0}
+.toc-m a{color:var(--muted);text-decoration:none}
+
+/* ---------- sections ---------- */
+main{padding-top:36px;min-width:0}
+section{padding:34px 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0;padding-top:8px}
+.snum{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:7px}
+h2{font-family:var(--slab);font-weight:700;font-size:clamp(21px,2.5vw,27px);line-height:1.2;letter-spacing:-.01em;margin:0 0 6px;text-wrap:balance}
+h3{font-family:var(--slab);font-weight:600;font-size:16.5px;margin:30px 0 10px;letter-spacing:-.005em}
+.lede{color:var(--muted);margin:0 0 22px;max-width:66ch}
+p{max-width:68ch}
+strong{font-weight:600}
+
+/* ---------- tables ---------- */
+.scroller{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--surface);margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:500;background:var(--surface-2);white-space:nowrap;
+  position:sticky;top:0;
+}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--surface-2)}
+td.num,th.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.ipa{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.en{font-family:var(--mono);font-size:13px}
+caption{caption-side:bottom;text-align:left;padding:9px 14px;font-size:12.5px;color:var(--faint);border-top:1px solid var(--rule)}
+
+/* ---------- pills & chips ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:2px;white-space:nowrap;
+}
+.pill.now{background:var(--accent-soft);color:var(--accent-ink)}
+.pill.good{background:var(--good-bg);color:var(--good)}
+.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}
+.pill.off{background:var(--surface-2);color:var(--faint)}
+.pill.tierA{background:var(--crit-bg);color:var(--crit)}
+.pill.tierB{background:var(--warn-bg);color:var(--warn)}
+.pill.tierC{background:var(--surface-2);color:var(--faint)}
+
+/* ---------- OMR bubble meter ---------- */
+.bubbles{display:flex;gap:3px;flex-wrap:wrap;align-items:center}
+.bub{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--rule-strong);flex:none}
+.bub.fill{background:var(--accent);border-color:var(--accent)}
+.bub.part{background:linear-gradient(90deg,var(--accent) 50%,transparent 50%);border-color:var(--accent)}
+
+/* ---------- phase cards ---------- */
+.phases{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:18px 0}
+.phase{background:var(--surface);padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;align-items:start}
+.phase.live{background:var(--accent-soft)}
+.phase h4{margin:0;font-family:var(--slab);font-size:16px;font-weight:600;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.phase h4 em{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--accent);letter-spacing:.08em}
+.phase .goal{grid-column:1;margin:0;font-size:14px;color:var(--muted)}
+.phase .gate{grid-column:1;margin:0;font-size:13px}
+.phase .gate b{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:500;display:block}
+.phase aside{grid-column:2;grid-row:1/span 3;text-align:right;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.phase .when{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+@media (max-width:640px){
+  .phase{grid-template-columns:minmax(0,1fr)}
+  .phase aside{grid-column:1;grid-row:auto;text-align:left;align-items:flex-start;flex-direction:row;justify-content:space-between;width:100%}
+}
+
+/* ---------- session bar ---------- */
+.sessbar{display:flex;gap:2px;margin:18px 0 8px;height:44px;border-radius:3px;overflow:hidden;border:1px solid var(--rule)}
+.seg{background:var(--surface);display:flex;flex-direction:column;justify-content:center;padding:0 8px;min-width:0;border-right:1px solid var(--rule)}
+.seg:last-child{border-right:0}
+.seg b{font-family:var(--slab);font-size:13px;font-weight:600;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg span{font-family:var(--mono);font-size:10.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.seg.hi{background:var(--accent-soft)}
+.seg.hi b{color:var(--accent-ink)}
+
+/* ---------- two-col do/dont ---------- */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:18px 0}
+.col{border:1px solid var(--rule);border-radius:4px;background:var(--surface);padding:16px 18px}
+.col h4{margin:0 0 12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.col.yes h4{color:var(--good)}
+.col.no h4{color:var(--crit)}
+.col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14.2px}
+.col li{padding-left:18px;position:relative}
+.col.yes li::before{content:"✓";position:absolute;left:0;color:var(--good);font-weight:600}
+.col.no li::before{content:"×";position:absolute;left:0;color:var(--crit);font-weight:600;font-size:16px;line-height:1.35}
+
+/* ---------- topic grid ---------- */
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:18px 0}
+.topic{background:var(--surface);padding:9px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13.5px}
+.topic.started{background:var(--accent-soft)}
+.topic i{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.topic.started i{color:var(--accent-ink);font-weight:500}
+
+/* ---------- steps ---------- */
+.steps{counter-reset:s;list-style:none;margin:18px 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.steps li{counter-increment:s;padding-left:38px;position:relative;font-size:14.5px;max-width:66ch}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;
+  border:1.5px solid var(--accent);color:var(--accent-ink);font-family:var(--mono);font-size:12px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ---------- note ---------- */
+.note{border-left:2px solid var(--accent);background:var(--surface);padding:12px 16px;margin:18px 0;font-size:14.2px;border-radius:0 3px 3px 0}
+.note.alert{border-left-color:var(--crit)}
+.note b{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
+.note.alert b{color:var(--crit)}
+.note p{margin:0;max-width:none}
+
+pre{
+  font-family:var(--mono);font-size:12.5px;line-height:1.7;background:var(--surface);
+  border:1px solid var(--rule);border-radius:4px;padding:16px;overflow-x:auto;margin:18px 0;
+}
+
+/* ---------- checkbox ---------- */
+input[type=checkbox]{accent-color:var(--accent);width:15px;height:15px;cursor:pointer;margin:3px 0 0}
+
+/* ---------- commands ---------- */
+.cmd{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);color:var(--accent-ink);padding:1px 6px;border-radius:2px;white-space:nowrap}
+
+footer{grid-column:1/-1;margin-top:48px;padding-top:22px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--faint);font-family:var(--mono);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<style>
+.credit{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;margin:0 0 18px;font-size:14.5px;color:var(--muted)}
+.credit b{font-family:var(--slab);font-weight:600;font-size:16px;color:var(--ink)}
+.credit em{font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--accent-ink);background:var(--accent-soft);padding:2px 8px;border-radius:2px}
+
+.fillin{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:18px 0}
+.fillin div{background:var(--surface);padding:12px 14px 14px}
+.fillin dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+.fillin dd{margin:0;border-bottom:1px dashed var(--rule-strong);height:20px}
+.fillin dd.opts{border-bottom:0;height:auto;font-size:13px;color:var(--muted);line-height:1.9}
+.blank{color:var(--rule-strong);letter-spacing:.06em;user-select:none}
+.sig{display:flex;gap:36px;flex-wrap:wrap;margin:22px 0 0}
+.sig div{flex:1;min-width:200px}
+.sig dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin:0 0 22px}
+.sig dd{margin:0;border-top:1px dashed var(--rule-strong)}
+
+/* week rhythm strip */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:18px 0}
+.day{background:var(--surface);padding:12px 8px;text-align:center;min-height:104px;display:flex;flex-direction:column;gap:5px;justify-content:flex-start}
+.day b{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.day span{font-family:var(--slab);font-size:13.5px;font-weight:600;line-height:1.25}
+.day i{font-style:normal;font-size:11.5px;color:var(--muted);line-height:1.35}
+.day.zoom{background:var(--accent-soft)}
+.day.zoom span{color:var(--accent-ink)}
+.day.send{background:var(--surface-2)}
+@media (max-width:700px){
+  .week{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .day{min-height:0;text-align:left}
+}
+</style>
+
+  <header class="masthead">
+    <p class="eyebrow">Sổ tay học viên · Chương trình TOEIC 0→600+</p>
+    <h1>Sổ tay TOEIC 0&rarr;600</h1>
+    <p class="credit"><span>Mentor</span> <b>Thầy Đinh Văn Nam</b> <em>Mr. Lucero Dinh</em></p>
+    <p class="dek">Dành cho học viên <strong>mất gốc tự học tại nhà</strong>. Bạn tự học <strong>6 buổi/tuần</strong> theo packet viết sẵn; mentor gặp bạn <strong>một buổi Zoom 60 phút mỗi tuần</strong> để chữa lỗi, kiểm tra và giao tuần mới. Sổ tay này là nơi bạn ghi lại toàn bộ 12 tháng — mở trước mỗi buổi học để biết hôm nay đang ở đâu và đang yếu chỗ nào.</p>
+
+    <dl class="console">
+      <div class="tile"><dt>Tự học</dt><dd>6 buổi<small>45 phút/ngày, theo packet</small></dd></div>
+      <div class="tile"><dt>Gặp mentor</dt><dd>60 phút<small>1 buổi Zoom mỗi tuần</small></dd></div>
+      <div class="tile"><dt>Thời gian</dt><dd>12 tháng<small>5 phase · 6 milestone</small></dd></div>
+      <div class="tile"><dt>Đích đến</dt><dd>600+<small>ổn định 620–680 khi mock</small></dd></div>
+    </dl>
+
+    <details class="toc-m">
+      <summary>Mục lục</summary>
+      <ol>
+        <li><a href="#s0">§0 Dành cho ai</a></li>
+        <li><a href="#s1">§1 Nhịp một tuần</a></li>
+        <li><a href="#s2">§2 Dashboard</a></li>
+        <li><a href="#s3">§3 Năm Phase</a></li>
+        <li><a href="#s4">§4 Checklist 12 tuần</a></li>
+        <li><a href="#s5">§5 Milestones</a></li>
+        <li><a href="#s6">§6 Buổi học 45 phút</a></li>
+        <li><a href="#s7">§7 Giao kèo hai chiều</a></li>
+        <li><a href="#s8">§8 Hỏi giữa tuần</a></li>
+        <li><a href="#s9">§9 Nhật ký</a></li>
+        <li><a href="#s10">§10 Sổ từ vựng</a></li>
+        <li><a href="#s11">§11 Error log</a></li>
+        <li><a href="#s12">§12 Spaced repetition</a></li>
+        <li><a href="#s13">§13 Weekly report</a></li>
+        <li><a href="#s14">§14 Cấu trúc đề</a></li>
+        <li><a href="#s15">§15 Chiến lược 80/20</a></li>
+        <li><a href="#s16">§16 Luyện nghe</a></li>
+        <li><a href="#s17">§17 Tốc độ đọc</a></li>
+        <li><a href="#s18">§18 Kỷ luật tự học</a></li>
+        <li><a href="#s19">§19 Cam kết</a></li>
+      </ol>
+    </details>
+  </header>
+
+  <nav class="rail" aria-label="Mục lục">
+    <p>Mục lục</p>
+    <ol>
+      <li><a href="#s0"><span>00</span>Dành cho ai</a></li>
+      <li><a href="#s1"><span>01</span>Nhịp một tuần</a></li>
+      <li><a href="#s2"><span>02</span>Dashboard</a></li>
+      <li><a href="#s3"><span>03</span>Năm Phase</a></li>
+      <li><a href="#s4"><span>04</span>Checklist 12 tuần</a></li>
+      <li><a href="#s5"><span>05</span>Milestones</a></li>
+      <li><a href="#s6"><span>06</span>Buổi học 45′</a></li>
+      <li><a href="#s7"><span>07</span>Giao kèo hai chiều</a></li>
+      <li><a href="#s8"><span>08</span>Hỏi giữa tuần</a></li>
+      <li><a href="#s9"><span>09</span>Nhật ký</a></li>
+      <li><a href="#s10"><span>10</span>Sổ từ vựng</a></li>
+      <li><a href="#s11"><span>11</span>Error log</a></li>
+      <li><a href="#s12"><span>12</span>Spaced repetition</a></li>
+      <li><a href="#s13"><span>13</span>Weekly report</a></li>
+      <li><a href="#s14"><span>14</span>Cấu trúc đề</a></li>
+      <li><a href="#s15"><span>15</span>Chiến lược 80/20</a></li>
+      <li><a href="#s16"><span>16</span>Luyện nghe</a></li>
+      <li><a href="#s17"><span>17</span>Tốc độ đọc</a></li>
+      <li><a href="#s18"><span>18</span>Kỷ luật tự học</a></li>
+      <li><a href="#s19"><span>19</span>Cam kết</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- 0 -->
+    <section id="s0">
+      <span class="snum">§00 — Bắt đầu</span>
+      <h2>Sổ tay này dành cho ai</h2>
+      <p class="lede">Mô hình này đòi hỏi bạn tự ngồi vào bàn sáu ngày một tuần. Đọc hai cột dưới trước khi cam kết.</p>
+
+      <div class="cols">
+        <div class="col yes">
+          <h4>Đúng đối tượng</h4>
+          <ul>
+            <li>Bạn <strong>mất gốc hoặc gần mất gốc</strong> — chưa chắc về <span class="en">to be</span>, đại từ, số ít/số nhiều.</li>
+            <li>Bạn <strong>học ở nhà, một mình</strong>, không lên lớp mỗi ngày.</li>
+            <li>Bạn chấp nhận mentor <strong>không giảng bài hằng ngày</strong> — thầy chữa lỗi và định hướng mỗi tuần một lần.</li>
+            <li>Bạn cần một hệ thống <strong>đo được</strong>, không phải danh sách “nên học gì”.</li>
+          </ul>
+        </div>
+        <div class="col no">
+          <h4>Chưa phải lúc dùng</h4>
+          <ul>
+            <li>Bạn cần thi trong 4–6 tuần — lộ trình này dài 12 tháng.</li>
+            <li>Bạn đã ở mức 500+ và chỉ cần luyện đề.</li>
+            <li>Bạn muốn có người kèm từng buổi và chữa bài theo giờ.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Thông tin học viên — điền trước buổi Zoom đầu tiên</h3>
+      <dl class="fillin">
+        <div><dt>Họ tên học viên</dt><dd></dd></div>
+        <div><dt>Ngày bắt đầu (Ngày 1)</dt><dd></dd></div>
+        <div><dt>Trình độ khởi điểm</dt><dd class="opts">☐ Level 0 Absolute Beginner<br>☐ Level 1 Pre-A1 ☐ Level 2 A1 ☐ Level 3 A2</dd></div>
+        <div><dt>Thời lượng cam kết</dt><dd></dd></div>
+        <div><dt>Khung giờ học cố định</dt><dd></dd></div>
+        <div><dt>Ngày thi dự kiến</dt><dd></dd></div>
+        <div><dt>Điểm mục tiêu (tối thiểu 600)</dt><dd></dd></div>
+        <div><dt>Điều kiện luyện nghe</dt><dd class="opts">☐ Tai nghe + YouTube<br>☐ Hạn chế ☐ Chủ yếu học bằng chữ</dd></div>
+      </dl>
+      <p>Chụp lại phần này gửi mentor trước buổi Zoom đầu tiên. Thầy cần đúng tám dòng trên để chọn điểm xuất phát cho bạn.</p>
+
+      <h3>Bộ tài liệu bạn nhận được</h3>
+      <p>Toàn bộ <strong>Phase 1 (Tuần 1–12)</strong> đã soạn xong: 12 packet, 12 file đáp án, 2 bài milestone. Bản <span class="en">.md</span> để đọc trên máy, bản <strong>PDF</strong> trong thư mục <span class="en">PDF\</span> để in.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>File</th><th>Vai trò</th><th>Ai giữ</th></tr></thead>
+          <tbody>
+            <tr><td class="en">00_ROADMAP.md</td><td>Bản đồ tổng 12 tháng</td><td>Mentor phát</td></tr>
+            <tr><td class="en">implementation-notes.md</td><td><strong>Sổ tay này</strong> — bạn ghi chép suốt 12 tháng</td><td><strong>Bạn giữ và điền</strong></td></tr>
+            <tr><td class="en">implementation-notes.html</td><td>Bản xem nhanh, mở bằng trình duyệt</td><td>Mentor phát</td></tr>
+            <tr><td class="en">app.html</td><td><strong>Sổ tra từ cho điện thoại</strong> — mục <strong>Tra từ</strong> trên trang lớp, 482 từ, có chế độ che nghĩa</td><td>Bạn mở hằng ngày</td></tr>
+            <tr><td class="en">30_TEST-XEP-LOP.md</td><td>Test xếp lớp 30 câu — làm <strong>một lần</strong> trước khi bắt đầu</td><td>Mentor chấm</td></tr>
+            <tr><td class="en">21–28 · 42–49 · 50–57</td><td><strong>Packet Tuần 1–12 + đáp án</strong> — mỗi tuần 6 buổi</td><td>Mentor phát <strong>từng tuần một</strong></td></tr>
+            <tr><td class="en">40 / 41</td><td><strong>Milestone 1</strong> (cuối Tuần 4) — 40 câu · 30 phút</td><td>41 chỉ mentor</td></tr>
+            <tr><td class="en">58 / 59</td><td><strong>Milestone 2 — A1</strong> (cuối Tuần 12) — 60 câu · 45 phút</td><td>59 chỉ mentor</td></tr>
+            <tr><td class="en">10_MENTOR-PLAYBOOK · 32_ZOOM-00 · 33_BANG-THEO-DOI-LOP.xlsx</td><td>Tài liệu vận hành nội bộ</td><td>Bạn không cần các file này</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Packet được phát <strong>từng tuần</strong>, không phát trước cả 12 tuần — học vượt khi tuần trước chưa qua Zoom là cách nhanh nhất để tích lỗi mà không ai phát hiện.</p>
+
+      <h3>Nộp bài ở đâu, hỏi thầy thế nào</h3>
+      <p>Toàn bộ bài học nằm trên trang lớp: <strong><span class="en">lucero6886.github.io/lucero-toeic</span></strong><br>
+      Lưu trang này vào màn hình chính điện thoại — cả 12 tuần, 482 từ và sổ tay đều mở từ đó.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Việc</th><th>Gửi vào đâu</th><th>Hạn</th><th>Bao lâu được trả lời</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Nộp Weekly Report + Error Log</strong></td><td>Biểu mẫu <strong>Nộp báo cáo tuần</strong> trên trang lớp</td><td><strong>Trước Zoom 24 giờ</strong></td><td>Thầy phản hồi ngay trên buổi Zoom</td></tr>
+            <tr><td><strong>Hỏi bài giữa tuần</strong></td><td>Zalo <strong>0988999027</strong></td><td>Bất cứ lúc nào</td><td>Trong <strong>24 giờ</strong> ngày làm việc — chỉ với câu hỏi đủ 3 phần (§8.2)</td></tr>
+            <tr><td><strong>Đăng ký · xin nghỉ · đổi lịch · hồ sơ</strong></td><td><span class="en">luceroenglishsystem@gmail.com</span></td><td>Báo trước càng sớm càng tốt</td><td>Trong <strong>2 ngày làm việc</strong></td></tr>
+            <tr><td><strong>Đăng ký thi Milestone</strong></td><td>Biểu mẫu <strong>Đăng ký thi</strong> trên trang lớp</td><td>Trước ngày thi <strong>48 giờ</strong></td><td>Thầy xác nhận giờ qua Zalo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>Đáp án tuần mở ra khi nào</b>
+        <p>Nộp xong báo cáo tuần này thì trang xác nhận hiện ngay link <strong>bài học và đáp án của tuần kế tiếp</strong>. Lưu link đó lại — bạn cần đáp án <strong>suốt tuần</strong> để tự chấm sau mỗi buổi, chứ không phải chỉ đến cuối tuần.</p>
+      </div>
+
+      <div class="note">
+        <b>Nguyên tắc vàng</b>
+        <p>Sổ tay ghi <strong>bằng chứng</strong>, không ghi dự định. Ô nào chưa đo được thì để nguyên <em>“Insufficient evidence”</em> — đừng điền số phỏng đoán, vì mentor dựa vào đó để chọn bài cho bạn.</p>
+      </div>
+    </section>
+
+    <!-- 1 -->
+    <section id="s1">
+      <span class="snum">§01 — Vận hành</span>
+      <h2>Nhịp một tuần</h2>
+      <p class="lede">Phần quan trọng nhất của sổ tay. Cả chương trình chạy theo đúng vòng lặp bảy ngày này, lặp lại 52 lần.</p>
+
+      <div class="week">
+        <div class="day"><b>Ngày 1</b><span>Tự học</span><i>45′ · packet buổi 1</i></div>
+        <div class="day"><b>Ngày 2</b><span>Tự học</span><i>45′ · buổi 2</i></div>
+        <div class="day"><b>Ngày 3</b><span>Tự học</span><i>45′ · buổi 3</i></div>
+        <div class="day"><b>Ngày 4</b><span>Tự học</span><i>45′ · buổi 4</i></div>
+        <div class="day"><b>Ngày 5</b><span>Tự học</span><i>45′ · buổi 5</i></div>
+        <div class="day send"><b>Ngày 6</b><span>Ôn + Quiz</span><i>45′ · rồi <strong>gửi báo cáo</strong></i></div>
+        <div class="day zoom"><b>Ngày 7</b><span>Zoom 60′</span><i>chữa lỗi · giao tuần mới</i></div>
+      </div>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Mốc</th><th>Bạn làm gì</th><th>Mentor làm gì</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ngày 1–6</strong></td><td>Tự học 45 phút/ngày theo packet · tự chấm bằng file đáp án · ghi Error Log</td><td>Không can thiệp. Chỉ trả lời câu hỏi hợp lệ (§8)</td></tr>
+            <tr><td><strong>Trước Zoom 24 giờ</strong></td><td>Nộp <strong>Weekly Report</strong> (§13) + ảnh Error Log qua biểu mẫu → <strong>nhận ngay packet và đáp án tuần kế tiếp</strong></td><td>Đọc báo cáo cả nhóm, chọn 3 lỗi chung để chữa</td></tr>
+            <tr><td><strong>Ngày Zoom</strong></td><td>Dự Zoom 60 phút, mang câu hỏi đã viết sẵn</td><td>Chữa lỗi → kiểm tra ngẫu nhiên → giao tuần mới</td></tr>
+            <tr><td><strong>Sau Zoom 24 giờ</strong></td><td>Bắt đầu tuần mới — <em>packet và đáp án bạn đã nhận từ lúc nộp báo cáo</em></td><td>Gửi ghi chú riêng cho ai đang yếu</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Buổi Zoom 60 phút diễn ra thế nào</h3>
+
+      <div class="sessbar" role="img" aria-label="Agenda Zoom: điểm danh 5 phút, chữa lỗi chung 15 phút, kiểm tra ngẫu nhiên 15 phút, hỏi đáp 10 phút, giao tuần mới 10 phút, chốt cam kết 5 phút">
+        <div class="seg" style="flex:5"><b>Số liệu</b><span>5′</span></div>
+        <div class="seg hi" style="flex:15"><b>Chữa 3 lỗi chung</b><span>15′</span></div>
+        <div class="seg hi" style="flex:15"><b>Kiểm tra ngẫu nhiên</b><span>15′</span></div>
+        <div class="seg" style="flex:10"><b>Hỏi đáp</b><span>10′</span></div>
+        <div class="seg" style="flex:10"><b>Giao tuần mới</b><span>10′</span></div>
+        <div class="seg" style="flex:5"><b>Cam kết</b><span>5′</span></div>
+      </div>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Phút</th><th>Nội dung</th><th>Bạn cần chuẩn bị gì</th></tr></thead>
+          <tbody>
+            <tr><td class="num">0–5</td><td>Điểm danh &amp; số liệu cả nhóm</td><td>Đã gửi báo cáo đúng hạn</td></tr>
+            <tr><td class="num">5–20</td><td><strong>Chữa 3 lỗi chung</strong> của nhóm</td><td>Đã tự chấm và biết mình sai gì</td></tr>
+            <tr><td class="num">20–35</td><td><strong>Kiểm tra ngẫu nhiên</strong> — thầy gọi tên bất kỳ, hỏi 2 câu tuần vừa rồi</td><td>Học thật, không chép đáp án</td></tr>
+            <tr><td class="num">35–45</td><td>Hỏi đáp</td><td>Câu hỏi ghi sẵn đủ 3 phần (§8)</td></tr>
+            <tr><td class="num">45–55</td><td>Giao tuần mới</td><td>Ghi lại chỗ thầy dặn dễ sai</td></tr>
+            <tr><td class="num">55–60</td><td>Mỗi người nói <strong>một câu</strong>: tuần tới tôi sẽ sửa lỗi gì</td><td>Biết lỗi ưu tiên của mình</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note alert">
+        <b>Zoom không phải giờ giảng bài mới</b>
+        <p>Kiến thức mới nằm ở packet. Nếu bạn không đọc packet trước, buổi Zoom sẽ vô ích với bạn — và thầy sẽ không giảng lại. Ba thứ làm buổi Zoom mất giá trị: <strong>không gửi báo cáo</strong> · <strong>chưa tự chấm</strong> · <strong>hỏi ứng khẩu</strong>.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="s2">
+      <span class="snum">§02 — Trạng thái</span>
+      <h2>TOEIC Dashboard</h2>
+      <p class="lede">Bạn tự cập nhật cuối mỗi tuần, mentor duyệt lại trên Zoom. Đây là trang thầy nhìn đầu tiên.</p>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Chỉ số</th><th>Điền vào</th><th class="num">Lấy số ở đâu</th></tr></thead>
+          <tbody>
+            <tr><td>Current stage</td><td>Phase <span class="blank">·····</span> · Tuần <span class="blank">·····</span></td><td class="num">§4</td></tr>
+            <tr><td>Estimated level</td><td><span class="blank">····································</span></td><td class="num">Mentor xác nhận</td></tr>
+            <tr><td>Estimated TOEIC range</td><td><span class="pill off">Insufficient evidence</span> — tới khi có mock đầu tiên</td><td class="num">§5</td></tr>
+            <tr><td>Vocabulary</td><td><span class="blank">·····</span> / 482 từ đã học · <span class="blank">·····</span> từ nhớ được</td><td class="num">§10</td></tr>
+            <tr><td>Grammar</td><td>Mastered <span class="blank">·····</span> · Developing <span class="blank">·····</span> · Weak <span class="blank">·····</span></td><td class="num">§9</td></tr>
+            <tr><td>Listening</td><td><span class="blank">····································</span></td><td class="num">§16</td></tr>
+            <tr><td>Reading</td><td><span class="blank">····································</span></td><td class="num">§17</td></tr>
+            <tr><td>Strongest / Weakest area</td><td><span class="blank">····································</span></td><td class="num">§11</td></tr>
+            <tr><td>Recurring errors</td><td><span class="blank">····································</span></td><td class="num">§11</td></tr>
+            <tr><td>Current priority</td><td><span class="blank">····································</span></td><td class="num">Mentor giao trên Zoom</td></tr>
+            <tr><td>Next milestone</td><td><span class="blank">····································</span></td><td class="num">§5</td></tr>
+            <tr><td>Số buổi đã hoàn thành</td><td><span class="blank">·····</span> / <span class="blank">·····</span></td><td class="num">§9</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>Ví dụ một dashboard điền đúng — cuối tuần 1, học viên Level 0</b>
+        <p>Current stage: Phase 1 · Tuần 1 — Estimated level: Level 0 → Level 1 — Estimated TOEIC range: <em>Insufficient evidence</em> — Vocabulary: 42 đã học, 31 nhớ được — Grammar: TO BE <strong>Mastered</strong>, giới từ <strong>Developing</strong> — Listening: <em>Insufficient evidence</em> — Weakest area: nhầm <span class="en">is/are</span> khi chủ ngữ là danh từ số nhiều — Buổi đã hoàn thành: 6/6.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section id="s3">
+      <span class="snum">§03 — Lộ trình</span>
+      <h2>Năm Phase và điều kiện chuyển giai đoạn</h2>
+      <p class="lede">Chuyển Phase dựa trên <strong>năng lực đo được</strong>, không dựa trên số ngày đã học. <strong>Mentor quyết định</strong> — bạn không tự tuyên bố “xong Phase 1”.</p>
+
+      <div class="phases">
+        <div class="phase live">
+          <h4>Survival English Foundation <em>Phase 1</em></h4>
+          <p class="goal">Hiểu cấu trúc câu · <strong>482 từ/cụm</strong> · đọc &amp; nghe được câu ngắn</p>
+          <p class="gate"><b>Điều kiện qua</b>Milestone 2 (A1) ≥ 48/60</p>
+          <aside>
+            <span class="when">Tuần 1–12</span>
+            <span class="pill now">Điểm khởi hành</span>
+            <div class="bubbles" role="img" aria-label="12 tuần của Phase 1">
+              <i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i><i class="bub"></i>
+            </div>
+          </aside>
+        </div>
+
+        <div class="phase">
+          <h4>Core English for TOEIC <em>Phase 2</em></h4>
+          <p class="goal">A1 → A2 · 1.200–1.800 từ · word form · làm quen dạng bài TOEIC</p>
+          <p class="gate"><b>Điều kiện qua</b>Milestone 3 (A2) ≥ 80% <em>và</em> Part 5 mini ≥ 70%</p>
+          <aside><span class="when">Tuần 13–24</span><span class="pill off">Chưa mở</span></aside>
+        </div>
+
+        <div class="phase">
+          <h4>TOEIC Part Training <em>Phase 3</em></h4>
+          <p class="goal">Chiến thuật riêng cho từng Part 1–7</p>
+          <p class="gate"><b>Điều kiện qua</b>Mini test <em>từng Part</em> ≥ 65%</p>
+          <aside><span class="when">Tuần 22–34</span><span class="pill off">Chưa mở</span></aside>
+        </div>
+
+        <div class="phase">
+          <h4>Score Building 450 → 600+ <em>Phase 4</em></h4>
+          <p class="goal">Cày Tier A · tăng tốc độ làm bài · quản lý thời gian</p>
+          <p class="gate"><b>Điều kiện qua</b>Half test ≥ 550</p>
+          <aside><span class="when">Tuần 33–44</span><span class="pill off">Chưa mở</span></aside>
+        </div>
+
+        <div class="phase">
+          <h4>Mock Test &amp; Exam Readiness <em>Phase 5</em></h4>
+          <p class="goal">Ổn định 620–680 · không phụ thuộc một bài may mắn</p>
+          <p class="gate"><b>Điều kiện qua</b>≥ 3 full mock <em>liên tiếp</em> ≥ 600</p>
+          <aside><span class="when">Tuần 44–52</span><span class="pill off">Chưa mở</span></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="s4">
+      <span class="snum">§04 — Phase 1</span>
+      <h2>Checklist 12 tuần đầu</h2>
+      <p class="lede">Chỉ tick khi <strong>mentor xác nhận đạt</strong> trên Zoom — không tick khi mới “đọc hiểu”. Cột <b>Từ</b> là dải số từ của tuần đó, cộng dồn đúng <strong>482 từ</strong> hết Tuần 12.</p>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Tuần</th><th>Ngữ pháp trọng tâm</th><th>Từ vựng</th><th class="num">Từ</th><th>Kỹ năng</th><th class="num">Xong</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>TO BE + đại từ nhân xưng · in/on/at</td><td>Văn phòng · nghề nghiệp · nơi chốn · số</td><td class="num en">1–42</td><td>Nhận diện âm &amp; số đếm</td><td class="num"><input type="checkbox" aria-label="Tuần 1 hoàn thành"></td></tr>
+            <tr><td class="num">2</td><td>Danh từ số ít / số nhiều · a, an, the</td><td>Đồ vật · văn phòng phẩm</td><td class="num en">43–82</td><td>Nghe câu ngắn</td><td class="num"><input type="checkbox" aria-label="Tuần 2 hoàn thành"></td></tr>
+            <tr><td class="num">3</td><td>this / that / these / those · sở hữu · <span class="en">’s</span></td><td>Gia đình · mô tả người</td><td class="num en">83–122</td><td>Part 1 làm quen</td><td class="num"><input type="checkbox" aria-label="Tuần 3 hoàn thành"></td></tr>
+            <tr><td class="num">4</td><td>there is / there are · some/any · giới từ vị trí</td><td>Nhà cửa · tòa nhà · vị trí</td><td class="num en">123–162</td><td><strong>Milestone 1 test</strong></td><td class="num"><input type="checkbox" aria-label="Tuần 4 hoàn thành"></td></tr>
+            <tr><td class="num">5</td><td>Present Simple — khẳng định · <span class="en">-s</span> ngôi 3</td><td>Hoạt động hằng ngày</td><td class="num en">163–202</td><td>Hội thoại 2 câu</td><td class="num"><input type="checkbox" aria-label="Tuần 5 hoàn thành"></td></tr>
+            <tr><td class="num">6</td><td>Present Simple — phủ định &amp; nghi vấn · lượng từ</td><td>Thời gian · ngày tháng · số</td><td class="num en">203–242</td><td>Đọc lịch trình</td><td class="num"><input type="checkbox" aria-label="Tuần 6 hoàn thành"></td></tr>
+            <tr><td class="num">7</td><td>Trạng từ tần suất · tính từ vs trạng từ</td><td>Đồ ăn · mua sắm</td><td class="num en">243–282</td><td>Part 2 — Yes/No</td><td class="num"><input type="checkbox" aria-label="Tuần 7 hoàn thành"></td></tr>
+            <tr><td class="num">8</td><td>can / can’t · câu mệnh lệnh</td><td>Chỉ đường · giao thông</td><td class="num en">283–322</td><td>Nghe chỉ dẫn ngắn</td><td class="num"><input type="checkbox" aria-label="Tuần 8 hoàn thành"></td></tr>
+            <tr><td class="num">9</td><td>WH-questions đầy đủ</td><td>Du lịch · sân bay · khách sạn</td><td class="num en">323–362</td><td>Part 2 — WH</td><td class="num"><input type="checkbox" aria-label="Tuần 9 hoàn thành"></td></tr>
+            <tr><td class="num">10</td><td>Present Continuous · phân biệt với Present Simple</td><td>Hành động đang diễn ra</td><td class="num en">363–402</td><td>Part 1 — V-ing</td><td class="num"><input type="checkbox" aria-label="Tuần 10 hoàn thành"></td></tr>
+            <tr><td class="num">11</td><td>Past Simple — was/were · <span class="en">didn’t/Did</span> · đuôi <span class="en">-ed</span></td><td>Công việc · email đơn giản</td><td class="num en">403–442</td><td>Đọc email ngắn</td><td class="num"><input type="checkbox" aria-label="Tuần 11 hoàn thành"></td></tr>
+            <tr><td class="num">12</td><td>Liên từ &amp; từ nối · tổng ôn</td><td>Ôn lại 12 tuần</td><td class="num en">443–482</td><td><strong>Milestone 2 test (A1)</strong> · Part 6</td><td class="num"><input type="checkbox" aria-label="Tuần 12 hoàn thành"></td></tr>
+          </tbody>
+          <caption>Ô tick chỉ giữ trong phiên xem hiện tại. Bản ghi chính thức nằm ở file <span class="en">implementation-notes.md</span>.</caption>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>Chưa học ở Phase 1 — đừng lo khi gặp mà chưa hiểu</b>
+        <p>Câu bị động · present perfect · so sánh hơn/nhất · các modal ngoài <span class="en">can</span> · mệnh đề quan hệ · câu điều kiện · past continuous · tương lai. Toàn bộ nằm ở <strong>Phase 2 (Tuần 13–24)</strong>. Packet Tuần 1–12 <strong>không</strong> dùng những cấu trúc đó, kể cả trong bài đọc — nên nếu một câu làm bạn khựng lại, gần như chắc chắn là do <strong>từ vựng</strong>, không phải ngữ pháp.</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="s5">
+      <span class="snum">§05 — Đo lường</span>
+      <h2>Sáu milestone</h2>
+      <p class="lede">Bài quyết định milestone <strong>luôn làm trên Zoom</strong>, camera bật, không tra cứu. Bài làm ở nhà không tính.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">#</th><th>Tên</th><th>Đề</th><th>Chuẩn đạt</th><th class="num">Dự kiến</th><th class="num">Ngày thi thật</th><th class="num">Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Basic English Foundation</td><td>40 câu · 30 phút · 8 phần</td><td><strong>≥ 32/40</strong></td><td class="num">cuối Tuần 4</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">····</span>/40</td></tr>
+            <tr><td class="num">2</td><td><strong>A1</strong></td><td>60 câu · 45 phút · 12 phần</td><td><strong>≥ 48/60</strong></td><td class="num">cuối Tuần 12</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">····</span>/60</td></tr>
+            <tr><td class="num">3</td><td>A2</td><td>soạn ở Phase 2</td><td>≥ 80%</td><td class="num">cuối Tuần 24</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">····</span>%</td></tr>
+            <tr><td class="num">4</td><td>TOEIC ~400</td><td>Half test</td><td>≥ 400</td><td class="num">~Tuần 33</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">····</span> đ</td></tr>
+            <tr><td class="num">5</td><td>TOEIC ~500</td><td>Full mock</td><td>≥ 500</td><td class="num">~Tuần 43</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">····</span> đ</td></tr>
+            <tr><td class="num">6</td><td>TOEIC 600+</td><td>3 full mock <strong>liên tiếp</strong></td><td>≥ 600</td><td class="num">~Tuần 48</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">····</span> đ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Milestone 2 (A1) — bài quyết định vào Phase 2</h3>
+      <div class="scroller">
+        <table>
+          <tbody>
+            <tr><td>Nội dung</td><td>Toàn bộ Tuần 1–12. <strong>Mọi từ trong đề đều đã học.</strong></td></tr>
+            <tr><td>Cấu trúc</td><td>TO BE/đại từ 5 · danh từ–mạo từ 5 · there is/are–giới từ 5 · Present Simple 7 · trạng từ 4 · can/mệnh lệnh 4 · WH 5 · Present Continuous 5 · Past Simple 6 · từ nối 5 · từ vựng 4 · đọc hiểu 5</td></tr>
+            <tr><td>Chuẩn đạt</td><td><strong>≥ 48/60.</strong> 39–47 = ôn rút gọn 1 tuần rồi thi lại · ≤ 38 = học lại theo cụm 2–3 tuần</td></tr>
+            <tr><td>Vào Phase 2 khi đủ <strong>cả ba</strong></td><td>① ≥ 48/60 làm trên Zoom ② đã học đủ 12 tuần packet ③ không còn RECURRING WEAKNESS chưa xử lý</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>Điểm cao chưa chắc đã đủ</b>
+        <p>Đạt ≥ 48/60 nhưng <strong>chưa học đủ 12 tuần packet</strong> thì vẫn chưa vào Phase 2 — điểm đó có thể đến từ nền cũ chứ không từ chương trình này, và chỗ hổng sẽ lộ ra ở Part 5 của Phase 2.</p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="s6">
+      <span class="snum">§06 — Buổi học</span>
+      <h2>Cấu trúc chuẩn 45 phút</h2>
+      <p class="lede">Mọi buổi trong packet đều theo đúng sáu khối này, tỉ lệ như thanh bên dưới. Ba khối tô đậm tạo ra điểm số nhanh nhất ở Phase 1.</p>
+
+      <div class="sessbar" role="img" aria-label="Phân bổ thời gian: A 5 phút, B 10 phút, C 10 phút, D 8 phút, E 8 phút, F 4 phút">
+        <div class="seg" style="flex:5"><b>A</b><span>5′</span></div>
+        <div class="seg hi" style="flex:10"><b>B · Vocab</b><span>10′</span></div>
+        <div class="seg hi" style="flex:10"><b>C · Grammar</b><span>10′</span></div>
+        <div class="seg" style="flex:8"><b>D · Nghe</b><span>8′</span></div>
+        <div class="seg" style="flex:8"><b>E · Đọc</b><span>8′</span></div>
+        <div class="seg hi" style="flex:4"><b>F</b><span>4′</span></div>
+      </div>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Khối</th><th class="num">Phút</th><th>Nội dung</th><th>Vì sao có mặt</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A. Retrieval Review</strong></td><td class="num">5</td><td>5 từ cũ + 2 cấu trúc cũ + 2 lỗi đã mắc</td><td>Chống quên — quan trọng hơn học mới</td></tr>
+            <tr><td><strong>B. Vocabulary</strong></td><td class="num">10</td><td>8–12 từ/cụm mới, học <strong>theo cụm</strong></td><td><span class="en">meet a deadline</span> &gt; <span class="en">deadline</span></td></tr>
+            <tr><td><strong>C. Grammar</strong></td><td class="num">10</td><td>1–2 điểm: Meaning → Form → Example → Common Error → Practice</td><td>Ít mà chắc</td></tr>
+            <tr><td><strong>D. Listening</strong></td><td class="num">8</td><td>Gist → Details → Transcript → Vocab → Connected speech → Nghe lại → Shadowing</td><td>Phần yếu nhất của người Việt</td></tr>
+            <tr><td><strong>E. Reading</strong></td><td class="num">8</td><td>Bài vừa trình độ, tiến dần tới dạng TOEIC</td><td>Không nhảy vào đề thật quá sớm</td></tr>
+            <tr><td><strong>F. Exit Ticket</strong></td><td class="num">4</td><td>3 câu kiến thức + 2 ứng dụng + 1 TOEIC</td><td>Đo được mới quản được</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>Khi lệch giờ</b>
+        <p><strong>Chỉ có 30 phút:</strong> A (5) → B (8) → C (12) → F (5); bỏ D/E, dồn nghe–đọc vào cuối tuần.<br>
+        <strong>Có 60 phút:</strong> giãn D và E lên 10 phút, cộng 11 phút drill đúng lỗi ưu tiên mentor giao tuần này.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="s7">
+      <span class="snum">§07 — Giao kèo</span>
+      <h2>Giao kèo hai chiều</h2>
+      <p class="lede">Tự học không có nghĩa là học một mình. Đây là phần việc của mỗi bên — nếu mentor làm sai một gạch đầu dòng ở cột giữa, bạn có quyền nhắc lại ngay trên Zoom.</p>
+
+      <div class="cols">
+        <div class="col yes">
+          <h4>Mentor sẽ</h4>
+          <ul>
+            <li>Soạn packet <strong>tự chạy được</strong>: đọc là làm được, không cần thầy giải thích thêm.</li>
+            <li>Chữa <strong>3 lỗi chung của nhóm</strong> mỗi buổi Zoom, theo lối gợi ý → cho thử lại → mới giải thích.</li>
+            <li>Đọc Weekly Report và Error Log của bạn <strong>trước</strong> mỗi buổi Zoom.</li>
+            <li>Giao lỗi ưu tiên riêng cho bạn, chèn vào khối A của packet tuần sau.</li>
+            <li>Trả lời câu hỏi hợp lệ trong vòng <strong>24 giờ ngày làm việc</strong>.</li>
+            <li>Chỉ kết luận “sẵn sàng thi” khi có ≥ 3 mock liên tiếp ≥ 600.</li>
+          </ul>
+        </div>
+        <div class="col no">
+          <h4>Mentor không</h4>
+          <ul>
+            <li>Không giảng lại nội dung packet trên Zoom.</li>
+            <li>Không đưa đáp án khi bạn hỏi giữa tuần.</li>
+            <li>Không hứa điểm số theo mốc thời gian.</li>
+            <li>Không so sánh bạn với học viên khác — chỉ so với <strong>chính bạn tuần trước</strong>.</li>
+            <li>Không cho sang tuần mới khi nền tuần này chưa chắc.</li>
+          </ul>
+        </div>
+        <div class="col yes">
+          <h4>Học viên phải</h4>
+          <ul>
+            <li>Ngồi vào bàn <strong>đúng khung giờ cố định</strong>, kể cả hôm chỉ làm được khối A.</li>
+            <li><strong>Không mở file đáp án trước</strong> khi làm xong bài.</li>
+            <li>Điền §9, §10, §11 <strong>ngay sau buổi học</strong>, không dồn cuối tuần.</li>
+            <li>Gửi Weekly Report <strong>trước Zoom 24 giờ</strong>, kể cả tuần làm sai nhiều.</li>
+            <li><strong>Viết sẵn câu hỏi</strong> trước khi vào Zoom.</li>
+            <li>Báo thật khi không hiểu — giấu chỗ không hiểu là cách nhanh nhất để tắc ở Phase 2.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section id="s8">
+      <span class="snum">§08 — Hỏi đáp</span>
+      <h2>Hỏi giữa tuần &amp; chuẩn bị Zoom</h2>
+      <p class="lede">Mentor không làm gia sư 24/7. Ranh giới rõ ràng giúp cả hai bên đi được đường dài.</p>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Loại câu hỏi</th><th>Mentor xử lý thế nào</th></tr></thead>
+          <tbody>
+            <tr><td><em>“Câu này đáp án gì?”</em></td><td><strong>Không trả lời.</strong> Mở file đáp án và làm theo quy trình tự chấm 4 bước ở §18.</td></tr>
+            <tr><td><em>“Em đọc lời giải rồi mà vẫn không hiểu vì sao…”</em></td><td>✅ <strong>Trả lời</strong> — đây là câu hỏi hợp lệ duy nhất.</td></tr>
+            <tr><td>Câu hỏi ngoài chương trình tuần này</td><td>Ghi lại, trả lời trên Zoom nếu còn giờ.</td></tr>
+            <tr><td>Báo ốm / bận</td><td>Xác nhận, hướng dẫn quay lại bằng buổi ôn — không bắt học bù gấp đôi.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Một câu hỏi tốt phải có đủ ba phần</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Phần</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1 · Câu hỏi gốc</td><td><span class="en">The staff ____ ready.</span></td></tr>
+            <tr><td class="num">2 · Tôi chọn gì</td><td>Em chọn <span class="en">is</span></td></tr>
+            <tr><td class="num">3 · Không hiểu chỗ nào</td><td>Đáp án ghi <span class="en">are</span>. Em không hiểu vì sao <span class="en">staff</span> là một từ số ít mà lại dùng <span class="en">are</span>.</td></tr>
+          </tbody>
+          <caption>Câu hỏi thiếu một trong ba phần sẽ không được trả lời trên Zoom — không phải vì thầy khó tính, mà vì thiếu ba phần này thì không ai trả lời trúng được.</caption>
+        </table>
+      </div>
+
+      <h3>Mang gì tới Zoom</h3>
+      <ol class="steps">
+        <li>Weekly Report đã gửi trước 24 giờ</li>
+        <li>Ảnh Error Log của tuần</li>
+        <li><strong>Ba câu hỏi</strong> viết sẵn, đủ ba phần</li>
+        <li>Ba lỗi bạn sai nhiều nhất tuần này</li>
+        <li>Điểm mini quiz cuối tuần</li>
+      </ol>
+    </section>
+
+    <!-- 9 -->
+    <section id="s9">
+      <span class="snum">§09 — Bằng chứng</span>
+      <h2>Nhật ký học tập</h2>
+      <p class="lede">Một dòng cho mỗi buổi, điền ngay sau khi học xong. Dòng đầu là ví dụ mẫu.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Ngày</th><th class="num">Buổi</th><th>Grammar</th><th>Vocab</th><th>Nghe</th><th>Đọc</th><th>Exit ticket</th><th>Đánh giá</th></tr></thead>
+          <tbody>
+            <tr><td class="num">ví dụ</td><td class="num">T1-B1</td><td>TO BE + đại từ nhân xưng</td><td>8 từ · Office set 1</td><td>số đếm 1–10</td><td>thẻ nhân viên</td><td>5/6</td><td><span class="pill warn">Developing</span></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">·····</span></td><td colspan="6"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">·····</span></td><td colspan="6"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">·····</span></td><td colspan="6"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">·····</span></td><td colspan="6"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">·····</span></td><td colspan="6"></td></tr>
+          </tbody>
+          <caption>Ký hiệu: <span class="pill good">Mastered</span> <span class="pill warn">Developing</span> <span class="pill crit">Needs review</span></caption>
+        </table>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <span class="snum">§10 — Từ vựng</span>
+      <h2>Sổ từ vựng</h2>
+      <p class="lede">Không lưu từ rời. Mỗi mục phải đi đủ bốn tầng: <strong>word → phrase → sentence → TOEIC context</strong>. Một cụm đúng ngữ cảnh đáng giá bằng ba từ lẻ.</p>
+
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Tầng</th><th>Nội dung mẫu</th></tr></thead>
+          <tbody>
+            <tr><td class="num">word</td><td><span class="en">deadline</span> <span class="ipa">/ˈded.laɪn/</span> (n) — hạn chót</td></tr>
+            <tr><td class="num">phrase</td><td><span class="en">meet a deadline</span> — kịp hạn</td></tr>
+            <tr><td class="num">sentence</td><td><span class="en">We must meet the deadline.</span></td></tr>
+            <tr><td class="num">TOEIC</td><td><span class="en">The team is working overtime to meet the project deadline.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tiến độ 22 chủ đề · Phase 1 dạy đúng 482 từ</h3>
+      <div class="topics">
+        <div class="topic"><span>01 Office</span><i>—</i></div>
+        <div class="topic"><span>02 Meetings</span><i>—</i></div>
+        <div class="topic"><span>03 Recruitment</span><i>—</i></div>
+        <div class="topic"><span>04 HR</span><i>—</i></div>
+        <div class="topic"><span>05 Business</span><i>—</i></div>
+        <div class="topic"><span>06 Sales</span><i>—</i></div>
+        <div class="topic"><span>07 Marketing</span><i>—</i></div>
+        <div class="topic"><span>08 Finance</span><i>—</i></div>
+        <div class="topic"><span>09 Banking</span><i>—</i></div>
+        <div class="topic"><span>10 Travel</span><i>—</i></div>
+        <div class="topic"><span>11 Hotel</span><i>—</i></div>
+        <div class="topic"><span>12 Restaurant</span><i>—</i></div>
+        <div class="topic"><span>13 Transport</span><i>—</i></div>
+        <div class="topic"><span>14 Airport</span><i>—</i></div>
+        <div class="topic"><span>15 Shopping</span><i>—</i></div>
+        <div class="topic"><span>16 Manufacturing</span><i>—</i></div>
+        <div class="topic"><span>17 Shipping</span><i>—</i></div>
+        <div class="topic"><span>18 Customer Service</span><i>—</i></div>
+        <div class="topic"><span>19 Technology</span><i>—</i></div>
+        <div class="topic"><span>20 Construction</span><i>—</i></div>
+        <div class="topic"><span>21 Health</span><i>—</i></div>
+        <div class="topic"><span>22 Events</span><i>—</i></div>
+      </div>
+
+      <h3>Từ đã học — chép lại từ packet mỗi tuần</h3>
+      <p>Chép tay vẫn bắt buộc — <strong>chép là một lần ôn</strong>. Nhưng khi cần tra nhanh giữa đường, mở mục <strong>Tra từ</strong> trên trang lớp (<span class="en">app.html</span>): có đủ 482 từ, tìm theo chữ hoặc theo tuần, và có nút <strong>Che nghĩa</strong> để tự kiểm tra.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Tuần</th><th>Word</th><th>IPA</th><th class="num">POS</th><th>Nghĩa</th><th>Collocation</th><th>Ví dụ TOEIC</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td class="en">manager <em>(ví dụ)</em></td><td class="ipa">/ˈmæn.ɪ.dʒər/</td><td class="num">n</td><td>quản lý</td><td class="en">a sales manager</td><td class="en">The manager is in a meeting.</td></tr>
+            <tr><td class="num"><span class="blank">····</span></td><td colspan="6"></td></tr>
+            <tr><td class="num"><span class="blank">····</span></td><td colspan="6"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+      <span class="snum">§11 — Lỗi</span>
+      <h2>Error log</h2>
+      <p class="lede">Phần giá trị nhất của cả sổ tay. <strong>Một lỗi được ghi lại đáng giá hơn mười từ mới học thuộc.</strong></p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Ngày</th><th>Câu hỏi</th><th>Tôi trả lời</th><th>Đáp án đúng</th><th>Loại lỗi</th><th>Vì sao sai</th><th>Quy tắc cần nhớ</th><th class="num">Ôn lại</th></tr></thead>
+          <tbody>
+            <tr><td class="num">ví dụ</td><td class="en">She ___ busy.</td><td class="en">are</td><td class="en">is</td><td>Grammar</td><td>Nhầm chia TO BE theo ngôi</td><td>She / He / It → <span class="en">is</span></td><td class="num">+1 +3 +7</td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td colspan="7"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td colspan="7"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td colspan="7"></td></tr>
+            <tr><td class="num"><span class="blank">··/··</span></td><td colspan="7"></td></tr>
+          </tbody>
+          <caption>Phân loại: Vocabulary · Grammar · Listening · Pronunciation · Reading · Paraphrase · Careless · Time pressure · Unknown structure</caption>
+        </table>
+      </div>
+
+      <div class="note alert">
+        <b>Dấu hiệu mentor đọc đầu tiên</b>
+        <p>Tuần nào Error Log trống là tuần đó bạn <strong>chưa làm bài nghiêm túc</strong> — không phải tuần đó bạn giỏi. Người học thật luôn có lỗi để ghi.</p>
+      </div>
+
+      <h3>Recurring weakness — lỗi lặp ≥ 3 lần</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Lỗi</th><th class="num">Số lần</th><th>Micro-lesson mentor giao</th><th>Đã khắc phục</th></tr></thead>
+          <tbody>
+            <tr><td colspan="4">Một lỗi chỉ vào bảng này sau lần mắc <strong>thứ ba</strong> — khi đó mentor sẽ giao bài chữa riêng cho đúng lỗi đó.</td></tr>
+            <tr><td><span class="blank">·············</span></td><td class="num"><span class="blank">···</span></td><td><span class="blank">·············</span></td><td><span class="blank">·······</span></td></tr>
+            <tr><td><span class="blank">·············</span></td><td class="num"><span class="blank">···</span></td><td><span class="blank">·············</span></td><td><span class="blank">·······</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section id="s12">
+      <span class="snum">§12 — Chống quên</span>
+      <h2>Spaced repetition</h2>
+      <p class="lede">Chu kỳ Ngày 0 → +1 → +3 → +7 → +14 → +30. Sai ở bất kỳ mốc nào → <strong>reset về Ngày 0</strong>.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Nội dung</th><th class="num">Ngày 0</th><th class="num">+1</th><th class="num">+3</th><th class="num">+7</th><th class="num">+14</th><th class="num">+30</th></tr></thead>
+          <tbody>
+            <tr><td>ví dụ · TO BE (am / is / are)</td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td></tr>
+            <tr><td><span class="blank">····························</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td></tr>
+            <tr><td><span class="blank">····························</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td><td class="num"><span class="blank">··/··</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>Cảnh báo</b>
+        <p>Gặp một lần là <em>nhận ra</em>; dùng được mới là <em>biết</em>. Đừng coi một từ là “đã thuộc” chỉ vì đã gặp nó.</p>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section id="s13">
+      <span class="snum">§13 — Hằng tuần</span>
+      <h2>Weekly report gửi mentor</h2>
+      <p class="lede">Nộp qua biểu mẫu <strong>Nộp báo cáo tuần</strong> trên trang lớp, <strong>trước buổi Zoom 24 giờ</strong>. Mất khoảng <strong>5 phút</strong> nếu bạn đã ghi Error Log trong tuần. Nộp xong là <strong>bài học và đáp án tuần kế tiếp mở ra ngay</strong> trên trang xác nhận.</p>
+      <p>Chuẩn bị đủ <strong>mười hai mục</strong> dưới đây trước khi mở biểu mẫu — mỗi mục là một ô, và <strong>tất cả đều bắt buộc</strong>. Mục 10 là ảnh: không chuẩn bị trước thì không gửi được biểu mẫu.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">#</th><th>Ô trong biểu mẫu</th><th>Bạn chuẩn bị gì</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Em là ai</td><td>Chọn tên trong danh sách <em>(tự học thì chọn “Tôi tự học, không thuộc lớp nào”)</em></td></tr>
+            <tr><td class="num">2</td><td>Cohort</td><td>Mã lớp thầy cấp, ví dụ <span class="en">C1</span></td></tr>
+            <tr><td class="num">3</td><td>Hoàn thành mấy buổi trên 6</td><td>Một con số 0–6. <strong>Ghi thật.</strong> Ghi 6 khi thực ra học 3 là tự phá số liệu của chính mình</td></tr>
+            <tr><td class="num">4</td><td>Tổng số phút thực sự ngồi học</td><td>Thời gian thật, không tính lúc mở sách rồi lướt điện thoại</td></tr>
+            <tr><td class="num">5</td><td>Điểm mini quiz, trên 25</td><td>Điểm bạn tự chấm ở buổi 6</td></tr>
+            <tr><td class="num">6</td><td>Nhớ được bao nhiêu từ mới</td><td>Trên 42 ở Tuần 1, trên 40 từ Tuần 2 trở đi</td></tr>
+            <tr><td class="num">7</td><td>Error Log có bao nhiêu dòng</td><td>Đếm số dòng ở §11</td></tr>
+            <tr><td class="num">8</td><td><strong>Ba lỗi lặp nhiều nhất</strong></td><td>Mỗi lỗi một dòng, và <strong>gọi tên lỗi giống hệt nhau qua các tuần</strong> — ví dụ luôn viết <span class="en">is/are khi chủ ngữ số nhiều</span>. Đặt tên khác nhau mỗi tuần thì hệ thống không phát hiện được lỗi lặp</td></tr>
+            <tr><td class="num">9</td><td><strong>Một câu hỏi cho buổi Zoom</strong></td><td>Đủ ba phần (§8.2): câu nào · bạn hiểu tới đâu · tắc ở đâu</td></tr>
+            <tr><td class="num">10</td><td><strong>Ảnh Error Log</strong></td><td><strong>Chụp sẵn</strong> trang giấy hoặc ảnh màn hình. Tối đa 3 tệp, mỗi tệp dưới 10 MB</td></tr>
+            <tr><td class="num">11</td><td>Tự đánh giá tuần này</td><td>Thang 1–5</td></tr>
+            <tr><td class="num">12</td><td>Tuần tới sẽ sửa đúng MỘT lỗi nào</td><td>Một câu, bắt đầu bằng <em>“Tuần tới em sẽ…”</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Cuối biểu mẫu có một câu nữa: <strong>“Em vừa học xong Tuần mấy?”</strong> — chọn đúng, vì chính câu đó quyết định bạn được mở tuần nào tiếp theo.</p>
+      <div class="note">
+        <b>Số liệu thật quan trọng hơn số liệu đẹp</b>
+        <p>Thầy đọc báo cáo cả nhóm trước buổi Zoom và chọn <strong>ba lỗi chung</strong> để chữa. Nếu bạn ghi “không sai gì” trong khi thật ra có sai, buổi Zoom sẽ chữa lỗi của người khác chứ không phải lỗi của bạn. Điểm thấp không bị trách; giấu lỗi mới là thứ làm hỏng cả tháng học.</p>
+      </div>
+    </section>
+
+    <!-- 14 -->
+    <section id="s14">
+      <span class="snum">§14 — Đề thi</span>
+      <h2>Cấu trúc đề TOEIC L&amp;R</h2>
+      <p class="lede">Số liệu theo trang chính thức của ETS. Đây là bản đồ đích đến — chưa cần học tới, nhưng phải biết mình đang nhắm vào cái gì.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Section</th><th class="num">Part</th><th>Tên</th><th class="num">Số câu</th><th class="num">Thời gian</th></tr></thead>
+          <tbody>
+            <tr><td rowspan="5"><strong>Listening</strong></td><td class="num">1</td><td>Photographs</td><td class="num">6</td><td class="num" rowspan="4">45 phút<br><small>cho cả 4 Part</small></td></tr>
+            <tr><td class="num">2</td><td>Question–Response</td><td class="num">25</td></tr>
+            <tr><td class="num">3</td><td>Conversations</td><td class="num">39</td></tr>
+            <tr><td class="num">4</td><td>Talks</td><td class="num">30</td></tr>
+            <tr><td class="num">—</td><td><strong>Tổng Listening</strong></td><td class="num"><strong>100</strong></td><td class="num"><strong>45 phút</strong></td></tr>
+            <tr><td rowspan="4"><strong>Reading</strong></td><td class="num">5</td><td>Incomplete Sentences</td><td class="num">30</td><td class="num" rowspan="3">75 phút<br><small>tự quản lý</small></td></tr>
+            <tr><td class="num">6</td><td>Text Completion</td><td class="num">16</td></tr>
+            <tr><td class="num">7</td><td>Reading Comprehension</td><td class="num">54</td></tr>
+            <tr><td class="num">—</td><td><strong>Tổng Reading</strong></td><td class="num"><strong>100</strong></td><td class="num"><strong>75 phút</strong></td></tr>
+            <tr><td><strong>Toàn bài</strong></td><td class="num">1–7</td><td><strong>Listening + Reading</strong></td><td class="num"><strong>200</strong></td><td class="num"><strong>2 giờ</strong></td></tr>
+          </tbody>
+          <caption>Điểm: mỗi section 5–495 · tổng 10–990. Nguồn: <a href="https://www.eu.ets.org/toeic/about/listening-reading.html">ETS — TOEIC Listening &amp; Reading</a></caption>
+        </table>
+      </div>
+
+      <h3>Được phép sai bao nhiêu câu?</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Mục tiêu</th><th class="num">Listening đúng</th><th class="num">Reading đúng</th><th class="num">Được sai / section</th></tr></thead>
+          <tbody>
+            <tr><td>~600 tổng</td><td class="num">~60–66 / 100</td><td class="num">~58–65 / 100</td><td class="num">~35 câu</td></tr>
+            <tr><td>~650 an toàn</td><td class="num">~68–74 / 100</td><td class="num">~65–72 / 100</td><td class="num">~28 câu</td></tr>
+          </tbody>
+          <caption>Ước lượng tham khảo — ETS không công bố bảng quy đổi cố định giữa số câu đúng và điểm.</caption>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>Vì sao con số này quan trọng</b>
+        <p>Bạn được phép sai khoảng 35 câu mỗi section mà vẫn đạt 600. Nghĩa là chiến lược ở §15 — <strong>bỏ đúng chỗ</strong> — có giá trị hơn việc cố giải bằng được câu khó.</p>
+      </div>
+    </section>
+
+    <!-- 15 -->
+    <section id="s15">
+      <span class="snum">§15 — Ưu tiên</span>
+      <h2>Chiến lược 80/20</h2>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">Tier</th><th>Nghĩa</th><th>Cách xử lý</th></tr></thead>
+          <tbody>
+            <tr><td class="num"><span class="pill tierA">Tier A</span></td><td>Phải làm được mới đạt 600</td><td>Cày đến khi đúng ≥ 90%</td></tr>
+            <tr><td class="num"><span class="pill tierB">Tier B</span></td><td>Nên làm được để lên 600–700</td><td>Luyện sau khi Tier A đã ổn</td></tr>
+            <tr><td class="num"><span class="pill tierC">Tier C</span></td><td>Khó, hiếm gặp</td><td><strong>Bỏ qua</strong> ở giai đoạn này — chọn một đáp án, đi tiếp</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tier A ở giai đoạn 400 → 600</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Nội dung</th><th>Xuất hiện ở</th><th>Vì sao đáng ưu tiên</th></tr></thead>
+          <tbody>
+            <tr><td>Từ vựng thông dụng &amp; <strong>word form</strong></td><td>Part 5, 6, 7</td><td><span class="en">success / successful / successfully / succeed</span> — nhận đúng loại từ là ăn điểm ngay</td></tr>
+            <tr><td>Thì động từ · hòa hợp chủ ngữ–động từ</td><td>Part 5, 6</td><td>Xuất hiện đều đặn ở mọi đề</td></tr>
+            <tr><td>Giới từ · liên từ</td><td>Part 5, 6</td><td>Số lượng hữu hạn, học hết được</td></tr>
+            <tr><td>Nhận dạng loại câu hỏi</td><td>Part 2</td><td>25 câu — nghe được từ đầu tiên là loại được 2 đáp án</td></tr>
+            <tr><td>Keyword &amp; paraphrase</td><td>Part 3, 4</td><td>69 câu phụ thuộc kỹ năng này</td></tr>
+            <tr><td>Part 5 trọn vẹn</td><td>Part 5</td><td>30 câu — điểm dễ nhất toàn bài</td></tr>
+            <tr><td>Single passage</td><td>Part 7</td><td>Dễ hơn hẳn double/triple, làm trước</td></tr>
+            <tr><td>Quản lý thời gian</td><td>Reading</td><td>Người mới luôn hết giờ ở Part 7</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 16 -->
+    <section id="s16">
+      <span class="snum">§16 — Nghe</span>
+      <h2>Năm loại lỗi nghe</h2>
+      <p class="lede">“Nghe không hiểu” không phải một vấn đề mà là năm vấn đề khác nhau. Tự phân loại trước khi luyện — đừng nghe lại một cách vô định.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Loại lỗi</th><th>Biểu hiện</th><th>Cách chữa</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Vocabulary</strong></td><td>Chưa biết từ đó</td><td>Học từ, rồi nghe lại đúng câu đó</td></tr>
+            <tr><td><strong>Sound</strong></td><td>Biết từ nhưng không nhận ra khi nghe</td><td>Nghe từng từ · đọc to · shadowing</td></tr>
+            <tr><td><strong>Speed</strong></td><td>Hiểu khi nói chậm, không kịp tốc độ thật</td><td>0.75× → 1.0× → 1.25×</td></tr>
+            <tr><td><strong>Attention</strong></td><td>Nghe được nhưng bỏ lỡ thông tin</td><td>Đọc câu hỏi <em>trước</em> khi nghe · ghi keyword</td></tr>
+            <tr><td><strong>Paraphrase</strong></td><td>Nghe rõ nhưng không nhận ra cách nói tương đương</td><td>Học cặp đồng nghĩa TOEIC</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 17 -->
+    <section id="s17">
+      <span class="snum">§17 — Đọc</span>
+      <h2>Accuracy → Fluency → Speed</h2>
+      <p class="lede">Đúng thứ tự này. Ép tốc độ khi độ chính xác chưa ổn chỉ tạo ra thói quen đoán bừa.</p>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Giai đoạn</th><th class="num">Tốc độ mục tiêu</th><th>Việc cần làm</th></tr></thead>
+          <tbody>
+            <tr><td>Phase 1–2</td><td class="num">không đo</td><td>Chỉ tập đọc đúng, cho phép đọc chậm</td></tr>
+            <tr><td>Phase 3</td><td class="num">~100 wpm</td><td>Bắt đầu bấm giờ từng bài</td></tr>
+            <tr><td>Phase 4–5</td><td class="num">~150 wpm</td><td>Đủ để hoàn thành Part 7 trong 75 phút</td></tr>
+          </tbody>
+          <caption>Chỉ số theo dõi mỗi buổi đọc: độ chính xác (%) · tốc độ (wpm) · thời gian trên mỗi câu.</caption>
+        </table>
+      </div>
+    </section>
+
+    <!-- 18 -->
+    <section id="s18">
+      <span class="snum">§18 — Tự học</span>
+      <h2>Kỷ luật tự học tại nhà</h2>
+      <p class="lede">Mentor chỉ gặp bạn <strong>60 phút mỗi tuần</strong>. 270 phút còn lại là của bạn — và chính 270 phút đó quyết định kết quả.</p>
+
+      <h3>Sáu quy tắc bắt buộc</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th class="num">#</th><th>Quy tắc</th><th>Vì sao</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><strong>Khung giờ cố định</strong> mỗi ngày, ghi vào lịch như một cuộc hẹn</td><td>Phải quyết định “khi nào học” mỗi ngày làm bạn kiệt ý chí trước khi kịp mở sách</td></tr>
+            <tr><td class="num">2</td><td><strong>Điện thoại ở phòng khác</strong> trong 45 phút</td><td>Chỉ cần nhìn thấy điện thoại là hiệu suất đã giảm</td></tr>
+            <tr><td class="num">3</td><td><strong>Không mở file đáp án trước</strong> khi làm xong toàn bộ bài</td><td>Mở trước biến bài tập thành bài đọc — không tạo trí nhớ</td></tr>
+            <tr><td class="num">4</td><td><strong>Quy tắc 2 phút</strong> — bí quá 2 phút thì đánh dấu <span class="en">?</span> và đi tiếp</td><td>Ngồi bí 15 phút một câu là cách phá hỏng cả buổi học</td></tr>
+            <tr><td class="num">5</td><td><strong>Ngày bận vẫn làm khối A — 5 phút</strong></td><td>Giữ chuỗi quan trọng hơn giữ thời lượng</td></tr>
+            <tr><td class="num">6</td><td><strong>Đọc to</strong> mọi câu ví dụ, không đọc thầm</td><td>Tự học tại nhà rất dễ thành “học bằng mắt” — nghe sẽ không lên</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tự chấm — bốn bước</h3>
+      <ol class="steps">
+        <li>Làm xong → <strong>đóng đề</strong> → mở file đáp án, chấm đúng/sai.</li>
+        <li>Câu sai: <strong>không đọc lời giải ngay.</strong> Tự hỏi <em>“từ nào là manh mối? cần loại từ gì?”</em> rồi thử lại một lần.</li>
+        <li>Vẫn sai → đọc lời giải → ghi vào §11 đủ cột <strong>Vì sao sai</strong> và <strong>Quy tắc cần nhớ</strong>.</li>
+        <li>Câu đánh dấu <span class="en">?</span> mà <strong>đoán đúng</strong> vẫn tính là <strong>chưa biết</strong> → vẫn ghi vào §11.</li>
+      </ol>
+
+      <h3>Chống bỏ cuộc</h3>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Tình huống</th><th>Việc phải làm</th></tr></thead>
+          <tbody>
+            <tr><td>Nghỉ 1 ngày</td><td>Bình thường. Hôm sau học tiếp, <strong>không học bù gấp đôi</strong></td></tr>
+            <tr><td>Nghỉ 3 ngày trở lên</td><td>Quay lại bằng một buổi <strong>thuần ôn</strong>, không học nội dung mới</td></tr>
+            <tr><td>Thấy nản, không thấy tiến bộ</td><td>Mở §9 và §13 — nhìn số liệu tuần trước so với tuần này, không nhìn cảm xúc</td></tr>
+            <tr><td>Thấy chán vì bài dễ</td><td>Báo mentor trên Zoom để nâng độ khó — đừng tự nhảy sang đề TOEIC thật</td></tr>
+            <tr><td>Không theo kịp cả nhóm</td><td>Báo thầy. Thà chậm một tuần còn hơn sai suốt sáu tháng</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 19 -->
+    <section id="s19">
+      <span class="snum">§19 — Cam kết</span>
+      <h2>Năm điều đã thống nhất</h2>
+      <div class="scroller">
+        <table>
+          <thead><tr><th>Tình huống</th><th>Cam kết</th></tr></thead>
+          <tbody>
+            <tr><td>Bình thường</td><td>6 buổi/tuần · 45 phút · nghỉ tối đa 1 ngày</td></tr>
+            <tr><td>Khi bận</td><td>Vẫn làm <strong>khối A — 5 phút</strong>. Không đứt chuỗi.</td></tr>
+            <tr><td>Khi sai</td><td>Không mở đáp án trước; tự sửa theo bốn bước ở §18.</td></tr>
+            <tr><td>Trước Zoom</td><td>Gửi Weekly Report trước 24 giờ + viết sẵn ba câu hỏi.</td></tr>
+            <tr><td>Khi nản</td><td>Xem số liệu ở §9, không xem cảm xúc.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <dl class="sig">
+        <div><dt>Chữ ký học viên</dt><dd></dd></div>
+        <div><dt>Ngày</dt><dd></dd></div>
+        <div><dt>Mentor duyệt — Thầy Đinh Văn Nam</dt><dd></dd></div>
+      </dl>
+
+      <div class="note">
+        <b>Nguồn tham khảo chính thức</b>
+        <p>Cấu trúc đề và thang điểm: <a href="https://www.eu.ets.org/toeic/about/listening-reading.html">ETS — TOEIC Listening &amp; Reading</a>. Tài liệu luyện tập cụ thể do mentor giao theo từng tuần, đúng trình độ hiện tại — không tự tải đề 600+ về làm khi đang ở Phase 1. Làm sai 80% một đề khó không dạy được gì ngoài việc mất tinh thần.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Chương trình TOEIC 0→600+ · Mentor: Thầy Đinh Văn Nam — Mr. Lucero Dinh</span>
+    <span>Sổ tay học viên tự học tại nhà</span>
+  </footer>
+
+
+</div>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a'));
+  if(!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('on'); });
+        var a = map[e.target.id];
+        if(a) a.classList.add('on');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+  document.querySelectorAll('main section').forEach(function(s){ obs.observe(s); });
+})();
+</script>
+
+<a class="backpill" href="index.html" style="position:fixed;left:12px;bottom:12px;z-index:60;background:#fff;color:#0F5F58;border:1px solid #B9C4BE;border-radius:20px;padding:7px 14px;font-size:13px;text-decoration:none;box-shadow:0 6px 18px -10px rgba(0,0,0,.5);font-family:'Be Vietnam Pro',system-ui,sans-serif">← Về trang chủ</a>
+</body>
+</html>
