@@ -7,7 +7,10 @@ Chương trình tự học TOEIC 12 tháng dành cho người **mất gốc**, c
 | | |
 |---|---|
 | **Mô hình** | Tự học 6 buổi/tuần × 45 phút theo bài viết sẵn · gặp mentor 1 buổi Zoom 60 phút/tuần |
-| **Phase 1** | 12 tuần · 72 buổi · 482 từ vựng · 2 bài Milestone |
+| **Đã có** | **Tuần 1–34 · 1.802 từ vựng · 4 bài Milestone — trọn ba Phase đầu** |
+| **Phase 1** | Tuần 1–12 — xong đủ |
+| **Phase 2** | Tuần 13–24 — **đã soạn xong**, kết bằng Milestone 3 (A2) |
+| **Phase 3** | Tuần 25–34 — **đã soạn xong trọn vẹn**: Part 1–4 *(Listening)*, Part 5–7 *(Reading)*, tốc độ & quản lý thời gian, tổng ôn, kết bằng **Milestone 4** |
 | **Mentor** | Thầy Đinh Văn Nam — Mr. Lucero Dinh |
 | **Zalo** | 0988999027 |
 | **Email** | luceroenglishsystem@gmail.com |
@@ -21,12 +24,12 @@ dang-ky.html        đăng ký học có mentor          ← chứa link biểu 
 nop-bao-cao.html    nộp báo cáo tuần               ← chứa link biểu mẫu F2
 thi-milestone.html  đăng ký thi Milestone          ← chứa link biểu mẫu F3
 lien-he.html        Zalo, email, quy tắc hỏi bài
-tuan/               12 tuần bài học (+ 12 trang đáp án, không index, không link từ menu)
+tuan/               34 tuần bài học (+ 34 trang đáp án, không index, không link từ menu)
 milestone/          cấu trúc đề + đề mẫu ngắn (đề thi thật nằm ở kho private)
 so-tay.html         sổ tay học viên: nhật ký, error log, sổ từ vựng
-app.html            sổ tra 482 từ cho điện thoại, có chế độ che nghĩa
+app.html            sổ tra 1.802 từ cho điện thoại, lọc theo tuần, có chế độ che nghĩa
 lo-trinh.html       lộ trình 12 tháng, 5 phase, 6 milestone
-pdf/                PDF A4 in được
+pdf/                37 file PDF A4 in được
 assets/site.css
 ```
 
