@@ -48,3 +48,6 @@
 /tuan/tuan-32.html
 /tuan/tuan-33.html
 /tuan/tuan-34.html
+/tuan/tuan-35.html
+/tuan/tuan-36.html
+/tuan/tuan-37.html
