@@ -196,3 +196,20 @@ footer.site a{color:var(--accent-ink)}
 
 /* mono cho từ/cụm tiếng Anh chèn trong câu tiếng Việt */
 .en{font-family:var(--mono);font-size:.94em}
+
+/* ── khối file nghe ───────────────────────────────────────────────────────── */
+.audiobox{border:1px solid var(--rule);border-radius:12px;background:var(--surface);
+  padding:20px 22px;margin:22px 0}
+.audiobox h2{margin:0 0 6px;font-size:19px}
+.audiobox > .lede{margin:0 0 14px;font-size:14.5px}
+.audlist{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.aud{display:grid;gap:7px;padding:12px 14px;border:1px solid var(--rule);
+  border-radius:9px;background:var(--bg)}
+@media (min-width:760px){
+  .aud{grid-template-columns:minmax(0,1fr) 320px;align-items:center;gap:16px}
+}
+.audmeta{min-width:0}
+.audmeta b{display:block;font-size:14.5px;line-height:1.35}
+.audmeta span{display:block;margin-top:2px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.aud audio{width:100%;height:34px}

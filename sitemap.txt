@@ -8,6 +8,7 @@
 /milestone/milestone-2.html
 /milestone/milestone-3.html
 /milestone/milestone-4.html
+/nghe/index.html
 /nop-bao-cao.html
 /pdf/index.html
 /so-tay.html

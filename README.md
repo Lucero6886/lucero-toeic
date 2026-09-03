@@ -7,11 +7,12 @@ Chương trình tự học TOEIC 12 tháng dành cho người **mất gốc**, c
 | | |
 |---|---|
 | **Mô hình** | Tự học 6 buổi/tuần × 45 phút theo bài viết sẵn · gặp mentor 1 buổi Zoom 60 phút/tuần |
-| **Đã có** | **Tuần 1–40 · 2.162 từ vựng · 4 bài Milestone — trọn ba Phase đầu + sáu tuần đầu Phase 4** |
+| **Đã có** | **Tuần 1–40 · 2.162 từ vựng · 4 bài Milestone · 140 file nghe MP3 (78 phút) — trọn ba Phase đầu + sáu tuần đầu Phase 4** |
 | **Phase 1** | Tuần 1–12 — xong đủ |
 | **Phase 2** | Tuần 13–24 — **đã soạn xong**, kết bằng Milestone 3 (A2) |
 | **Phase 3** | Tuần 25–34 — **đã soạn xong trọn vẹn**: Part 1–4 *(Listening)*, Part 5–7 *(Reading)*, tốc độ & quản lý thời gian, tổng ôn, kết bằng **Milestone 4** |
 | **Phase 4** | Tuần 35–40 — **đã soạn xong**. Tuần 35–37 vá bảy cấu trúc ngữ pháp mà đề TOEIC dùng thật *(bị động có modal · quá khứ hoàn thành · điều kiện loại 2 và 3 · câu ước · câu tường thuật · đảo ngữ)*; Tuần 38–40 cày dạng bài mức 600 *(Part 3–4 có hình · Part 2 câu trả lời gián tiếp · Part 5–6 cày khối 46 câu)*. Tuần 41–44 chưa soạn. |
+| **File nghe** | **140 bài · 78 phút**, dựng từ toàn bộ bản chép lời của 20 tuần có Listening. Nghe ở mục **[Nghe](nghe/)** hoặc ngay trong từng trang tuần. *(Giọng đọc máy — dùng để luyện tai và nhại theo, không phải thước đo trình độ.)* |
 | **Mentor** | Thầy Đinh Văn Nam — Mr. Lucero Dinh |
 | **Zalo** | 0988999027 |
 | **Email** | luceroenglishsystem@gmail.com |
@@ -26,6 +27,8 @@ nop-bao-cao.html    nộp báo cáo tuần               ← chứa link biểu 
 thi-milestone.html  đăng ký thi Milestone          ← chứa link biểu mẫu F3
 lien-he.html        Zalo, email, quy tắc hỏi bài
 tuan/               40 tuần bài học (+ 40 trang đáp án, không index, không link từ menu)
+nghe/               kho file nghe — 140 trình phát, chia theo tuần
+audio/              140 file MP3 + 20 playlist .m3u, chia theo tuần
 milestone/          cấu trúc đề + đề mẫu ngắn (đề thi thật nằm ở kho private)
 so-tay.html         sổ tay học viên: nhật ký, error log, sổ từ vựng
 app.html            sổ tra 2.162 từ cho điện thoại, lọc theo tuần, có chế độ che nghĩa

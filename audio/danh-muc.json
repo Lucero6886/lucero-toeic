@@ -1,0 +1,1402 @@
+[
+ {
+  "tuan": 13,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "Bài nghe 1 — Buổi 1 · Thông báo trong cửa hàng",
+  "file": "TUAN-13/TUAN-13_01_Buoi-1_Part-4.mp3",
+  "giay": 17.0,
+  "luot": 5
+ },
+ {
+  "tuan": 13,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 4",
+  "ten": "Bài nghe 2 — Buổi 2 · Lời nhắn của đồng nghiệp",
+  "file": "TUAN-13/TUAN-13_02_Buoi-2_Part-4.mp3",
+  "giay": 23.8,
+  "luot": 6
+ },
+ {
+  "tuan": 13,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "Bài nghe 3 — Buổi 3 · Thông báo trong cửa hàng",
+  "file": "TUAN-13/TUAN-13_03_Buoi-3_Part-4.mp3",
+  "giay": 22.2,
+  "luot": 5
+ },
+ {
+  "tuan": 13,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "Bài nghe 4 — Buổi 4 · Lời nhắn của đồng nghiệp",
+  "file": "TUAN-13/TUAN-13_04_Buoi-4_Part-4.mp3",
+  "giay": 30.8,
+  "luot": 7
+ },
+ {
+  "tuan": 13,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "Bài nghe 5 — Buổi 5 · Báo cáo ngắn trong cuộc họp",
+  "file": "TUAN-13/TUAN-13_05_Buoi-5_Part-4.mp3",
+  "giay": 25.6,
+  "luot": 5
+ },
+ {
+  "tuan": 14,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 2",
+  "ten": "D1 — Buổi 1",
+  "file": "TUAN-14/TUAN-14_01_Buoi-1_Part-2.mp3",
+  "giay": 13.4,
+  "luot": 6
+ },
+ {
+  "tuan": 14,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "D2 — Buổi 2",
+  "file": "TUAN-14/TUAN-14_02_Buoi-2_Part-2.mp3",
+  "giay": 13.1,
+  "luot": 6
+ },
+ {
+  "tuan": 14,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 2",
+  "ten": "D3 — Buổi 3",
+  "file": "TUAN-14/TUAN-14_03_Buoi-3_Part-2.mp3",
+  "giay": 16.4,
+  "luot": 8
+ },
+ {
+  "tuan": 14,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 2",
+  "ten": "D4 — Buổi 4",
+  "file": "TUAN-14/TUAN-14_04_Buoi-4_Part-2.mp3",
+  "giay": 15.5,
+  "luot": 8
+ },
+ {
+  "tuan": 14,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 2",
+  "ten": "D5 — Buổi 5",
+  "file": "TUAN-14/TUAN-14_05_Buoi-5_Part-2.mp3",
+  "giay": 18.9,
+  "luot": 8
+ },
+ {
+  "tuan": 15,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "Bài nghe 1 — Buổi 1",
+  "file": "TUAN-15/TUAN-15_01_Buoi-1_Part-3.mp3",
+  "giay": 19.1,
+  "luot": 4
+ },
+ {
+  "tuan": 15,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "Bài nghe 2 — Buổi 2",
+  "file": "TUAN-15/TUAN-15_02_Buoi-2_Part-3.mp3",
+  "giay": 21.5,
+  "luot": 4
+ },
+ {
+  "tuan": 15,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "Bài nghe 3 — Buổi 3",
+  "file": "TUAN-15/TUAN-15_03_Buoi-3_Part-3.mp3",
+  "giay": 17.7,
+  "luot": 4
+ },
+ {
+  "tuan": 15,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "Bài nghe 4 — Buổi 4",
+  "file": "TUAN-15/TUAN-15_04_Buoi-4_Part-3.mp3",
+  "giay": 22.3,
+  "luot": 4
+ },
+ {
+  "tuan": 15,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "Bài nghe 5 — Buổi 5",
+  "file": "TUAN-15/TUAN-15_05_Buoi-5_Part-3.mp3",
+  "giay": 18.5,
+  "luot": 4
+ },
+ {
+  "tuan": 16,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Giới thiệu nhân sự mới · dạng Part 4",
+  "file": "TUAN-16/TUAN-16_01_Buoi-1_Part-4.mp3",
+  "giay": 21.7,
+  "luot": 1
+ },
+ {
+  "tuan": 16,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Bốn cặp hỏi–đáp · dạng Part 2",
+  "file": "TUAN-16/TUAN-16_02_Buoi-2_Part-2.mp3",
+  "giay": 21.9,
+  "luot": 4
+ },
+ {
+  "tuan": 16,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Hội thoại ngắn · dạng Part 3",
+  "file": "TUAN-16/TUAN-16_03_Buoi-3_Part-3.mp3",
+  "giay": 22.0,
+  "luot": 6
+ },
+ {
+  "tuan": 16,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Hội thoại ngắn · dạng Part 3",
+  "file": "TUAN-16/TUAN-16_04_Buoi-4_Part-3.mp3",
+  "giay": 18.0,
+  "luot": 6
+ },
+ {
+  "tuan": 16,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Thông báo nội bộ · dạng Part 4",
+  "file": "TUAN-16/TUAN-16_05_Buoi-5_Part-4.mp3",
+  "giay": 26.4,
+  "luot": 1
+ },
+ {
+  "tuan": 17,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Báo cáo tiến độ nội bộ · dạng Part 4",
+  "file": "TUAN-17/TUAN-17_01_Buoi-1_Part-4.mp3",
+  "giay": 21.9,
+  "luot": 1
+ },
+ {
+  "tuan": 17,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Hội thoại ngắn · dạng Part 3",
+  "file": "TUAN-17/TUAN-17_02_Buoi-2_Part-3.mp3",
+  "giay": 26.9,
+  "luot": 7
+ },
+ {
+  "tuan": 17,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Bốn cặp hỏi–đáp · dạng Part 2",
+  "file": "TUAN-17/TUAN-17_03_Buoi-3_Part-2.mp3",
+  "giay": 21.0,
+  "luot": 4
+ },
+ {
+  "tuan": 17,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Hội thoại ngắn · dạng Part 3",
+  "file": "TUAN-17/TUAN-17_04_Buoi-4_Part-3.mp3",
+  "giay": 27.7,
+  "luot": 7
+ },
+ {
+  "tuan": 17,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Thông báo nội bộ · dạng Part 4",
+  "file": "TUAN-17/TUAN-17_05_Buoi-5_Part-4.mp3",
+  "giay": 19.0,
+  "luot": 1
+ },
+ {
+  "tuan": 18,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Giới thiệu tham quan nhà máy · dạng Part 4",
+  "file": "TUAN-18/TUAN-18_01_Buoi-1_Part-4.mp3",
+  "giay": 27.9,
+  "luot": 1
+ },
+ {
+  "tuan": 18,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Bốn cặp hỏi–đáp · dạng Part 2",
+  "file": "TUAN-18/TUAN-18_02_Buoi-2_Part-2.mp3",
+  "giay": 29.2,
+  "luot": 4
+ },
+ {
+  "tuan": 18,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Hội thoại ngắn · dạng Part 3",
+  "file": "TUAN-18/TUAN-18_03_Buoi-3_Part-3.mp3",
+  "giay": 21.9,
+  "luot": 6
+ },
+ {
+  "tuan": 18,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Hội thoại ở bến bốc hàng · dạng Part 3",
+  "file": "TUAN-18/TUAN-18_04_Buoi-4_Part-3.mp3",
+  "giay": 18.7,
+  "luot": 6
+ },
+ {
+  "tuan": 18,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Thông báo nội bộ · dạng Part 4",
+  "file": "TUAN-18/TUAN-18_05_Buoi-5_Part-4.mp3",
+  "giay": 26.4,
+  "luot": 1
+ },
+ {
+  "tuan": 19,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Thông báo kế hoạch năm · dạng Part 4",
+  "file": "TUAN-19/TUAN-19_01_Buoi-1_Part-4.mp3",
+  "giay": 24.4,
+  "luot": 1
+ },
+ {
+  "tuan": 19,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Bốn cặp hỏi–đáp · dạng Part 2",
+  "file": "TUAN-19/TUAN-19_02_Buoi-2_Part-2.mp3",
+  "giay": 28.1,
+  "luot": 4
+ },
+ {
+  "tuan": 19,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Hội thoại xin lời khuyên · dạng Part 3",
+  "file": "TUAN-19/TUAN-19_03_Buoi-3_Part-3.mp3",
+  "giay": 30.5,
+  "luot": 6
+ },
+ {
+  "tuan": 19,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Hội thoại ở phòng nhân sự · dạng Part 3",
+  "file": "TUAN-19/TUAN-19_04_Buoi-4_Part-3.mp3",
+  "giay": 30.4,
+  "luot": 8
+ },
+ {
+  "tuan": 19,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Buổi học cuối của khóa · dạng Part 4",
+  "file": "TUAN-19/TUAN-19_05_Buoi-5_Part-4.mp3",
+  "giay": 30.5,
+  "luot": 1
+ },
+ {
+  "tuan": 20,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Giới thiệu công ty cho nhân viên mới · dạng Part 4",
+  "file": "TUAN-20/TUAN-20_01_Buoi-1_Part-4.mp3",
+  "giay": 44.2,
+  "luot": 1
+ },
+ {
+  "tuan": 20,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Hỏi đường trong toà nhà · dạng Part 3",
+  "file": "TUAN-20/TUAN-20_02_Buoi-2_Part-3.mp3",
+  "giay": 29.6,
+  "luot": 6
+ },
+ {
+  "tuan": 20,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Phát biểu trong buổi họp tổng kết năm · dạng Part 4",
+  "file": "TUAN-20/TUAN-20_03_Buoi-3_Part-4.mp3",
+  "giay": 36.7,
+  "luot": 1
+ },
+ {
+  "tuan": 20,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Hỏi về người trong công ty · dạng Part 3",
+  "file": "TUAN-20/TUAN-20_04_Buoi-4_Part-3.mp3",
+  "giay": 39.8,
+  "luot": 8
+ },
+ {
+  "tuan": 20,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Giới thiệu người mới trong buổi họp · dạng Part 4",
+  "file": "TUAN-20/TUAN-20_05_Buoi-5_Part-4.mp3",
+  "giay": 35.5,
+  "luot": 1
+ },
+ {
+  "tuan": 21,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Nói với nhân viên mới trong tuần đầu · dạng Part 4",
+  "file": "TUAN-21/TUAN-21_01_Buoi-1_Part-4.mp3",
+  "giay": 34.7,
+  "luot": 1
+ },
+ {
+  "tuan": 21,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Gọi điện về việc gia hạn hợp đồng · dạng Part 3",
+  "file": "TUAN-21/TUAN-21_02_Buoi-2_Part-3.mp3",
+  "giay": 39.1,
+  "luot": 6
+ },
+ {
+  "tuan": 21,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Hỏi về việc hoàn tiền · dạng Part 3",
+  "file": "TUAN-21/TUAN-21_03_Buoi-3_Part-3.mp3",
+  "giay": 26.3,
+  "luot": 6
+ },
+ {
+  "tuan": 21,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Xử lý một sự cố về hàng · dạng Part 3",
+  "file": "TUAN-21/TUAN-21_04_Buoi-4_Part-3.mp3",
+  "giay": 39.7,
+  "luot": 7
+ },
+ {
+  "tuan": 21,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Gọi điện về gói đăng ký dịch vụ · dạng Part 3",
+  "file": "TUAN-21/TUAN-21_05_Buoi-5_Part-3.mp3",
+  "giay": 37.4,
+  "luot": 6
+ },
+ {
+  "tuan": 22,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Thông báo cho nhà đầu tư · dạng Part 4",
+  "file": "TUAN-22/TUAN-22_01_Buoi-1_Part-4.mp3",
+  "giay": 32.1,
+  "luot": 1
+ },
+ {
+  "tuan": 22,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Khách hàng hỏi về máy in · dạng Part 3",
+  "file": "TUAN-22/TUAN-22_02_Buoi-2_Part-3.mp3",
+  "giay": 28.1,
+  "luot": 6
+ },
+ {
+  "tuan": 22,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Hai đồng nghiệp nói về công trình ở sảnh · dạng Part 3",
+  "file": "TUAN-22/TUAN-22_03_Buoi-3_Part-3.mp3",
+  "giay": 25.8,
+  "luot": 6
+ },
+ {
+  "tuan": 22,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Giám đốc và nhân viên hành chính · dạng Part 3",
+  "file": "TUAN-22/TUAN-22_04_Buoi-4_Part-3.mp3",
+  "giay": 21.3,
+  "luot": 6
+ },
+ {
+  "tuan": 22,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Thông báo về biểu mẫu đặt hàng mới · dạng Part 4",
+  "file": "TUAN-22/TUAN-22_05_Buoi-5_Part-4.mp3",
+  "giay": 35.3,
+  "luot": 1
+ },
+ {
+  "tuan": 23,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Gọi điện tới công ty · dạng Part 3",
+  "file": "TUAN-23/TUAN-23_01_Buoi-1_Part-3.mp3",
+  "giay": 32.4,
+  "luot": 6
+ },
+ {
+  "tuan": 23,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Bốn cặp hỏi–đáp · dạng Part 2",
+  "file": "TUAN-23/TUAN-23_02_Buoi-2_Part-2.mp3",
+  "giay": 26.8,
+  "luot": 4
+ },
+ {
+  "tuan": 23,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Hướng dẫn cuối ca ở kho · dạng Part 4",
+  "file": "TUAN-23/TUAN-23_03_Buoi-3_Part-4.mp3",
+  "giay": 33.0,
+  "luot": 1
+ },
+ {
+  "tuan": 23,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Thông báo trong tòa nhà · dạng Part 4",
+  "file": "TUAN-23/TUAN-23_04_Buoi-4_Part-4.mp3",
+  "giay": 48.1,
+  "luot": 6
+ },
+ {
+  "tuan": 23,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5A (Buổi 5) — Tin nhắn thoại · dạng Part 4",
+  "file": "TUAN-23/TUAN-23_05_Buoi-5_Part-4.mp3",
+  "giay": 36.6,
+  "luot": 4
+ },
+ {
+  "tuan": 23,
+  "so": 6,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5B (Buổi 5) — Hướng dẫn tham quan kho hàng · dạng Part 4",
+  "file": "TUAN-23/TUAN-23_06_Buoi-5_Part-4.mp3",
+  "giay": 44.9,
+  "luot": 5
+ },
+ {
+  "tuan": 24,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Hai đồng nghiệp ở văn phòng · dạng Part 3",
+  "file": "TUAN-24/TUAN-24_01_Buoi-1_Part-3.mp3",
+  "giay": 36.9,
+  "luot": 6
+ },
+ {
+  "tuan": 24,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Thông báo trong cửa hàng · dạng Part 4",
+  "file": "TUAN-24/TUAN-24_02_Buoi-2_Part-4.mp3",
+  "giay": 31.2,
+  "luot": 5
+ },
+ {
+  "tuan": 24,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Khách hàng và trưởng phòng kinh doanh · dạng Part 3",
+  "file": "TUAN-24/TUAN-24_03_Buoi-3_Part-3.mp3",
+  "giay": 39.8,
+  "luot": 6
+ },
+ {
+  "tuan": 24,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Thông báo trước chuyến tham quan nhà máy · dạng Part 4",
+  "file": "TUAN-24/TUAN-24_04_Buoi-4_Part-4.mp3",
+  "giay": 46.9,
+  "luot": 5
+ },
+ {
+  "tuan": 24,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Tin nhắn thoại của nhà cung cấp · dạng Part 4",
+  "file": "TUAN-24/TUAN-24_05_Buoi-5_Part-4.mp3",
+  "giay": 42.8,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 1",
+  "ten": "Anh 01",
+  "file": "TUAN-25/TUAN-25_01_Buoi-1_Part-1.mp3",
+  "giay": 18.4,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 2,
+  "buoi": "Buoi 1",
+  "part": "Part 1",
+  "ten": "Anh 02",
+  "file": "TUAN-25/TUAN-25_02_Buoi-1_Part-1.mp3",
+  "giay": 18.9,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 3,
+  "buoi": "Buoi 1",
+  "part": "Part 1",
+  "ten": "Anh 03",
+  "file": "TUAN-25/TUAN-25_03_Buoi-1_Part-1.mp3",
+  "giay": 23.0,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 4,
+  "buoi": "Buoi 2",
+  "part": "Part 1",
+  "ten": "Anh 05",
+  "file": "TUAN-25/TUAN-25_04_Buoi-2_Part-1.mp3",
+  "giay": 18.9,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 5,
+  "buoi": "Buoi 2",
+  "part": "Part 1",
+  "ten": "Anh 06",
+  "file": "TUAN-25/TUAN-25_05_Buoi-2_Part-1.mp3",
+  "giay": 19.6,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 6,
+  "buoi": "Buoi 2",
+  "part": "Part 1",
+  "ten": "Anh 07",
+  "file": "TUAN-25/TUAN-25_06_Buoi-2_Part-1.mp3",
+  "giay": 18.9,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 7,
+  "buoi": "Buoi 3",
+  "part": "Part 1",
+  "ten": "Anh 09",
+  "file": "TUAN-25/TUAN-25_07_Buoi-3_Part-1.mp3",
+  "giay": 21.8,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 8,
+  "buoi": "Buoi 3",
+  "part": "Part 1",
+  "ten": "Anh 10",
+  "file": "TUAN-25/TUAN-25_08_Buoi-3_Part-1.mp3",
+  "giay": 19.3,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 9,
+  "buoi": "Buoi 3",
+  "part": "Part 1",
+  "ten": "Anh 11",
+  "file": "TUAN-25/TUAN-25_09_Buoi-3_Part-1.mp3",
+  "giay": 20.1,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 10,
+  "buoi": "Buoi 4",
+  "part": "Part 1",
+  "ten": "Anh 13",
+  "file": "TUAN-25/TUAN-25_10_Buoi-4_Part-1.mp3",
+  "giay": 19.3,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 11,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 15",
+  "file": "TUAN-25/TUAN-25_11_Buoi-5_Part-1.mp3",
+  "giay": 22.0,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 12,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 16",
+  "file": "TUAN-25/TUAN-25_12_Buoi-5_Part-1.mp3",
+  "giay": 19.4,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 13,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 17",
+  "file": "TUAN-25/TUAN-25_13_Buoi-5_Part-1.mp3",
+  "giay": 21.7,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 14,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 18",
+  "file": "TUAN-25/TUAN-25_14_Buoi-5_Part-1.mp3",
+  "giay": 19.9,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 15,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 19",
+  "file": "TUAN-25/TUAN-25_15_Buoi-5_Part-1.mp3",
+  "giay": 22.5,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 16,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 20",
+  "file": "TUAN-25/TUAN-25_16_Buoi-5_Part-1.mp3",
+  "giay": 19.2,
+  "luot": 5
+ },
+ {
+  "tuan": 25,
+  "so": 17,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 21",
+  "file": "TUAN-25/TUAN-25_17_Buoi-5_Part-1.mp3",
+  "giay": 20.7,
+  "luot": 5
+ },
+ {
+  "tuan": 26,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Sáu câu hỏi WH",
+  "file": "TUAN-26/TUAN-26_01_Buoi-1_Part-2.mp3",
+  "giay": 29.2,
+  "luot": 12
+ },
+ {
+  "tuan": 26,
+  "so": 2,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 2 (Buổi 2) — Sáu câu hỏi Yes/No và câu hỏi đuôi",
+  "file": "TUAN-26/TUAN-26_02_Buoi-2_Part-2.mp3",
+  "giay": 26.7,
+  "luot": 12
+ },
+ {
+  "tuan": 26,
+  "so": 3,
+  "buoi": "Buoi 3",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 3 (Buổi 3) — Sáu câu đề nghị, nhờ vả, rủ, xin phép",
+  "file": "TUAN-26/TUAN-26_03_Buoi-3_Part-2.mp3",
+  "giay": 28.9,
+  "luot": 12
+ },
+ {
+  "tuan": 26,
+  "so": 4,
+  "buoi": "Buoi 4",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 4 (Buổi 4) — Tám câu có đáp gián tiếp",
+  "file": "TUAN-26/TUAN-26_04_Buoi-4_Part-2.mp3",
+  "giay": 34.8,
+  "luot": 16
+ },
+ {
+  "tuan": 26,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 2",
+  "ten": "BÀI NGHE 5 (Buổi 5) — Tám câu dùng khung hỏi khó",
+  "file": "TUAN-26/TUAN-26_05_Buoi-5_Part-2.mp3",
+  "giay": 38.7,
+  "luot": 16
+ },
+ {
+  "tuan": 27,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 1 (Buổi 1 — Đoạn 1)",
+  "file": "TUAN-27/TUAN-27_01_Buoi-1_Part-3.mp3",
+  "giay": 29.9,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 2,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 2 (Buổi 1 — Đoạn 2)",
+  "file": "TUAN-27/TUAN-27_02_Buoi-1_Part-3.mp3",
+  "giay": 32.9,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 3,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 3 (Buổi 2 — Đoạn 3)",
+  "file": "TUAN-27/TUAN-27_03_Buoi-2_Part-3.mp3",
+  "giay": 31.8,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 4,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 2 — Đoạn 4)",
+  "file": "TUAN-27/TUAN-27_04_Buoi-2_Part-3.mp3",
+  "giay": 30.1,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 5,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 5 (Buổi 3 — Đoạn 5)",
+  "file": "TUAN-27/TUAN-27_05_Buoi-3_Part-3.mp3",
+  "giay": 28.5,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 6,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 6 (Buổi 3 — Đoạn 6)",
+  "file": "TUAN-27/TUAN-27_06_Buoi-3_Part-3.mp3",
+  "giay": 35.9,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 7,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 7 (Buổi 4 — Đoạn 7)",
+  "file": "TUAN-27/TUAN-27_07_Buoi-4_Part-3.mp3",
+  "giay": 31.8,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 8,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 8 (Buổi 4 — Đoạn 8)",
+  "file": "TUAN-27/TUAN-27_08_Buoi-4_Part-3.mp3",
+  "giay": 31.1,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 9,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 9 (Buổi 5 — Đoạn 9, đoạn có bảng)",
+  "file": "TUAN-27/TUAN-27_09_Buoi-5_Part-3.mp3",
+  "giay": 27.5,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 10,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 10 (Buổi 5 — Đoạn 10, đoạn có câu hàm ý)",
+  "file": "TUAN-27/TUAN-27_10_Buoi-5_Part-3.mp3",
+  "giay": 31.7,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 11,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 1",
+  "file": "TUAN-27/TUAN-27_11_Buoi-x_Part-3.mp3",
+  "giay": 30.2,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 12,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 2",
+  "file": "TUAN-27/TUAN-27_12_Buoi-x_Part-3.mp3",
+  "giay": 31.7,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 13,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 3",
+  "file": "TUAN-27/TUAN-27_13_Buoi-x_Part-3.mp3",
+  "giay": 26.3,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 14,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 4",
+  "file": "TUAN-27/TUAN-27_14_Buoi-x_Part-3.mp3",
+  "giay": 34.5,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 15,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 5",
+  "file": "TUAN-27/TUAN-27_15_Buoi-x_Part-3.mp3",
+  "giay": 30.4,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 16,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 6",
+  "file": "TUAN-27/TUAN-27_16_Buoi-x_Part-3.mp3",
+  "giay": 30.8,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 17,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 7",
+  "file": "TUAN-27/TUAN-27_17_Buoi-x_Part-3.mp3",
+  "giay": 28.0,
+  "luot": 5
+ },
+ {
+  "tuan": 27,
+  "so": 18,
+  "buoi": "-",
+  "part": "Part 3",
+  "ten": "BẢN ĐỌC MINI TEST 8",
+  "file": "TUAN-27/TUAN-27_18_Buoi-x_Part-3.mp3",
+  "giay": 31.4,
+  "luot": 5
+ },
+ {
+  "tuan": 28,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 1 (Buổi 1) — Thông báo nội bộ",
+  "file": "TUAN-28/TUAN-28_01_Buoi-1_Part-4.mp3",
+  "giay": 39.7,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 2,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 2 (Buổi 1) — Quảng cáo",
+  "file": "TUAN-28/TUAN-28_02_Buoi-1_Part-4.mp3",
+  "giay": 32.1,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 3,
+  "buoi": "Buoi 2",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 3 (Buổi 2) — Tin nhắn thoại",
+  "file": "TUAN-28/TUAN-28_03_Buoi-2_Part-4.mp3",
+  "giay": 39.3,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 4,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 4 (Buổi 3) — Bản tin thời tiết & giao thông",
+  "file": "TUAN-28/TUAN-28_04_Buoi-3_Part-4.mp3",
+  "giay": 40.7,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 5,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 5 (Buổi 3) — Thông báo phát trên loa trong cửa hàng",
+  "file": "TUAN-28/TUAN-28_05_Buoi-3_Part-4.mp3",
+  "giay": 37.9,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 6,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 6 (Buổi 4) — Quảng cáo",
+  "file": "TUAN-28/TUAN-28_06_Buoi-4_Part-4.mp3",
+  "giay": 35.8,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 7,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 7 (Buổi 4) — Tin nhắn thoại",
+  "file": "TUAN-28/TUAN-28_07_Buoi-4_Part-4.mp3",
+  "giay": 39.7,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 8,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 8 (Buổi 5) — Giới thiệu diễn giả",
+  "file": "TUAN-28/TUAN-28_08_Buoi-5_Part-4.mp3",
+  "giay": 43.0,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 9,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 9 (Buổi 5) — Hướng dẫn tham quan",
+  "file": "TUAN-28/TUAN-28_09_Buoi-5_Part-4.mp3",
+  "giay": 34.3,
+  "luot": 1
+ },
+ {
+  "tuan": 28,
+  "so": 10,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NÓI 10 (Buổi 5) — Thông báo nội bộ có bảng (Look at the graphic)",
+  "file": "TUAN-28/TUAN-28_10_Buoi-5_Part-4.mp3",
+  "giay": 29.8,
+  "luot": 1
+ },
+ {
+  "tuan": 34,
+  "so": 1,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "TRANSCRIPT — PART 3 (hội thoại)",
+  "file": "TUAN-34/TUAN-34_01_Buoi-5_Part-3.mp3",
+  "giay": 34.0,
+  "luot": 5
+ },
+ {
+  "tuan": 34,
+  "so": 2,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "TRANSCRIPT — PART 4 (bài nói một người)",
+  "file": "TUAN-34/TUAN-34_02_Buoi-5_Part-4.mp3",
+  "giay": 41.3,
+  "luot": 1
+ },
+ {
+  "tuan": 34,
+  "so": 3,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 01",
+  "file": "TUAN-34/TUAN-34_03_Buoi-5_Part-1.mp3",
+  "giay": 19.3,
+  "luot": 5
+ },
+ {
+  "tuan": 34,
+  "so": 4,
+  "buoi": "Buoi 5",
+  "part": "Part 1",
+  "ten": "Anh 02",
+  "file": "TUAN-34/TUAN-34_04_Buoi-5_Part-1.mp3",
+  "giay": 21.8,
+  "luot": 5
+ },
+ {
+  "tuan": 34,
+  "so": 5,
+  "buoi": "Buoi 5",
+  "part": "Part 2",
+  "ten": "LỚP — TRANSCRIPT & LÀM BÀI",
+  "file": "TUAN-34/TUAN-34_05_Buoi-5_Part-2.mp3",
+  "giay": 61.9,
+  "luot": 20
+ },
+ {
+  "tuan": 37,
+  "so": 1,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "conversation",
+  "file": "TUAN-37/TUAN-37_01_Buoi-2_Part-3.mp3",
+  "giay": 35.2,
+  "luot": 5
+ },
+ {
+  "tuan": 38,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "conversation and delivery board",
+  "file": "TUAN-38/TUAN-38_01_Buoi-1_Part-3.mp3",
+  "giay": 45.1,
+  "luot": 6
+ },
+ {
+  "tuan": 38,
+  "so": 2,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "talk and table",
+  "file": "TUAN-38/TUAN-38_02_Buoi-1_Part-4.mp3",
+  "giay": 37.8,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 3,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "conversation and graph",
+  "file": "TUAN-38/TUAN-38_03_Buoi-1_Part-3.mp3",
+  "giay": 41.9,
+  "luot": 6
+ },
+ {
+  "tuan": 38,
+  "so": 4,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "talk and graph",
+  "file": "TUAN-38/TUAN-38_04_Buoi-1_Part-4.mp3",
+  "giay": 44.8,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 5,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "conversation and price list",
+  "file": "TUAN-38/TUAN-38_05_Buoi-2_Part-3.mp3",
+  "giay": 49.4,
+  "luot": 7
+ },
+ {
+  "tuan": 38,
+  "so": 6,
+  "buoi": "Buoi 2",
+  "part": "Part 4",
+  "ten": "announcement and price list",
+  "file": "TUAN-38/TUAN-38_06_Buoi-2_Part-4.mp3",
+  "giay": 39.0,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 7,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "conversation and schedule",
+  "file": "TUAN-38/TUAN-38_07_Buoi-3_Part-3.mp3",
+  "giay": 41.1,
+  "luot": 7
+ },
+ {
+  "tuan": 38,
+  "so": 8,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "announcement and schedule",
+  "file": "TUAN-38/TUAN-38_08_Buoi-3_Part-4.mp3",
+  "giay": 41.0,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 9,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "conversation and floor plan",
+  "file": "TUAN-38/TUAN-38_09_Buoi-4_Part-3.mp3",
+  "giay": 42.6,
+  "luot": 6
+ },
+ {
+  "tuan": 38,
+  "so": 10,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "recorded message and floor plan",
+  "file": "TUAN-38/TUAN-38_10_Buoi-4_Part-4.mp3",
+  "giay": 41.4,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 11,
+  "buoi": "Buoi 6",
+  "part": "Part 3",
+  "ten": "conversation and price list",
+  "file": "TUAN-38/TUAN-38_11_Buoi-6_Part-3.mp3",
+  "giay": 38.6,
+  "luot": 5
+ },
+ {
+  "tuan": 38,
+  "so": 12,
+  "buoi": "Buoi 6",
+  "part": "Part 4",
+  "ten": "talk and graph",
+  "file": "TUAN-38/TUAN-38_12_Buoi-6_Part-4.mp3",
+  "giay": 37.2,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 13,
+  "buoi": "Buoi 6",
+  "part": "Part 4",
+  "ten": "recorded message and schedule",
+  "file": "TUAN-38/TUAN-38_13_Buoi-6_Part-4.mp3",
+  "giay": 43.0,
+  "luot": 2
+ },
+ {
+  "tuan": 38,
+  "so": 14,
+  "buoi": "Buoi 6",
+  "part": "Part 3",
+  "ten": "conversation and floor plan",
+  "file": "TUAN-38/TUAN-38_14_Buoi-6_Part-3.mp3",
+  "giay": 35.1,
+  "luot": 6
+ },
+ {
+  "tuan": 39,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 2",
+  "ten": "D. Luyện Part 2 · 8 phút — 6 CÂU, CÓ BẤM GIỜ",
+  "file": "TUAN-39/TUAN-39_01_Buoi-1_Part-2.mp3",
+  "giay": 194.2,
+  "luot": 60
+ },
+ {
+  "tuan": 39,
+  "so": 2,
+  "buoi": "Buoi 1",
+  "part": "Part 2",
+  "ten": "F. Exit Ticket · 4 phút — 6 CÂU",
+  "file": "TUAN-39/TUAN-39_02_Buoi-1_Part-2.mp3",
+  "giay": 32.5,
+  "luot": 10
+ },
+ {
+  "tuan": 39,
+  "so": 3,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "D. Luyện Part 2 · 8 phút — 6 CÂU, CÓ BẤM GIỜ",
+  "file": "TUAN-39/TUAN-39_03_Buoi-2_Part-2.mp3",
+  "giay": 95.5,
+  "luot": 30
+ },
+ {
+  "tuan": 39,
+  "so": 4,
+  "buoi": "Buoi 2",
+  "part": "Part 2",
+  "ten": "F. Exit Ticket · 4 phút — 6 CÂU",
+  "file": "TUAN-39/TUAN-39_04_Buoi-2_Part-2.mp3",
+  "giay": 15.2,
+  "luot": 5
+ },
+ {
+  "tuan": 39,
+  "so": 5,
+  "buoi": "Buoi 3",
+  "part": "Part 2",
+  "ten": "D. Luyện Part 2 và Part 5 · 8 phút — 6 CÂU, CÓ BẤM GIỜ",
+  "file": "TUAN-39/TUAN-39_05_Buoi-3_Part-2.mp3",
+  "giay": 69.9,
+  "luot": 20
+ },
+ {
+  "tuan": 39,
+  "so": 6,
+  "buoi": "Buoi 3",
+  "part": "Part 2",
+  "ten": "F. Exit Ticket · 4 phút — 6 CÂU",
+  "file": "TUAN-39/TUAN-39_06_Buoi-3_Part-2.mp3",
+  "giay": 15.9,
+  "luot": 5
+ },
+ {
+  "tuan": 39,
+  "so": 7,
+  "buoi": "Buoi 4",
+  "part": "Part 2",
+  "ten": "D. Luyện Part 2 và Part 5 · 8 phút — 6 CÂU, CÓ BẤM GIỜ",
+  "file": "TUAN-39/TUAN-39_07_Buoi-4_Part-2.mp3",
+  "giay": 67.3,
+  "luot": 20
+ },
+ {
+  "tuan": 39,
+  "so": 8,
+  "buoi": "Buoi 4",
+  "part": "Part 2",
+  "ten": "F. Exit Ticket · 4 phút — 6 CÂU",
+  "file": "TUAN-39/TUAN-39_08_Buoi-4_Part-2.mp3",
+  "giay": 16.4,
+  "luot": 5
+ },
+ {
+  "tuan": 39,
+  "so": 9,
+  "buoi": "Buoi 6",
+  "part": "Part 2",
+  "ten": "Phần 1 — Part 2 (câu 1–15)",
+  "file": "TUAN-39/TUAN-39_09_Buoi-6_Part-2.mp3",
+  "giay": 249.7,
+  "luot": 75
+ }
+]
