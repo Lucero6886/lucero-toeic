@@ -2,7 +2,7 @@
 
 *Sinh tự động bằng `TAO-AUDIO.py`. Đừng sửa tay — chạy lại script là file này được viết lại.*
 
-**Tổng: 140 file · 78 phút 11 giây.**
+**Tổng: 161 file · 88 phút 2 giây.**
 
 
 ## Tuần 13
@@ -111,8 +111,8 @@
 |---|---|---|---|---|---|
 | 1 | Buoi 1 | Part 3 | BÀI NGHE 1 (Buổi 1) — Gọi điện tới công ty · dạng Part 3 | 0:32 | `TUAN-23_01_Buoi-1_Part-3.mp3` |
 | 2 | Buoi 2 | Part 2 | BÀI NGHE 2 (Buổi 2) — Bốn cặp hỏi–đáp · dạng Part 2 | 0:26 | `TUAN-23_02_Buoi-2_Part-2.mp3` |
-| 3 | Buoi 3 | Part 4 | BÀI NGHE 3 (Buổi 3) — Hướng dẫn cuối ca ở kho · dạng Part 4 | 0:33 | `TUAN-23_03_Buoi-3_Part-4.mp3` |
-| 4 | Buoi 4 | Part 4 | BÀI NGHE 4 (Buổi 4) — Thông báo trong tòa nhà · dạng Part 4 | 0:48 | `TUAN-23_04_Buoi-4_Part-4.mp3` |
+| 3 | Buoi 3 | Part 4 | BÀI NGHE 3 (Buổi 3) — Hướng dẫn cuối ca ở kho · dạng Part 4 | 0:25 | `TUAN-23_03_Buoi-3_Part-4.mp3` |
+| 4 | Buoi 4 | Part 4 | BÀI NGHE 4 (Buổi 4) — Thông báo trong tòa nhà · dạng Part 4 | 0:41 | `TUAN-23_04_Buoi-4_Part-4.mp3` |
 | 5 | Buoi 5 | Part 4 | BÀI NGHE 5A (Buổi 5) — Tin nhắn thoại · dạng Part 4 | 0:36 | `TUAN-23_05_Buoi-5_Part-4.mp3` |
 | 6 | Buoi 5 | Part 4 | BÀI NGHE 5B (Buổi 5) — Hướng dẫn tham quan kho hàng · dạng Part 4 | 0:44 | `TUAN-23_06_Buoi-5_Part-4.mp3` |
 
@@ -120,11 +120,11 @@
 
 | # | Buổi | Part | Nội dung | Thời lượng | File |
 |---|---|---|---|---|---|
-| 1 | Buoi 1 | Part 3 | BÀI NGHE 1 (Buổi 1) — Hai đồng nghiệp ở văn phòng · dạng Part 3 | 0:36 | `TUAN-24_01_Buoi-1_Part-3.mp3` |
+| 1 | Buoi 1 | Part 3 | BÀI NGHE 1 (Buổi 1) — Hai đồng nghiệp ở văn phòng · dạng Part 3 | 0:33 | `TUAN-24_01_Buoi-1_Part-3.mp3` |
 | 2 | Buoi 2 | Part 4 | BÀI NGHE 2 (Buổi 2) — Thông báo trong cửa hàng · dạng Part 4 | 0:31 | `TUAN-24_02_Buoi-2_Part-4.mp3` |
-| 3 | Buoi 3 | Part 3 | BÀI NGHE 3 (Buổi 3) — Khách hàng và trưởng phòng kinh doanh · dạng Part 3 | 0:39 | `TUAN-24_03_Buoi-3_Part-3.mp3` |
+| 3 | Buoi 3 | Part 3 | BÀI NGHE 3 (Buổi 3) — Khách hàng và trưởng phòng kinh doanh · dạng Part 3 | 0:37 | `TUAN-24_03_Buoi-3_Part-3.mp3` |
 | 4 | Buoi 4 | Part 4 | BÀI NGHE 4 (Buổi 4) — Thông báo trước chuyến tham quan nhà máy · dạng Part 4 | 0:46 | `TUAN-24_04_Buoi-4_Part-4.mp3` |
-| 5 | Buoi 5 | Part 4 | BÀI NGHE 5 (Buổi 5) — Tin nhắn thoại của nhà cung cấp · dạng Part 4 | 0:42 | `TUAN-24_05_Buoi-5_Part-4.mp3` |
+| 5 | Buoi 5 | Part 4 | BÀI NGHE 5 (Buổi 5) — Tin nhắn thoại của nhà cung cấp · dạng Part 4 | 0:38 | `TUAN-24_05_Buoi-5_Part-4.mp3` |
 
 ## Tuần 25
 
@@ -185,16 +185,16 @@
 
 | # | Buổi | Part | Nội dung | Thời lượng | File |
 |---|---|---|---|---|---|
-| 1 | Buoi 1 | Part 4 | BÀI NÓI 1 (Buổi 1) — Thông báo nội bộ | 0:39 | `TUAN-28_01_Buoi-1_Part-4.mp3` |
-| 2 | Buoi 1 | Part 4 | BÀI NÓI 2 (Buổi 1) — Quảng cáo | 0:32 | `TUAN-28_02_Buoi-1_Part-4.mp3` |
-| 3 | Buoi 2 | Part 4 | BÀI NÓI 3 (Buổi 2) — Tin nhắn thoại | 0:39 | `TUAN-28_03_Buoi-2_Part-4.mp3` |
-| 4 | Buoi 3 | Part 4 | BÀI NÓI 4 (Buổi 3) — Bản tin thời tiết & giao thông | 0:40 | `TUAN-28_04_Buoi-3_Part-4.mp3` |
-| 5 | Buoi 3 | Part 4 | BÀI NÓI 5 (Buổi 3) — Thông báo phát trên loa trong cửa hàng | 0:37 | `TUAN-28_05_Buoi-3_Part-4.mp3` |
-| 6 | Buoi 4 | Part 4 | BÀI NÓI 6 (Buổi 4) — Quảng cáo | 0:35 | `TUAN-28_06_Buoi-4_Part-4.mp3` |
+| 1 | Buoi 1 | Part 4 | BÀI NÓI 1 (Buổi 1) — Thông báo nội bộ | 0:33 | `TUAN-28_01_Buoi-1_Part-4.mp3` |
+| 2 | Buoi 1 | Part 4 | BÀI NÓI 2 (Buổi 1) — Quảng cáo | 0:29 | `TUAN-28_02_Buoi-1_Part-4.mp3` |
+| 3 | Buoi 2 | Part 4 | BÀI NÓI 3 (Buổi 2) — Tin nhắn thoại | 0:38 | `TUAN-28_03_Buoi-2_Part-4.mp3` |
+| 4 | Buoi 3 | Part 4 | BÀI NÓI 4 (Buổi 3) — Bản tin thời tiết & giao thông | 0:30 | `TUAN-28_04_Buoi-3_Part-4.mp3` |
+| 5 | Buoi 3 | Part 4 | BÀI NÓI 5 (Buổi 3) — Thông báo phát trên loa trong cửa hàng | 0:31 | `TUAN-28_05_Buoi-3_Part-4.mp3` |
+| 6 | Buoi 4 | Part 4 | BÀI NÓI 6 (Buổi 4) — Quảng cáo | 0:32 | `TUAN-28_06_Buoi-4_Part-4.mp3` |
 | 7 | Buoi 4 | Part 4 | BÀI NÓI 7 (Buổi 4) — Tin nhắn thoại | 0:39 | `TUAN-28_07_Buoi-4_Part-4.mp3` |
 | 8 | Buoi 5 | Part 4 | BÀI NÓI 8 (Buổi 5) — Giới thiệu diễn giả | 0:43 | `TUAN-28_08_Buoi-5_Part-4.mp3` |
 | 9 | Buoi 5 | Part 4 | BÀI NÓI 9 (Buổi 5) — Hướng dẫn tham quan | 0:34 | `TUAN-28_09_Buoi-5_Part-4.mp3` |
-| 10 | Buoi 5 | Part 4 | BÀI NÓI 10 (Buổi 5) — Thông báo nội bộ có bảng (Look at the graphic) | 0:29 | `TUAN-28_10_Buoi-5_Part-4.mp3` |
+| 10 | Buoi 5 | Part 4 | BÀI NÓI 10 (Buổi 5) — Thông báo nội bộ có bảng (Look at the graphic) | 0:32 | `TUAN-28_10_Buoi-5_Part-4.mp3` |
 
 ## Tuần 34
 
@@ -244,3 +244,29 @@
 | 7 | Buoi 4 | Part 2 | D. Luyện Part 2 và Part 5 · 8 phút — 6 CÂU, CÓ BẤM GIỜ | 1:07 | `TUAN-39_07_Buoi-4_Part-2.mp3` |
 | 8 | Buoi 4 | Part 2 | F. Exit Ticket · 4 phút — 6 CÂU | 0:16 | `TUAN-39_08_Buoi-4_Part-2.mp3` |
 | 9 | Buoi 6 | Part 2 | Phần 1 — Part 2 (câu 1–15) | 4:09 | `TUAN-39_09_Buoi-6_Part-2.mp3` |
+
+## Tuần 42
+
+| # | Buổi | Part | Nội dung | Thời lượng | File |
+|---|---|---|---|---|---|
+| 1 | Buoi 1 | Part 3 | BÀI NGHE 1 (Buổi 1) — Part 3 · Máy in nhãn ở kho hỏng, dời lịch kỹ thuật viên | 0:35 | `TUAN-42_01_Buoi-1_Part-3.mp3` |
+| 2 | Buoi 1 | Part 3 | BÀI NGHE 2 (Buổi 1) — Part 3 · Bản báo cáo bảo hành dài bốn trang | 0:29 | `TUAN-42_02_Buoi-1_Part-3.mp3` |
+| 3 | Buoi 1 | Part 4 | BÀI NGHE 3 (Buổi 1) — Part 4 · Tin nhắn thoại của khách về một dòng trong hợp đồng | 0:27 | `TUAN-42_03_Buoi-1_Part-4.mp3` |
+| 4 | Buoi 2 | Part 3 | BÀI NGHE 4 (Buổi 2) — Part 3 · Máy sao chụp ở City Book Store chờ linh kiện | 0:23 | `TUAN-42_04_Buoi-2_Part-3.mp3` |
+| 5 | Buoi 2 | Part 3 | BÀI NGHE 5 (Buổi 2) — Part 3 · Mẫu phiếu dịch vụ mới, thiếu một ô | 0:24 | `TUAN-42_05_Buoi-2_Part-3.mp3` |
+| 6 | Buoi 2 | Part 4 | BÀI NGHE 6 (Buổi 2) — Part 4 · Thông báo buổi sáng về thang hàng | 0:35 | `TUAN-42_06_Buoi-2_Part-4.mp3` |
+| 7 | Buoi 3 | Part 3 | BÀI NGHE 7 (Buổi 3) — Part 3 · Có nên đổi nhà cung cấp giấy không | 0:29 | `TUAN-42_07_Buoi-3_Part-3.mp3` |
+| 8 | Buoi 3 | Part 3 | BÀI NGHE 8 (Buổi 3) — Part 3 · Khách nói bị tính tiền hai lần | 0:21 | `TUAN-42_08_Buoi-3_Part-3.mp3` |
+| 9 | Buoi 3 | Part 4 | BÀI NGHE 9 (Buổi 3) — Part 4 · Tin nhắn thoại xin dời ngày kiểm kho | 0:42 | `TUAN-42_09_Buoi-3_Part-4.mp3` |
+| 10 | Buoi 4 | Part 3 | BÀI NGHE 10 (Buổi 4) — Part 3 · Kiện hàng đặt từ tháng Chín | 0:23 | `TUAN-42_10_Buoi-4_Part-3.mp3` |
+| 11 | Buoi 4 | Part 3 | BÀI NGHE 11 (Buổi 4) — Part 3 · Tấm biển thứ tư trong năm cho cửa bên | 0:24 | `TUAN-42_11_Buoi-4_Part-3.mp3` |
+| 12 | Buoi 4 | Part 4 | BÀI NGHE 12 (Buổi 4) — Part 4 · Mở đầu buổi họp bộ phận hỗ trợ | 0:37 | `TUAN-42_12_Buoi-4_Part-4.mp3` |
+| 13 | Buoi 5 | Part 3 | BÀI NGHE 13 (Buổi 5) — Part 3 · Hợp đồng không nói ai trả tiền | 0:31 | `TUAN-42_13_Buoi-5_Part-3.mp3` |
+| 14 | Buoi 5 | Part 3 | BÀI NGHE 14 (Buổi 5) — Part 3 · Hoá đơn tháng Ba của Harbor Print | 0:22 | `TUAN-42_14_Buoi-5_Part-3.mp3` |
+| 15 | Buoi 5 | Part 4 | BÀI NGHE 15 (Buổi 5) — Part 4 · Bài nói trước ca làm của bộ phận trực điện thoại | 0:41 | `TUAN-42_15_Buoi-5_Part-4.mp3` |
+| 16 | Buoi 6 | Part 3 | BÀI NGHE MINI TEST 1 (Buổi 6) — Part 3 · Máy thanh toán thẻ ở City Book Store | 0:24 | `TUAN-42_16_Buoi-6_Part-3.mp3` |
+| 17 | Buoi 6 | Part 3 | BÀI NGHE MINI TEST 2 (Buổi 6) — Part 3 · Delta Paper tăng giá từ tháng Giêng | 0:22 | `TUAN-42_17_Buoi-6_Part-3.mp3` |
+| 18 | Buoi 6 | Part 3 | BÀI NGHE MINI TEST 3 (Buổi 6) — Part 3 · Hai kệ mới cho phòng hàng | 0:28 | `TUAN-42_18_Buoi-6_Part-3.mp3` |
+| 19 | Buoi 6 | Part 4 | BÀI NGHE MINI TEST 4 (Buổi 6) — Part 4 · Thông báo về cửa chính 25 Le Loi Street | 0:38 | `TUAN-42_19_Buoi-6_Part-4.mp3` |
+| 20 | Buoi 6 | Part 4 | BÀI NGHE MINI TEST 5 (Buổi 6) — Part 4 · Tin nhắn thoại về giờ chờ trên hoá đơn | 0:26 | `TUAN-42_20_Buoi-6_Part-4.mp3` |
+| 21 | Buoi 6 | Part 4 | BÀI NGHE MINI TEST 6 (Buổi 6) — Part 4 · Buổi tập huấn ngắn về phiếu dịch vụ mới | 0:50 | `TUAN-42_21_Buoi-6_Part-4.mp3` |

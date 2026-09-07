@@ -526,7 +526,7 @@
   "part": "Part 4",
   "ten": "BÀI NGHE 3 (Buổi 3) — Hướng dẫn cuối ca ở kho · dạng Part 4",
   "file": "TUAN-23/TUAN-23_03_Buoi-3_Part-4.mp3",
-  "giay": 33.0,
+  "giay": 25.6,
   "luot": 1
  },
  {
@@ -536,7 +536,7 @@
   "part": "Part 4",
   "ten": "BÀI NGHE 4 (Buổi 4) — Thông báo trong tòa nhà · dạng Part 4",
   "file": "TUAN-23/TUAN-23_04_Buoi-4_Part-4.mp3",
-  "giay": 48.1,
+  "giay": 41.9,
   "luot": 6
  },
  {
@@ -566,7 +566,7 @@
   "part": "Part 3",
   "ten": "BÀI NGHE 1 (Buổi 1) — Hai đồng nghiệp ở văn phòng · dạng Part 3",
   "file": "TUAN-24/TUAN-24_01_Buoi-1_Part-3.mp3",
-  "giay": 36.9,
+  "giay": 33.9,
   "luot": 6
  },
  {
@@ -586,7 +586,7 @@
   "part": "Part 3",
   "ten": "BÀI NGHE 3 (Buổi 3) — Khách hàng và trưởng phòng kinh doanh · dạng Part 3",
   "file": "TUAN-24/TUAN-24_03_Buoi-3_Part-3.mp3",
-  "giay": 39.8,
+  "giay": 37.1,
   "luot": 6
  },
  {
@@ -606,7 +606,7 @@
   "part": "Part 4",
   "ten": "BÀI NGHE 5 (Buổi 5) — Tin nhắn thoại của nhà cung cấp · dạng Part 4",
   "file": "TUAN-24/TUAN-24_05_Buoi-5_Part-4.mp3",
-  "giay": 42.8,
+  "giay": 38.7,
   "luot": 5
  },
  {
@@ -1016,7 +1016,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 1 (Buổi 1) — Thông báo nội bộ",
   "file": "TUAN-28/TUAN-28_01_Buoi-1_Part-4.mp3",
-  "giay": 39.7,
+  "giay": 33.1,
   "luot": 1
  },
  {
@@ -1026,7 +1026,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 2 (Buổi 1) — Quảng cáo",
   "file": "TUAN-28/TUAN-28_02_Buoi-1_Part-4.mp3",
-  "giay": 32.1,
+  "giay": 29.2,
   "luot": 1
  },
  {
@@ -1036,7 +1036,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 3 (Buổi 2) — Tin nhắn thoại",
   "file": "TUAN-28/TUAN-28_03_Buoi-2_Part-4.mp3",
-  "giay": 39.3,
+  "giay": 38.6,
   "luot": 1
  },
  {
@@ -1046,7 +1046,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 4 (Buổi 3) — Bản tin thời tiết & giao thông",
   "file": "TUAN-28/TUAN-28_04_Buoi-3_Part-4.mp3",
-  "giay": 40.7,
+  "giay": 30.8,
   "luot": 1
  },
  {
@@ -1056,7 +1056,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 5 (Buổi 3) — Thông báo phát trên loa trong cửa hàng",
   "file": "TUAN-28/TUAN-28_05_Buoi-3_Part-4.mp3",
-  "giay": 37.9,
+  "giay": 31.2,
   "luot": 1
  },
  {
@@ -1066,7 +1066,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 6 (Buổi 4) — Quảng cáo",
   "file": "TUAN-28/TUAN-28_06_Buoi-4_Part-4.mp3",
-  "giay": 35.8,
+  "giay": 32.2,
   "luot": 1
  },
  {
@@ -1106,7 +1106,7 @@
   "part": "Part 4",
   "ten": "BÀI NÓI 10 (Buổi 5) — Thông báo nội bộ có bảng (Look at the graphic)",
   "file": "TUAN-28/TUAN-28_10_Buoi-5_Part-4.mp3",
-  "giay": 29.8,
+  "giay": 32.5,
   "luot": 1
  },
  {
@@ -1398,5 +1398,215 @@
   "file": "TUAN-39/TUAN-39_09_Buoi-6_Part-2.mp3",
   "giay": 249.7,
   "luot": 75
+ },
+ {
+  "tuan": 42,
+  "so": 1,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 1 (Buổi 1) — Part 3 · Máy in nhãn ở kho hỏng, dời lịch kỹ thuật viên",
+  "file": "TUAN-42/TUAN-42_01_Buoi-1_Part-3.mp3",
+  "giay": 35.3,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 2,
+  "buoi": "Buoi 1",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 2 (Buổi 1) — Part 3 · Bản báo cáo bảo hành dài bốn trang",
+  "file": "TUAN-42/TUAN-42_02_Buoi-1_Part-3.mp3",
+  "giay": 29.3,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 3,
+  "buoi": "Buoi 1",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 3 (Buổi 1) — Part 4 · Tin nhắn thoại của khách về một dòng trong hợp đồng",
+  "file": "TUAN-42/TUAN-42_03_Buoi-1_Part-4.mp3",
+  "giay": 27.9,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 4,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 4 (Buổi 2) — Part 3 · Máy sao chụp ở City Book Store chờ linh kiện",
+  "file": "TUAN-42/TUAN-42_04_Buoi-2_Part-3.mp3",
+  "giay": 24.0,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 5,
+  "buoi": "Buoi 2",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 5 (Buổi 2) — Part 3 · Mẫu phiếu dịch vụ mới, thiếu một ô",
+  "file": "TUAN-42/TUAN-42_05_Buoi-2_Part-3.mp3",
+  "giay": 24.0,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 6,
+  "buoi": "Buoi 2",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 6 (Buổi 2) — Part 4 · Thông báo buổi sáng về thang hàng",
+  "file": "TUAN-42/TUAN-42_06_Buoi-2_Part-4.mp3",
+  "giay": 35.4,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 7,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 7 (Buổi 3) — Part 3 · Có nên đổi nhà cung cấp giấy không",
+  "file": "TUAN-42/TUAN-42_07_Buoi-3_Part-3.mp3",
+  "giay": 29.8,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 8,
+  "buoi": "Buoi 3",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 8 (Buổi 3) — Part 3 · Khách nói bị tính tiền hai lần",
+  "file": "TUAN-42/TUAN-42_08_Buoi-3_Part-3.mp3",
+  "giay": 21.8,
+  "luot": 5
+ },
+ {
+  "tuan": 42,
+  "so": 9,
+  "buoi": "Buoi 3",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 9 (Buổi 3) — Part 4 · Tin nhắn thoại xin dời ngày kiểm kho",
+  "file": "TUAN-42/TUAN-42_09_Buoi-3_Part-4.mp3",
+  "giay": 42.0,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 10,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 10 (Buổi 4) — Part 3 · Kiện hàng đặt từ tháng Chín",
+  "file": "TUAN-42/TUAN-42_10_Buoi-4_Part-3.mp3",
+  "giay": 23.1,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 11,
+  "buoi": "Buoi 4",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 11 (Buổi 4) — Part 3 · Tấm biển thứ tư trong năm cho cửa bên",
+  "file": "TUAN-42/TUAN-42_11_Buoi-4_Part-3.mp3",
+  "giay": 24.8,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 12,
+  "buoi": "Buoi 4",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 12 (Buổi 4) — Part 4 · Mở đầu buổi họp bộ phận hỗ trợ",
+  "file": "TUAN-42/TUAN-42_12_Buoi-4_Part-4.mp3",
+  "giay": 37.0,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 13,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 13 (Buổi 5) — Part 3 · Hợp đồng không nói ai trả tiền",
+  "file": "TUAN-42/TUAN-42_13_Buoi-5_Part-3.mp3",
+  "giay": 31.5,
+  "luot": 7
+ },
+ {
+  "tuan": 42,
+  "so": 14,
+  "buoi": "Buoi 5",
+  "part": "Part 3",
+  "ten": "BÀI NGHE 14 (Buổi 5) — Part 3 · Hoá đơn tháng Ba của Harbor Print",
+  "file": "TUAN-42/TUAN-42_14_Buoi-5_Part-3.mp3",
+  "giay": 22.4,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 15,
+  "buoi": "Buoi 5",
+  "part": "Part 4",
+  "ten": "BÀI NGHE 15 (Buổi 5) — Part 4 · Bài nói trước ca làm của bộ phận trực điện thoại",
+  "file": "TUAN-42/TUAN-42_15_Buoi-5_Part-4.mp3",
+  "giay": 41.6,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 16,
+  "buoi": "Buoi 6",
+  "part": "Part 3",
+  "ten": "BÀI NGHE MINI TEST 1 (Buổi 6) — Part 3 · Máy thanh toán thẻ ở City Book Store",
+  "file": "TUAN-42/TUAN-42_16_Buoi-6_Part-3.mp3",
+  "giay": 25.0,
+  "luot": 8
+ },
+ {
+  "tuan": 42,
+  "so": 17,
+  "buoi": "Buoi 6",
+  "part": "Part 3",
+  "ten": "BÀI NGHE MINI TEST 2 (Buổi 6) — Part 3 · Delta Paper tăng giá từ tháng Giêng",
+  "file": "TUAN-42/TUAN-42_17_Buoi-6_Part-3.mp3",
+  "giay": 22.9,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 18,
+  "buoi": "Buoi 6",
+  "part": "Part 3",
+  "ten": "BÀI NGHE MINI TEST 3 (Buổi 6) — Part 3 · Hai kệ mới cho phòng hàng",
+  "file": "TUAN-42/TUAN-42_18_Buoi-6_Part-3.mp3",
+  "giay": 28.3,
+  "luot": 6
+ },
+ {
+  "tuan": 42,
+  "so": 19,
+  "buoi": "Buoi 6",
+  "part": "Part 4",
+  "ten": "BÀI NGHE MINI TEST 4 (Buổi 6) — Part 4 · Thông báo về cửa chính 25 Le Loi Street",
+  "file": "TUAN-42/TUAN-42_19_Buoi-6_Part-4.mp3",
+  "giay": 38.2,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 20,
+  "buoi": "Buoi 6",
+  "part": "Part 4",
+  "ten": "BÀI NGHE MINI TEST 5 (Buổi 6) — Part 4 · Tin nhắn thoại về giờ chờ trên hoá đơn",
+  "file": "TUAN-42/TUAN-42_20_Buoi-6_Part-4.mp3",
+  "giay": 26.8,
+  "luot": 1
+ },
+ {
+  "tuan": 42,
+  "so": 21,
+  "buoi": "Buoi 6",
+  "part": "Part 4",
+  "ten": "BÀI NGHE MINI TEST 6 (Buổi 6) — Part 4 · Buổi tập huấn ngắn về phiếu dịch vụ mới",
+  "file": "TUAN-42/TUAN-42_21_Buoi-6_Part-4.mp3",
+  "giay": 50.0,
+  "luot": 1
  }
 ]
